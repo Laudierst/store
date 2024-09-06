@@ -1,0 +1,69 @@
+Regras_de_cadastro_de_produtos
+
+===================================================================================
+SELECIONE A CATEGORIA CLICANDO EM QUALQUE UMA IMAGEM QUE SE REFERE A CATEGORIA EM 
+QUESTÃO QUE VOCÊ IRIA CADASTRA O PRODUTO, LEMBRANDO QUE ISSO É OBRIGATORIO
+
+------------------------------------------------------------------------------------
+BAR_CODE OBRIGATORIO
+
+Os campos bar_code tem que ser preechidos todos cada categoria tem um numero expecifico veja a lista a baixo.
+
+Calça F: 1,
+Calçados: "2",
+Vestidos: "3",
+Short F: "4",
+Audio/Vídeo: "5",
+Ferramentas: "6",
+Eletronicos: "7",
+Estética: "8",
+Boné: "9",
+Intimo: "10",
+Short M: "11",
+Informática: "12",
+Smartphone: "13",
+
+
+------------------------------------------------------------------------------------
+
+SLUG, EXISTE 5 SLUG E É OBRIGATORIO
+
+Os campos bar_code tem que ser preechidos todos.
+Mais o que seria e para que seria isso? 
+Isso seria o que um cliente iria pesquisar sobre o produto no campo de pesquisa.
+
+------------------------------------------------------------------------------------
+
+SIZE, EXISTE 5 SIZE VOCÊ PREECHE SE EXISTE OS TAMNHOS SE NÃO DEIXA VAZIO
+
+Os campos size são os tamnhos.
+Mais o que seria e para que seria isso? 
+
+EXEMPLO:
+P,M,G,GG,XG se caso for roupas,
+Coloque o nome Padrão como foi escrito aqui se for qualque outro intem, isso é obrigatorio.
+
+------------------------------------------------------------------------------------
+
+AVALIAÇÃO, EXISTE 3 CAMPO DE AVALIAÇÃO E É OBRIGATORIO
+
+Os campos avaliação são para dar mais credibilidade ao produto, e são avaliações reais.
+
+------------------------------------------------------------------------------------
+
+URL_PRODUCT, EXISTE 1 CAMPO DE URL_PRODUCT E É OBRIGATORIO
+
+Essecampo é obrigatorio porque é atraves dele que vamos fazer o pedido do produto em questão.
+
+------------------------------------------------------------------------------------
+
+AQUI A BAIXO TEMOS TODOS OS LINK NECESSARIO PARA ISSO.
+
+DASHBOARD: https://dashboardstylestop.netlify.app/form
+Usuario: laudier@gmail.com,
+Senha: 123hk
+
+SHOPEE: https://shopee.com.br/
+
+LOJA: https://stylestop.netlify.app/
+

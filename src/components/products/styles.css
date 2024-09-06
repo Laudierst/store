@@ -1,0 +1,104 @@
+
+.section {
+    width: 95%;
+    margin: auto;
+    /*border: 1px solid;*/
+
+    .div {
+        width: 220px;
+        height: 230px;
+        display: inline-block;
+        margin: 2px;
+        /*border: 1px solid;*/
+    }
+
+    .loading {
+        position: relative;
+    }
+
+    @keyframes identifier {
+        0%{
+            background-position: 10%;
+        }
+        50%{
+            background-position: 100%;
+        }
+        100%{
+            background-position: 0%;
+        }   
+    }
+
+    .div.loading *::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background:linear-gradient(-45deg, white,  #635c6c, white);
+        width: 100%;
+        height: 100%;
+        background-size: 100%;
+        animation: identifier 1s linear infinite;
+    }
+    
+    .img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .h5 {
+        width: 90%;
+        font-size: 01.5vw;
+        margin: auto;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: clip; 
+    }
+    
+    @media (max-width: 923px) {
+        width: 90%;
+        margin: auto;
+        display: flexbox;
+
+        .div {
+            width:105px; /* box retangular */
+            /*height:8em;  /* box retangular */
+            /*display: inline-block;*/
+            margin: 1px;
+            /*border: 1px solid;*/
+            height: 120px;
+        }
+
+        .img {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            margin: auto;
+            margin-bottom: 5px;
+        }
+
+        .h5 {
+            width: 90%;
+            font-size: 3vw;
+            margin: auto;
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: clip; 
+        }
+    }
+
+    
+}
+.linha { 
+    margin: 10px 0;
+    height: 2px;
+    background: black;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, black));
+}
+
+.hr{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, black, transparent);
+}
+
+
