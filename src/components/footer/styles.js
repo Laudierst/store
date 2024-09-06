@@ -15,6 +15,7 @@ export const ContainerFooter = styled.div`
     width: 100%;
   }
 
+
   & h2 {
     font-weight: bold;
     font-size: 2.5vw;
@@ -81,6 +82,13 @@ export const ContainerFooter = styled.div`
     margin-left: 53%;
     border: none;
 
+    @media (max-width: 768px) {
+        & h5 {
+          margin: auto;
+          display: flex;
+        }
+      }
+
     & input {
       width: 250px;
       background-color: white;
@@ -95,7 +103,12 @@ export const ContainerFooter = styled.div`
         border-radius: 8px;
         border: none;
         padding: 10px;
-        margin: 5px;
+        margin: 2px;
+
+        & h5 {
+          margin: auto;
+          display: flex;
+        }
       }
 
     }
@@ -145,6 +158,21 @@ export const ContainerFooter2 = styled.div`
     width: 100%;
     margin-top: -50px;
     padding: 40px;
+  }
+
+  & .imgSeg {
+
+    & img {
+      margin-top: -50px;
+      width: 100%;
+      height: 17vh;
+
+      @media screen and (max-width: 768px) {
+        margin-top: -10px;
+      width: 100%;
+      height: 10vh;
+      }
+    }
   }
 
   & div {
@@ -234,6 +262,10 @@ export const ContainerFooter1 = styled.div`
         margin: 2px;
         margin-top: 3px;
     }
+  }
+
+  & .ssl {
+    width: 20%;
   }
 }
 `;

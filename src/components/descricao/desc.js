@@ -11,6 +11,15 @@ export const Pricipal = styled.div`
     "secao barra-lateral"
     "rodape rodape";
 
+  & .padraoImg {
+    //
+
+    @media screen and (max-width: 923px) {
+      width: 100%;
+      height: 55vh;
+    }
+  }
+
   & .imgDiv {
     width: 98%;
     height: 75vh;
@@ -31,7 +40,7 @@ export const Pricipal = styled.div`
 
     @media screen and (max-width: 923px) {
       width: 100%;
-      height: 70vh;
+      height: 100%;
       border: none;
     }
   }
@@ -50,12 +59,15 @@ export const Pricipal = styled.div`
   & aside {
     grid-area: barra-lateral;
     background-color: transparent;
+    
+    
+    & h5 {
+      font-weight: bold;
+    }
 
     @media (max-width: 1350px){
       & h5 {
-        & strong {
-          font-size: 1vw;
-        }
+        font-size: 1vw;
       }
 
       & span {
@@ -71,9 +83,7 @@ export const Pricipal = styled.div`
 
     @media (max-width: 1050px){
       & h5 {
-        & strong {
-          font-size: 1vw;
-        }
+        font-size: 1vw;
       }
 
       & span {
@@ -89,9 +99,9 @@ export const Pricipal = styled.div`
 
     @media (max-width: 923px){
       & h5 {
-        & strong {
-          font-size: 20px;
-        }
+        //letter-spacing: 2px;
+        font-size: 15px;
+        font-weight: bold;
       }
 
       & span {
@@ -106,19 +116,21 @@ export const Pricipal = styled.div`
     }
 
     .slugImgDiv {
-      width: 20px;
+      width: 20%;
       margin: 2px;
+      border-radius: 5px;
     }
 
     .slugImg {
       width: 40px;
       margin: 2px;
+      border-radius: 3px;
 
       &:hover {
         border: 1px solid;
-        border-color: cyan;
+        border-color: #000000;
         opacity: 0.8;
-        border-radius: 10px;
+        border-radius: 5px;
         //box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease-in-out;
         cursor: pointer;
@@ -153,6 +165,15 @@ export const Pricipal = styled.div`
     height: 100%;
     background-color: transparent;
     margin-top: 30px;
+
+    @media(max-width: 923px){
+      & .espaco {
+        margin-top: 230px;
+      }
+      & .espaco2 {
+        margin-top: 50px;
+      }
+    }
   }
 
   .div {
@@ -162,6 +183,7 @@ export const Pricipal = styled.div`
     height: 100%;
     display: inline-flex;
     margin: 5px;
+    
 
     & .buttonColor {
       margin: 2px;
@@ -173,6 +195,21 @@ export const Pricipal = styled.div`
 			background-color: #08e2d332;
 			border: solid 1px;
       border-color: aquamarine;
+
+      &:hover {
+        background: #e5d416;
+        box-shadow: 0 0 0 0.3px black;
+      }
+    }
+
+    & .buttonColor1 {
+      margin: 2px;
+			display: "inline-block";
+			font-size: 11px;
+      border: none;
+      padding: 5px;
+      border-radius: 6px;
+			background-color: transparent;
 
       &:hover {
         background: #e5d416;
@@ -219,11 +256,12 @@ export const Pricipal = styled.div`
 	}
 
   @media (max-width: 992px) {
-    width: 100%;
+    width: 97%;
     text-align: justify;
     grid-template-columns: 100%;
-    grid-template-rows: 0px 470px 250px;
+    grid-template-rows: 0px 470px 30px;
     grid-template-areas: "cabecalho" "secao" "barra-lateral" "rodape";
+    
 
     & .img {
       width: 100%;
@@ -232,7 +270,7 @@ export const Pricipal = styled.div`
     }
 
     & aside {
-      //margin-top: 40%;
+      margin-top: -50px;
       text-align: justify;
       padding: 5px;
       height: 100%;
@@ -241,15 +279,15 @@ export const Pricipal = styled.div`
     }
 
     & footer {
-      margin: 10;
-      margin-top: 270%;
+      //margin: 10px;
+      margin-top: 250%;
       display: flex;
       flex-wrap: wrap;
       text-align: center;
     }
 
     & .parte1 {
-      margin-top: 110px;
+      margin-top: 10px;
       padding: 5px;
       text-align: justify;
       width: 100%;

@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { ShareSocial } from "react-share-social";
 import { toast } from "react-toastify";
+import correios from "./images/correios@2x.png";
+import pac from "./images/pac@2x.png";
+import sedex from "./images/sedex@2x.png";
+import trasport from "./images/transportadoras.jpg";
+import seloSeguranca from "./images/selo-seguranca.png";
+//import ssl from "./images/ssl.png";
 //import { Height } from '@material-ui/icons';
 
 export default function Footer() {
@@ -76,23 +82,25 @@ export default function Footer() {
 
   const formaEnvio = [
     {
-      envio:
-        "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/shipping/br/correios@2x.png",
+      envio: correios,
     },
     {
-      envio:
-        "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/shipping/br/correios/pac@2x.png",
+      envio: pac,
     },
     {
-      envio:
-        "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/shipping/br/correios/sedex@2x.png",
+      envio: sedex,
+    },
+    {
+      envio: trasport,
     },
   ];
 
   const seguranca = [
+    /*{
+      seguro: ssl,
+    },*/
     {
-      seguro:
-        "https://d2az8otjr0j19j.cloudfront.net/templates/001/152/331/twig/static/images/google-safe-white.png",
+      seguro: seloSeguranca,
     },
   ];
 
@@ -134,10 +142,9 @@ export default function Footer() {
             <img src={img.envio} alt="im" />
           ))}
         </div>
-        <div>
-          <h4>Segurança</h4>
+        <div className="imgSeg">
           {seguranca.map((seg) => (
-            <img src={seg.seguro} className="img" alt="im" />
+            <img src={seg.seguro} alt="im" />
           ))}
         </div>
       </ContainerFooter2>
@@ -160,10 +167,10 @@ export default function Footer() {
       <ContainerFooter1>
         <div>
           <strong>
-            Trabalhamos com boné de ótima qualidade, receba seu produto ou
-            devolvemos seu dinheiro.
+            Trabalhamos com total responsabilidade para que você, receba seu
+            produto ou devolvemos seu dinheiro d volta.
           </strong>
-          <p>&copy; Todos os direitos reservado StylesTop</p>
+          <p>&copy; Todos os direitos reservado OnShops</p>
         </div>
         <div>
           <url>
