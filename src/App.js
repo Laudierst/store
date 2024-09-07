@@ -15,16 +15,16 @@ import { Calcado } from "./components/categorys/Calcado";
 import { Relogio } from "./components/categorys/Relogio";
 import { AudioVideo } from "./components/categorys/AudioVideo";
 import { Intima } from "./components/categorys/Intima";
-import { Maquiagem } from "./components/categorys/Maquiagem";
+import { Macaquinho } from "./components/categorys/Macaquinho";
 import { Conjuntof } from "./components/categorys/Conjuntof";
 import { Calcaf } from "./components/categorys/Calcaf";
-import { Shortm } from "./components/categorys/Shortm";
+import { Bolsa } from "./components/categorys/Bolsa";
 import { Shortf } from "./components/categorys/Shortf";
-import { Calcam } from "./components/categorys/Calcam";
+import { Saia } from "./components/categorys/Saia";
 import { Camisetaf } from "./components/categorys/Camisetaf";
 import { Camisetam } from "./components/categorys/Camisetam";
 import { Informatica } from "./components/categorys/Informatica";
-import { Ferramentas } from "./components/categorys/Ferramentas"
+import { Body } from "./components/categorys/Body"
 import { Estetica } from "./components/categorys/Estetica"
 import { PoliticasDevolucaoTroca } from "./components/politicaTrocaDevolucao/politicaTrocaDevolucao";
 import { Meuproduto } from "./components/Meuproduto";
@@ -148,8 +148,8 @@ function App() {
       element: <Intima />,
     },
     {
-      path: "/maquiagem",
-      element: <Maquiagem />,
+      path: "/macaquinho",
+      element: <Macaquinho />,
     },
     {
       path: "/conjuntof",
@@ -160,20 +160,24 @@ function App() {
       element: <Calcaf />,
     },
     {
-      path: "/shortm",
-      element: <Shortm />,
+      path: "/bolsa",
+      element: <Bolsa />,
     },
     {
       path: "/acessorio",
       element: <Acessorio />,
     },
     {
+      path: "/body",
+      element: <Body />,
+    },
+    {
       path: "/shortf",
       element: <Shortf />,
     },
     {
-      path: "/calcam",
-      element: <Calcam />,
+      path: "/saia",
+      element: <Saia />,
     },
     {
       path: "/camisetaf",
@@ -185,10 +189,6 @@ function App() {
     {
       path: "/informatica",
       element: <Informatica />,
-    },
-    {
-      path: "/ferramentas",
-      element: <Ferramentas />,
     },
     {
       path: "/estetica",

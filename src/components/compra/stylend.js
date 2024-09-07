@@ -12,6 +12,25 @@ export const CompraStyle = styled.div`
     background-size: cover;
     background-position-y: -130px;
 
+    & .btn-cep {
+        border: none;
+        padding: 5px;
+        position: absolute;
+        margin-left: -95px;
+        margin-top: 50px;
+
+        @media (max-width: 1650px) {
+            font-size: 1.1vw;
+            margin-left: -70px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 923px) {
+            font-size: 2vw;
+            margin-left: -60px;
+        }
+    }
+
     & div {
         margin-top: 45px;
     }

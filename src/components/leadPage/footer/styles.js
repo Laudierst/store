@@ -1,23 +1,9 @@
 import styled from "styled-components";
 
-export const ContainerFooterPrimary = styled.div`
-  width: 100%;
-
-  @media screen and (max-width: 1750px) {
-    
-    width: 100%;
-  }
-
-  @media screen and (max-width: 923px) {
-    
-    width: 100%;
-  }
-`
-
 export const ContainerFooter = styled.div`
   width: 100%;
-  margin-top: 100px;
-  background-color: #000000;
+  margin-top: 15%;
+  background-color: #001414;
   display: flex;
   justify-content: space-between;
   color: #eee;
@@ -25,9 +11,10 @@ export const ContainerFooter = styled.div`
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
   @media screen and (max-width: 768px) {
-    margin-top: 50px;
+    margin-top: 60px;
     width: 100%;
   }
+
 
   & h2 {
     font-weight: bold;
@@ -95,6 +82,13 @@ export const ContainerFooter = styled.div`
     margin-left: 53%;
     border: none;
 
+    @media (max-width: 768px) {
+        & h5 {
+          margin: auto;
+          display: flex;
+        }
+      }
+
     & input {
       width: 250px;
       background-color: white;
@@ -109,7 +103,12 @@ export const ContainerFooter = styled.div`
         border-radius: 8px;
         border: none;
         padding: 10px;
-        margin: 5px;
+        margin: 2px;
+
+        & h5 {
+          margin: auto;
+          display: flex;
+        }
       }
 
     }
@@ -147,7 +146,7 @@ export const ContainerFooter = styled.div`
 
 export const ContainerFooter2 = styled.div`
   width: 100%;
-  background-color: #000000;
+  background-color: #001414;
   display: flex;
   justify-content: space-between;
   color: #eee;
@@ -159,6 +158,21 @@ export const ContainerFooter2 = styled.div`
     width: 100%;
     margin-top: -50px;
     padding: 40px;
+  }
+
+  & .imgSeg {
+
+    & img {
+      margin-top: -50px;
+      width: 100%;
+      height: 17vh;
+
+      @media screen and (max-width: 768px) {
+        margin-top: -10px;
+      width: 100%;
+      height: 10vh;
+      }
+    }
   }
 
   & div {
@@ -204,7 +218,7 @@ export const ContainerFooter2 = styled.div`
 
 export const ContainerFooter1 = styled.div`
   width: 100%;
-  background-color: #000000;
+  background-color: #001414;
   display: flex;
   justify-content: space-between;
   color: #eee;
@@ -249,12 +263,16 @@ export const ContainerFooter1 = styled.div`
         margin-top: 3px;
     }
   }
+
+  & .ssl {
+    width: 20%;
+  }
 }
 `;
 
 export const ContainerFooter3 = styled.div`
   width: 100%;
-  background-color: #000000;
+  background-color: #001414;
   display: flex;
   justify-content: space-between;
   color: #eee;

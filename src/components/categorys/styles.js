@@ -1,17 +1,11 @@
 import styled from "styled-components";
 
-export const ProductProd = styled.div`
-  width: 100vw;
-  background: transparent;
-  display: flex;
-  margin: auto;
-  margin-top: 50px;
+export const TitleProduct = styled.div`
+  margin-top: 70px;
 
-  & section {
-    width: 100%;
-
-    & h2 {
-      font-weight: bold;
+  & .titleProduct {
+    text-align: center;
+    font-weight:initial;
       margin-top: -15px;
       color: #000000;
       text-shadow: 0 2px 0 rgb(121, 116, 116), 0 3px 0 #c9c9c9, 0 1px 0 #bbb,
@@ -19,6 +13,71 @@ export const ProductProd = styled.div`
       0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
       0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
       0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  & hr {
+    width: 20%;
+    margin: auto;
+    display: flex;
+    background-image: linear-gradient(#03EBEB, #001414);
+    margin-bottom: -30px;
+  }
+
+  @media (max-width: 923px) {
+
+    & .titleProduct {
+      font-size: 20px;
+      text-align: center;
+      font-weight:initial;
+        margin-top: -15px;
+        color: #000000;
+        text-shadow: 0 2px 0 rgb(121, 116, 116), 0 3px 0 #c9c9c9, 0 1px 0 #bbb,
+        0 1px 0 #b9b9b9, 0 1px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
+        0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+        0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    & hr {
+      width: 20%;
+      margin: auto;
+      display: flex;
+      background-image: linear-gradient(#03EBEB, #001414);
+      margin-bottom: -40px;
+    }
+  }
+`
+
+export const ProductProd = styled.div`
+  width: 85vw;
+  display: flex;
+  margin: auto;
+  background: white;
+  margin-top: 50px;
+  border-radius: 6px;
+  padding: 12px;
+
+  @media (max-width: 1650px) {
+    width: 93.5%;
+  }
+
+  @media (max-width: 923px) {
+    width: 100%;
+  }
+
+  & section {
+    width: 100%;
+  
+    & h2 {
+      font-weight: bold;
+      margin-top: -15px;
+      font-size: 25px;
+      color: #000000;
+      text-shadow: 0 2px 0 rgb(121, 116, 116), 0 3px 0 #c9c9c9, 0 1px 0 #bbb,
+      0 1px 0 #b9b9b9, 0 1px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
+      0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+      0 3px 1px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+      0 10px 10px rgba(0, 0, 0, 0.2), 0 30px 30px rgba(0, 0, 0, 0.15);
     }
 
     & div {
@@ -32,7 +91,6 @@ export const ProductProd = styled.div`
 
       &:hover {
         border: 1px solid;
-        border-bottom: 0;
         border-color: cyan;
         opacity: 0.8;
         border-radius: 10px;
@@ -56,8 +114,13 @@ export const ProductProd = styled.div`
       & h5 {
         width: 100%;
         color: #000000;
-        font-weight: bold;
-        font-size: 0.8rem;
+        font-weight: initial;
+        font-size: 1.2rem;
+        overflow: hidden; // Removendo barra de rolagem
+        text-overflow: ellipsis; // Adicionando "..." ao final
+        display: -webkit-box;
+        -webkit-line-clamp: 2; // Quantidade de linhas
+        -webkit-box-orient: vertical; 
       }
 
       & h3 {
@@ -108,10 +171,19 @@ export const ProductProd = styled.div`
       padding: 3px;
     }
 
-    & .oldPricereal {
-      font-size: 1.8rem;
+    & .oldPrice {
+      font-size: 0.7rem;
+      text-decoration: line-through;
       flex-grow: 1;
-      font-weight: initial;
+      color: gray;
+      margin-bottom: -5px;
+    }
+
+    & .oldPricereal {
+      font-size: 2rem;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      flex-grow: 1;
+      font-weight: bold;
       color: #000000;
       opacity: 0.7;
       padding: 3px;
@@ -133,12 +205,50 @@ export const ProductProd = styled.div`
       }
 
     }
+
+    & .p {
+      margin-top: -5px;
+      font-size: 12px;
+      margin-bottom: 2px;
+      margin-left: 5px;
+      text-align: center;
+    }
+
+    & .frete {
+      font-size: 15px;
+      color: #00A650;
+    }
+
+    & .cartImg {
+      width: 25px;
+      height: 25px;
+      flex-grow: 1;
+      color: #000000;
+      opacity: 0.7;
+      padding: 3px;
+
+    }
     
-    @media (max-width: 768px) {
+    & .oldPricereal {
+      font-size: 1.2rem;
+      flex-grow: 1;
+      color: #000000;
+      opacity: 0.7;
+      padding: 3px;
+      
+    }
+    
+
+
+    @media (max-width: 923px) {
       width: 30%;
 
+      & h5 {
+        font-size: 0.9rem;
+      }
+
       & .oldPricereal {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         flex-grow: 1;
         color: #000000;
         opacity: 0.7;
@@ -147,27 +257,18 @@ export const ProductProd = styled.div`
       }
 
       & .frete {
-        font-size: 3vw;
+        font-size: 2.1vw;
         color: #00A650;
       }
 
       & .cartImg {
-        width: 30px;
-        height: 30px;
+        width: 17px;
+        height: 17px;
         flex-grow: 1;
         color: #000000;
         opacity: 0.7;
         padding: 3px;
   
-      }
-
-      & h5 {
-        width: 100%;
-        height: 5vh;
-        color: #000000;
-        font-weight: bold;
-        font-size: 2vw;
-        
       }
 
       & b {
@@ -180,7 +281,8 @@ export const ProductProd = styled.div`
       }
 
       & .p {
-        font-size: 1.6vw;
+        margin-top: -5px;
+        font-size: 1.8vw;
         margin-bottom: 2px;
         margin-left: 5px;
         text-align: center;
@@ -196,7 +298,7 @@ export const ProductProd = styled.div`
       }      
 
       & h3 {
-        margin-top: 50px;
+        margin-top: 0px;
         color: #000000;
         font-weight: bold;
         text-align: center;

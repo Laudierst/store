@@ -2,7 +2,7 @@
 /* eslint-disable eqeqeq */
 import { toast } from "react-toastify";
 import React, { useState } from "react";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
+//import LocationOnIcon from "@material-ui/icons/LocationOn";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 import SwapHorizIcon from "@material-ui/icons/SwapHoriz";
 import ReactLoading from "react-loading";
@@ -26,6 +26,7 @@ import { MarginTop, Pricipal } from "./desc";
 //import { ImageList } from "@material-ui/core";
 import { ProductImageMini } from "./products_desc";
 import Footer from "./footer/footer";
+import api from "../../api/api";
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -34,15 +35,20 @@ export const scrollToTop = () => {
   });
 };
 
-//window.history.back()
-
 setTimeout(() => {
   scrollToTop();
 }, 500);
 
 export const LoadPage = () => {
+  const [dataSlug, setdataSlug] = useState("");
   const [dataCores, setDatacores] = useState("");
   const [dataTamanho, setTamanho] = useState("");
+  const [dataImg5, setDataImm5] = useState([]);
+  const [categoroy, setCategory] = useState([]);
+
+  //console.log(categoroy);
+  //123Xerebebel*
+  //123xerebebel*
 
   //let url = window.location.pathname;
   //let parts = url.split("/");
@@ -63,6 +69,45 @@ export const LoadPage = () => {
   const sizeFilter = dataProductFilter.map((pri) => pri.size);
   const divideSizeArrey = { ...sizeFilter[0] };
 
+  const imgFilterImg6 = dataProductFilter.map((img6) => img6.image[5]);
+  //const divideImgArrey = { ...sizeFilter[0] };
+
+  const ProcessoImageCor = async () => {
+    //const reqName = await api.get("/category");
+    //const resName = await reqName.data;
+    const req = await api.get(`/productcategoryid/${lastPart}`);
+    const res = await req.data.products_categories[0].categories.name;
+
+    const response = await imgFilterImg6;
+    setDataImm5(response);
+    setCategory(res);
+    //setCategoryData(res);
+  };
+
+  /*useEffect(() => {
+    (async () => {
+      //const reqName = await api.get("/category");
+      //const resName = await reqName.data;
+      const req = await api.get(`/productcategoryid/${lastPart}`);
+      const res = await req.data.products_categories[0].categories.name;
+
+      const response = await imgFilterImg6;
+      setDataImm5(response);
+      setCategory(res);
+      //setCategoryData(res);
+    })();
+  }, []);*/
+
+  /*useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const response = await imgFilterImg6;
+      setDataImm5(response);
+    }
+    fetchData();
+  }, []); // Or [] if effect doesn't need props or state
+  //console.log(imgFilterImg6, "ls");*/
+
   localStorage.setItem("tm", divideSizeArrey[0]);
   const recebeTm = localStorage.getItem("tm");
 
@@ -71,13 +116,13 @@ export const LoadPage = () => {
   function handlerCartAdd(e) {
     const id = localStorage.getItem("id");
 
-    const dataCor = { id: id, cor: dataCores };
+    const dataCor = { id: id, cor: dataSlug };
     const dataTm = {
       id: id,
       tm: recebeTm == "Padrão" ? recebeTm : dataTamanho,
     };
 
-    console.log(dataTm);
+    //console.log(dataTm);
 
     dispatch(addTm(dataTm));
     dispatch(addCor(dataCor));
@@ -87,7 +132,7 @@ export const LoadPage = () => {
         if (dataTm.tm == "") {
           alert("Você tem que escolher um tamanho antes!");
         } else {
-          if (dataCores == "") {
+          if (dataSlug == "") {
             alert("Você tem que escolher uma cor antes!");
           } else {
             setTimeout(() => {
@@ -115,7 +160,7 @@ export const LoadPage = () => {
         if (dataTm.tm == "") {
           alert("Você tem que escolher um tamanho antes!");
         } else {
-          if (dataCores == "") {
+          if (dataSlug == "") {
             alert("Você tem que escolher uma cor antes!");
           } else {
             setTimeout(() => {
@@ -143,7 +188,7 @@ export const LoadPage = () => {
     let id = localStorage.getItem("id");
     let nameProduct = localStorage.getItem("name");
 
-    const dataCor = { id: id, cor: dataCores };
+    const dataCor = { id: id, cor: dataSlug };
     const dataTm = {
       id: id,
       tm: recebeTm == "Padrão" ? recebeTm : dataTamanho,
@@ -157,7 +202,7 @@ export const LoadPage = () => {
         if (dataTm.tm == "") {
           alert("Você tem que escolher um tamanho antes!");
         } else {
-          if (dataCores == "") {
+          if (dataSlug == "") {
             alert("Você tem que escolher uma cor antes!");
           } else {
             dispatch(addCart(e));
@@ -179,7 +224,7 @@ export const LoadPage = () => {
         if (dataTm.tm == "") {
           alert("Você tem que escolher um tamanho antes!");
         } else {
-          if (dataCores == "") {
+          if (dataSlug == "") {
             alert("Você tem que escolher uma cor antes!");
           } else {
             dispatch(addCart(e));
@@ -261,6 +306,23 @@ export const LoadPage = () => {
     frete: "FRETE GRATIS",
   };
 
+  const productProntoAddCard = [
+    {
+      id: dataProductFilter[0]?.id,
+      name: dataProductFilter[0]?.name,
+      price: dataProductFilter[0]?.price,
+      quantity: dataProductFilter[0]?.quantity,
+      url_product: dataProductFilter[0]?.url_product,
+      description: dataProductFilter[0]?.description,
+      category: categoroy,
+      cor: dataCores,
+      image: dataSlug,
+      size: dataTamanho,
+    },
+  ];
+
+  //console.log(productProntoAddCard, " t");
+
   /*const semImagem =
     "https://dermogral.com.br/wp-content/uploads/2023/03/FARMACIA-DERMOGRAL-SEM-FOTO.png";*/
 
@@ -274,9 +336,9 @@ export const LoadPage = () => {
             <Example />
           ) : (
             dataProductFilter.map((res) => {
-              const { id, image, color } = res;
+              const { id, image } = res;
 
-              console.log(color, "11111");
+              //console.log(slug, "11111");
 
               const imgList = [
                 image[0],
@@ -352,6 +414,7 @@ export const LoadPage = () => {
                     </div>
                   </ProductImageMini>
                   <Swiper
+                    className="padraoImg"
                     grabCursor={true}
                     effect={"creative"}
                     creativeEffect={{
@@ -371,7 +434,7 @@ export const LoadPage = () => {
                       ) : (
                         <SwiperSlide key={id}>
                           <img
-                            src={imgData}
+                            src={dataSlug ? dataSlug : imgData}
                             id="logo"
                             alt=""
                             className="imgDiv"
@@ -390,7 +453,25 @@ export const LoadPage = () => {
             <Example />
           ) : (
             dataProductFilter.map((res) => {
-              const { name, quantity, image, color } = res;
+              const { name, quantity, image, color, slug } = res;
+
+              /*const corImg = [
+                {
+                  cor0: color[0],
+                  img0: slug[0],
+                  cor1: color[1],
+                  img1: slug[1],
+                  cor2: color[2],
+                  img2: slug[2],
+                  cor3: color[3],
+                  img4: slug[4],
+                  cor5: color[5],
+                  img5: slug[5],
+                  cor6: color[6],
+                  img6: slug[6],
+                },
+              ];*/
+              //console.log(dataCores);
 
               return (
                 <>
@@ -406,17 +487,25 @@ export const LoadPage = () => {
                     </ProduVideoPlay2>
                     <div className="">
                       <div className="">
-                        <h5>
-                          <strong>{name}</strong>
-                        </h5>
+                        <h5>{name}</h5>
                         <div>
-                          <span className="mr-2">4.8</span>
-                          <GoStarFill className="text-warning mb-1" />
-                          <GoStarFill className="text-warning mb-1" />
-                          <GoStarFill className="text-warning mb-1" />
-                          <GoStarFill className="text-warning mb-1" />
-                          <TiStarHalfOutline className="text-warning mb-1 h4" />
-                          <span className="ml-2">{quantity} Vendido</span>
+                          <span style={{ fontSize: 15 }}>4.8</span>
+                          <GoStarFill
+                            style={{ fontSize: 15, color: "#ffc107" }}
+                          />
+                          <GoStarFill
+                            style={{ fontSize: 15, color: "#ffc107" }}
+                          />
+                          <GoStarFill
+                            style={{ fontSize: 15, color: "#ffc107" }}
+                          />
+                          <GoStarFill
+                            style={{ fontSize: 15, color: "#ffc107" }}
+                          />
+                          <TiStarHalfOutline
+                            style={{ fontSize: 18, color: "#ffc107" }}
+                          />
+                          <span> | {quantity} Vendido</span>
                           <p></p>
                           <span>ESSE É UM DOS MAIS VENDIDOS NA LOJA</span>
                         </div>
@@ -433,176 +522,171 @@ export const LoadPage = () => {
                           >
                             {frete.frete}
                           </span>
+                          ``
                         </div>
-
-                        <span>
-                          <FaCreditCard style={{ margin: "10px" }} /> Em até 12x
-                          sem juros
-                          <br />
-                          {imgCart.map((imgCard) => (
-                            <img
-                              src={imgCard.img}
-                              alt="img"
-                              style={{
-                                width: "12%",
-                                height: 25,
-                                display: "inline-block",
-                                margin: "5PX",
-                                border: "solid 1px",
-                              }}
-                            />
-                          ))}
-                        </span>
                         <br />
-                        <br />
-                        <p>
+                        <p style={{ fontSize: 20 }}>
                           <strong style={{ fontSize: 20 }}>Cor: </strong>
-                          <span
-                            style={{
-                              border: "solid 1px",
-                              padding: 5,
-                              borderRadius: 5,
-                            }}
-                          >
-                            {dataCores ? (
-                              <img
-                                className="slugImgDiv"
-                                src={dataCores}
-                                alt="sem cor"
-                              />
-                            ) : (
-                              "Sem cor"
-                            )}
-                          </span>
+                          {dataCores}
                         </p>
+                        <span
+                          style={{
+                            border: "none",
+                            padding: 5,
+                            borderRadius: 5,
+                          }}
+                        >
+                          {dataSlug ? (
+                            <img
+                              className="slugImgDiv"
+                              src={dataSlug}
+                              alt={dataSlug}
+                            />
+                          ) : (
+                            dataSlug
+                          )}
+                        </span>
                         <div>
                           <div
                             role="group"
                             aria-label="Basic example"
                             style={{ width: "80%" }}
                           >
-                            {color[0] ? (
-                              <button
-                                type="button"
-                                className="buttonColor"
-                                onClick={() => setDatacores(color[0])}
-                              >
-                                {color[0]}
-                              </button>
-                            ) : (
+                            {slug[0]?.charAt() == "h" ? (
                               <img
-                                onClick={() => setDatacores(res.slug[0])}
+                                onClick={() =>
+                                  setdataSlug(res.slug[0]) ||
+                                  setDatacores(res.color[0]) ||
+                                  ProcessoImageCor
+                                }
                                 className="slugImg"
                                 src={res.slug[0]}
                                 alt="img slug"
                                 srcset=""
                               />
-                            )}
-                            {color[1] ? (
+                            ) : (
                               <button
                                 type="button"
-                                className="buttonColor"
-                                onClick={() => setDatacores(color[1])}
+                                className="buttonColor1"
+                                onClick={() =>
+                                  ProcessoImageCor || setdataSlug(color[0])
+                                }
                               >
-                                {color[1]}
+                                {color[0] ? color[0] : ""}
                               </button>
-                            ) : (
+                            )}
+                            {slug[1]?.charAt() == "h" ? (
                               <img
-                                onClick={() => setDatacores(res.slug[1])}
+                                onClick={() =>
+                                  setdataSlug(res.slug[1]) ||
+                                  setDatacores(res.color[1]) ||
+                                  ProcessoImageCor
+                                }
                                 className="slugImg"
                                 src={res.slug[1]}
                                 alt="img slug"
                                 srcset=""
                               />
-                            )}
-                            {color[2] ? (
+                            ) : (
                               <button
                                 type="button"
-                                className="buttonColor"
-                                onClick={() => setDatacores(color[2])}
+                                className="buttonColor1"
+                                onClick={() =>
+                                  ProcessoImageCor || setdataSlug(color[1])
+                                }
                               >
-                                {color[2]}
+                                {color[1] ? color[1] : ""}
                               </button>
-                            ) : (
+                            )}
+                            {slug[2]?.charAt() == "h" ? (
                               <img
-                                onClick={() => setDatacores(res.slug[2])}
+                                onClick={() =>
+                                  setdataSlug(res.slug[2]) ||
+                                  setDatacores(res.color[2]) ||
+                                  ProcessoImageCor
+                                }
                                 className="slugImg"
                                 src={res.slug[2]}
                                 alt="img slug"
                                 srcset=""
                               />
-                            )}
-                            {color[3] ? (
+                            ) : (
                               <button
                                 type="button"
-                                className="buttonColor"
-                                onClick={() => setDatacores(color[3])}
+                                className="buttonColor1"
+                                onClick={() =>
+                                  ProcessoImageCor || setdataSlug(color[2])
+                                }
                               >
-                                {color[3]}
+                                {color[2] ? color[2] : ""}
                               </button>
-                            ) : (
+                            )}
+                            {slug[3]?.charAt() == "h" ? (
                               <img
-                                onClick={() => setDatacores(res.slug[3])}
+                                onClick={() =>
+                                  setdataSlug(res.slug[3]) ||
+                                  setDatacores(res.color[3]) ||
+                                  ProcessoImageCor
+                                }
                                 className="slugImg"
                                 src={res.slug[3]}
                                 alt="img slug"
                                 srcset=""
                               />
-                            )}
-                            {color[4] ? (
+                            ) : (
                               <button
                                 type="button"
-                                className="buttonColor"
-                                onClick={() => setDatacores(color[4])}
+                                className="buttonColor1"
+                                onClick={() =>
+                                  ProcessoImageCor || setdataSlug(color[3])
+                                }
                               >
-                                {color[4]}
+                                {color[3] ? color[3] : ""}
                               </button>
-                            ) : (
-                              ""
                             )}
-                            {color[5] ? (
+                            {slug[4]?.charAt() == "h" ? (
+                              <img
+                                onClick={() =>
+                                  setdataSlug(res.slug[4]) ||
+                                  setDatacores(res.color[4]) ||
+                                  ProcessoImageCor
+                                }
+                                className="slugImg"
+                                src={res.slug[4]}
+                                alt="img slug"
+                                srcset=""
+                              />
+                            ) : (
                               <button
                                 type="button"
-                                className="buttonColor"
-                                onClick={() => setDatacores(color[5])}
+                                className="buttonColor1"
+                                onClick={() =>
+                                  ProcessoImageCor || setdataSlug(color[4])
+                                }
                               >
-                                {color[5]}
+                                {color[4] ? color[4] : ""}
                               </button>
-                            ) : (
-                              ""
                             )}
-                            {color[6] ? (
+                            {slug[5]?.charAt() == "h" ? (
+                              <img
+                                onClick={() =>
+                                  setdataSlug(res.slug[5]) ||
+                                  setDatacores(res.color[5]) ||
+                                  ProcessoImageCor
+                                }
+                                className="slugImg"
+                                src={res.slug[5]}
+                                alt="img slug"
+                                srcset=""
+                              />
+                            ) : (
                               <button
                                 type="button"
-                                className="buttonColor"
-                                onClick={() => setDatacores(color[6])}
+                                className="buttonColor1"
+                                onClick={() => setdataSlug(color[5])}
                               >
-                                {color[6]}
+                                {color[5] ? color[5] : ""}
                               </button>
-                            ) : (
-                              ""
-                            )}
-                            {color[7] ? (
-                              <button
-                                type="button"
-                                className="buttonColor"
-                                onClick={() => setDatacores(color[7])}
-                              >
-                                {color[7]}
-                              </button>
-                            ) : (
-                              ""
-                            )}
-                            {color[8] ? (
-                              <button
-                                type="button"
-                                className="buttonColor"
-                                onClick={() => setDatacores(color[8])}
-                              >
-                                {color[8]}
-                              </button>
-                            ) : (
-                              ""
                             )}
                           </div>
                           <br />
@@ -751,32 +835,28 @@ export const LoadPage = () => {
                           Saiba os prazos de entrega e as formas de envio.
                         </span>
                         <div>
-                          <br />
-                          <LocationOnIcon />{" "}
-                          <b style={{ color: "green" }}>
-                            Frete Gratis para todo BR
-                          </b>
-                        </div>
-                        <br />
-                        <div>
                           <p>
                             <strong>Disponivel em Estoque</strong>
                             <div>disponivel ({quantity})</div>
-                            <br />
+
                             <br />
                             <strong>Finalize sua compra aqui!</strong>
                           </p>
                         </div>
 
                         <button
-                          onClick={() => handlerCartAdd(dataProductFilter[0])}
+                          onClick={() =>
+                            handlerCartAdd(productProntoAddCard[0])
+                          }
                           className="buttonCompra"
                         >
                           Comprar agora
                         </button>
 
                         <button
-                          onClick={() => handlerCartAdd2(dataProductFilter[0])}
+                          onClick={() =>
+                            handlerCartAdd2(productProntoAddCard[0])
+                          }
                           className="buttonCompra"
                         >
                           Adicionar ao carrinho
@@ -784,7 +864,6 @@ export const LoadPage = () => {
 
                         <br />
                         <div>
-                          <br />
                           <br />
                           <p>
                             <SwapHorizIcon /> <strong>Devolução Gratis</strong>{" "}
@@ -802,6 +881,24 @@ export const LoadPage = () => {
                             <span>
                               eceba o produto que está esperando ou devolvemos o
                               dinheiro.
+                            </span>
+                            <span>
+                              <FaCreditCard style={{ margin: "10px" }} /> Em até
+                              12x sem juros
+                              <br />
+                              {imgCart.map((imgCard) => (
+                                <img
+                                  src={imgCard.img}
+                                  alt="img"
+                                  style={{
+                                    width: "12%",
+                                    height: 25,
+                                    display: "inline-block",
+                                    margin: "5PX",
+                                    border: "solid 1px",
+                                  }}
+                                />
+                              ))}
                             </span>
                           </p>
                         </div>
@@ -821,12 +918,22 @@ export const LoadPage = () => {
               const { description } = res;
 
               return (
-                <div className="parte1">
-                  <h4>
-                    <strong>DESCRIÇÃO</strong>
-                  </h4>
-                  <p>{description}</p>
-                </div>
+                <>
+                  <div className="parte1">
+                    <div>
+                      {dataImg5 ? (
+                        <div className="espaco"></div>
+                      ) : (
+                        <div className="espaco2"></div>
+                      )}
+                    </div>
+
+                    <h4>
+                      <strong>DESCRIÇÃO</strong>
+                    </h4>
+                    <p>{description}</p>
+                  </div>
+                </>
               );
             })
           )}

@@ -23,10 +23,9 @@ export const CoontainerSlids = styled.div`
     & .item {
       width: 100%;
       background-color: transparent;
-      margin: 10px;
       padding: 5px;
       width: 400px;
-      height: 42vh;
+      height: 46vh;
       flex: none;
       cursor: pointer;
 
@@ -39,15 +38,14 @@ export const CoontainerSlids = styled.div`
         }
       }
       @media (max-width: 768px) {
-        width: 110px;
-        height: 20vh;
+        width: 200px;
+        height: 40vh;
 
         & .image {
           & img {
-            width: 128px;
-            height: 18vh;
+            width: 190px;
+            height: 40vh;
             object-fit: cover;
-            margin-left: -20px;
           }
         }
       }

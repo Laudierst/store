@@ -75,11 +75,12 @@ export const Coontainer = styled.div`
       margin-top: 16px;
       width: 100%;
       margin: auto;
-      display: flex;
+      text-align: center;
       
       & span {
         text-decoration: none;
         color: white;
+        text-align: center;
       }
 
       & .name {

@@ -2,25 +2,30 @@
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
 
 // Styles
-import { CartItemContainer, CartItemImage, CartItemInfo, CartItemQuantity, RemoveButton } from "./styles";
+import {
+  CartItemContainer,
+  CartItemImage,
+  CartItemInfo,
+  CartItemQuantity,
+  RemoveButton,
+} from "./styles";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart, decrementCart, addCart } from "../../redux/cart/cart";
 
 const CartItem = ({ product }) => {
-
-  const dispatch = useDispatch()
-  const length = useSelector((state) => state.cart.length)
+  const dispatch = useDispatch();
+  const length = useSelector((state) => state.cart.length);
 
   const handleRemoveClick = (id) => {
-    dispatch(removeFromCart(id))
+    dispatch(removeFromCart(id));
   };
 
   const handleIncreaseClick = (dataProduct) => {
-    dispatch(addCart(dataProduct))
+    dispatch(addCart(dataProduct));
   };
 
   const handleDecreaseClick = (dataProduct) => {
-    dispatch(decrementCart(dataProduct))
+    dispatch(decrementCart(dataProduct));
   };
 
   let percentual = 0.25;
@@ -30,11 +35,13 @@ const CartItem = ({ product }) => {
   return (
     <div>
       <CartItemContainer>
-        <CartItemImage imageUrl={product.image[0]} />
+        <CartItemImage imageUrl={product.image} />
 
         <CartItemInfo>
           <p>{product.name}</p>
-          <p><strong>R$ {novo_price * product.cartQuantity},00</strong></p>
+          <p>
+            <strong>R$ {novo_price * product.cartQuantity},00</strong>
+          </p>
 
           <CartItemQuantity>
             <AiOutlineMinus

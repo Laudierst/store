@@ -117,55 +117,45 @@ export function Header() {
       <ContainerPRT>
         <ul>
           <li>
-            <span>
-              <AiOutlineWhatsApp className="text-white h5 m-1 mb-2 p" />
-            </span>
             <a
               href="https://wa.me/5575998172448?text=Ol%C3%A1%20tudo%20bem%2C%20gostaria%20de%20saber%20mais%20sobre%20alguns%20produtos%20da%20Loja%3F"
               target="blank"
             >
+              <AiOutlineWhatsApp className="text-white h5 m-1 mb-2 p" />
               Contato
             </a>
           </li>
           <li>
-            <span>
-              <BsTruck className="text-white h5 m-1 mb-2 p" />
-            </span>
             <a
               href="https://rastreamento.correios.com.br/app/index.php"
               target="blank"
             >
+              <BsTruck className="text-white h5 m-1 mb-2 p" />
               Rastreio
             </a>
           </li>
           <li>
-            <span>
-              <LuPackageSearch className="text-white h5 m-1 mb-2 p" />
-            </span>
             <a href="/politicatrocadevolucao" target="blank">
+              <LuPackageSearch className="text-white h5 m-1 mb-2 p" />
               Devolução
             </a>
           </li>
           <li>
-            <span>
+            <a href="/descpage">
               <AiFillAlert className="text-white h5 m-1 mb-2 p" />
-            </span>
-            <a href="/descpage">Novidade</a>
+              Novidade
+            </a>
           </li>
           <li>
-            <span>
-              <BsJournalText className="text-white h5 m-1 mb-2 p" />
-            </span>
             <a href="/politica" target="blank">
+              <BsJournalText className="text-white h5 m-1 mb-2 p" />
               Politica
             </a>
           </li>
           <li>
-            <span>
-              <LuPackageSearch className="text-white h5 m-1 mb-2 p" />
-            </span>
             <a href="/meuproduto" target="blank">
-              Meus pedido
+              <LuPackageSearch className="text-white h5 m-1 mb-2 p" />
+              MeusPedido
             </a>
           </li>
         </ul>

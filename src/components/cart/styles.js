@@ -137,13 +137,16 @@ export const TableCartFinalize = styled.div`
       }
     }
 
-    @media(max-width: 780px) {
+    & .namePosition {
+      margin-top: -10px;
+    } 
+
+    @media(max-width: 923px) {
 
         & .namePosition {
-          width: 60%;
-          position: absolute;
-          margin-top: 5px;
-          margin-left: -19px;
+          width: 100%;
+          //position: absolute;
+          margin-top: -26px;
           font-size: 2.5vw;
           padding: 10px;
         } 
@@ -157,10 +160,15 @@ export const TableCartFinalize = styled.div`
 
         & button {
           background-color: white;
+
+          @media (max-width: 923px) {
+            margin-top: -3px;
+            margin-bottom: 20px;
+          }
         }
 
-        @media(max-width: 780px) {
-          width: 100px;
+        @media(max-width: 923px) {
+          width: 220px;
 
           & .namePosition {
             position: absolute;
@@ -190,16 +198,25 @@ export const TableCartFinalize = styled.div`
         margin-left: 15px;
       }
 
-      @media screen and (max-width: 680px) {
+      & .divnome {
+        margin-left: -50px;
+        font-size: 1vw;
+
+        @media(max-width: 923px) {
+          //margin-top: -20px;
+        }
+      }
+
+      @media screen and (max-width: 923px) {
         font-size: 3vw;
 
         & .divimg {
           position: absolute;
-          margin-top: -10px;
+          //margin-top: -5px;
         }
 
         & .divnome {
-          margin-left: 20px;
+          margin-left: 40px;
           font-size: 1.8vw;
         }
       }
@@ -270,7 +287,7 @@ export const TableCartFinalize = styled.div`
             font-weight: bold;
           }
 
-          @media (max-width: 768px) {
+          @media (max-width: 923px) {
             width: 85px;
           }
         }

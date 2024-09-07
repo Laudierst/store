@@ -50,7 +50,7 @@ export function Meuproduto() {
         </a>
       </ContainerAMR>
       <ContainerAMR2>
-        <p>Cole aqui o cóigo da compra</p>
+        <p>Cole aqui o código da compra</p>
         <FaLongArrowAltDown className="flecha" />
         <form onChange={(e) => handleSearch(e)}>
           <input

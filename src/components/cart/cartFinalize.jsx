@@ -96,7 +96,8 @@ export default function CartFinalize() {
               <hr />
               <tbody>
                 {cart.map((res) => {
-                  const { id, image, price, name, cartQuantity } = res;
+                  const { id, image, price, name, size, cor, cartQuantity } =
+                    res;
 
                   let percentual = 0.25;
                   let aumento = price * percentual;
@@ -104,35 +105,28 @@ export default function CartFinalize() {
 
                   return (
                     <tr>
+                      <hr />
                       <div key={id}>
                         <td>
                           <a href="/desc" className="divimg">
-                            <img src={image[0]} alt="img" />
+                            <img src={image} alt="img" />
                           </a>
                         </td>
                         <td>
                           <div className="divnome">
                             <div>
-                              {productCor.map((cor) =>
-                                productSize.map((resp) => (
-                                  <div key={resp.id}>
-                                    <p className="namePosition">
-                                      {res.id === resp.id && res.id === cor.id
-                                        ? name +
-                                          " Tamanho: " +
-                                          resp.tm +
-                                          " Cor: " +
-                                          cor.cor
-                                        : ""}
-                                    </p>
-                                  </div>
-                                ))
-                              )}
+                              <div>
+                                <p className="namePosition">{name}</p>
+                                <p className="namePosition">
+                                  {size ? <b>Tamanho: {size}</b> : ""}
+                                </p>
+                                <p className="namePosition">
+                                  {cor ? <b>Cor: {cor}</b> : ""}
+                                </p>
+                              </div>
                             </div>
                             <br />
                           </div>
-                        </td>
-                        <td>
                           <div className="div1">
                             <button
                               className="btnButton"
@@ -149,6 +143,7 @@ export default function CartFinalize() {
                             </button>
                           </div>
                         </td>
+
                         <td>
                           <div className="div2">
                             <strong>

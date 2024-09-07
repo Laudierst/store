@@ -106,7 +106,7 @@ export const Pricipal = styled.div`
     }
 
     .slugImgDiv {
-      width: 20px;
+      width: 50px;
       margin: 2px;
     }
 
