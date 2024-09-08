@@ -126,7 +126,7 @@
 }
 
 .serach img {
-  width: 20%;
+  width: 10%;
 
   @media screen and (max-width: 923px)  {
     width: 40%;

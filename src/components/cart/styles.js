@@ -3,18 +3,17 @@ import styled from "styled-components";
 export const CartContainer = styled.div`
   position: fixed;
   position: absolute;
-  height: 70vh;
-  width: 100vw;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  left: -15px;
-  //background-color: rgba(88, 29, 29, 0.174);
+  width: 30%;
   display: flex;
+  margin-left: 68.7%;
+  margin-top: -120px;
   justify-content: flex-end;
   visibility: ${(props) => (props.isVisible ? "visible" : "hidden")};
   opacity: ${(props) => (props.isVisible ? "1" : "0")};
   transition: all 0.3s ease;
+  //border: solid 1px;
+  //border-color: red;
+  //border-width: 5px;
   
   & a {
     text-decoration: none;
@@ -29,11 +28,9 @@ export const CartContainer = styled.div`
     
   }
   @media (max-width: 923px) {
-    width: 100vw;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: -2px;
+    width: 75%;
+    margin-left: 20%;
+    margin-top: -100px;
   }
 
   p {
@@ -47,19 +44,26 @@ export const CartEscapeArea = styled.div`
 
 export const CartContent = styled.div`
   height: 100%;
-  min-width: 200px;
+  min-width: 100%;
   z-index: 200;
   background-color: white;
   overflow-y: scroll;
 
   @media (max-width: 768px) {
-    min-width: 85%;
+    min-width: 100%;
   }
 `;
 export const CartTitle = styled.p`
   font-size: 1.325rem;
   font-weight: 600;
   margin-bottom: 15px;
+
+  & .efectBtn {
+    background: "red";
+    width: "25px";
+    height: "33px";
+    border: "none";
+  }
 `;
 export const CartTotal = styled.p`
   font-weight: 600;

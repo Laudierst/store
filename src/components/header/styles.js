@@ -1,5 +1,42 @@
 import styled from "styled-components";
 
+export const ContainerSearch = styled.div`
+margin-top: 2px;
+  width: 200px;
+  display: inline-block;
+
+  & img {
+    width: 100%;
+    height: 20vh;
+
+    @media(max-width: 923px){
+      height: 18vh;
+    }
+  }
+
+  & p {
+    font-size: 15px;
+    width: 100%;
+    overflow: hidden; // Removendo barra de rolagem
+        text-overflow: ellipsis; // Adicionando "..." ao final
+        display: -webkit-box;
+        -webkit-line-clamp: 2; // Quantidade de linhas
+        -webkit-box-orient: vertical;
+    @media(max-width: 923px){
+      font-size: 12px;
+    }
+  }
+
+  @media(max-width: 923px){
+    width: 90px;
+    height: 18vh;
+
+    & span {
+      margin-top: -500px;
+    }
+  }
+`
+
 export const Container = styled.div`
   
   width: 100%;
@@ -9,6 +46,7 @@ export const Container = styled.div`
   color: #eee;
   padding: 20px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  //border: solid 1px;
 
   & .bg {
     background: var(--color, red);
@@ -42,13 +80,15 @@ export const Container = styled.div`
       &:hover {
         background: #eee;
         border: none;
-      }    
+      }  
+      @media(max-width: 923px) {
+        width: 100%;
+        display: flex;
+        margin: auto;
+      }  
 
     }
-    @media(max-width: 768px){
-      width: 1100px;
-      margin-left: 2%;
-    }
+   
 
     & .lupaMarge {
       margin-top: -28px;
@@ -56,6 +96,11 @@ export const Container = styled.div`
       font-size: 30px;
       position: absolute;
       color: #000000;
+    }
+
+    @media(max-width: 923px) {
+      width: 100%;
+      margin-left: 1%;
     }
   
   }
@@ -83,12 +128,6 @@ export const Container = styled.div`
       margin-left: 68%;
       margin-top: 1px;
       font-size: 3vw;
-    }
-
-    @media(max-width: 768px) {
-      margin-left: 82%;
-      margin-top: 1px;
-      font-size: 6vw;
     }
   }
 
@@ -141,9 +180,10 @@ export const Buttons = styled.div`
   }
 
   @media (max-width: 768px){
-    margin-top: -3px;
-    margin-left: -12px;
-    position: absolute;
+    //margin-top: -3px;
+    //margin-right: -35px;
+    //margin-left: 8px;
+    //position: absolute;
   }
 `;
 

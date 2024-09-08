@@ -18,39 +18,8 @@ import { useSelector } from "react-redux";
 import { ProductsLoading } from "./ProductsLoading";
 import imgCopy from "./images/Decontos.gif";
 import "./styles.css";
-//import { useDispatch } from 'react-redux';
-//import { addDecription } from '../../redux/cart/cart';
-
-/*const Example = () => (
-    /*
-    blank
-    balls
-    bars
-    bubbles
-    cubes
-    cylon
-    spin
-    spinningBubbles
-    spokes 
-    */
-/*<LoadingPage>
-    <ReactLoading type='spokes' color='aqua' height={'100%'} width={'100%'} delay={'100'} />
-  </LoadingPage>
-);*/
-
-//const product = []
 
 export const Products = () => {
-  //const dispatch = useDispatch()
-
-  /*const handleUrlId = (e) => {
-    dispatch(urlNova(e))
-    //console.log(e)
-  }*/
-
-  //dispatch(addTm(dataTm))
-  //dispatch(addCor(dataCor))
-
   useEffect(() => {
     window.scroll({
       top: 100,

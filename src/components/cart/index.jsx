@@ -30,6 +30,18 @@ const Cart = ({ isVisible, setIsVisible }) => {
       <CartEscapeArea onClick={handleEscapeAreaClick} />
       <CartContent>
         <CartTitle>
+          <button
+            type="submit"
+            onClick={handleEscapeAreaClick}
+            style={{
+              background: "red",
+              width: "25px",
+              height: "33px",
+              border: "none",
+            }}
+          >
+            X
+          </button>
           <a href="/cartFinali">
             <CartIcon>
               Seu Carrinho
