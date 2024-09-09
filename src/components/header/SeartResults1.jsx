@@ -50,7 +50,7 @@ export const SeartResults = () => {
     window.location.reload();
   }
 
-  /*const response = products
+  const response = products
     .filter((val) => {
       if (searchTme === "") {
         return val;
@@ -58,7 +58,7 @@ export const SeartResults = () => {
         return val;
       }
     })
-    .map((item) => item);*/
+    .map((item) => item);
 
   //const resutList = data.map((item) => {
   return (
@@ -82,36 +82,24 @@ export const SeartResults = () => {
       </Container>
       <div>
         {searchTme.length >= 6
-          ? products
-              .filter((val) => {
-                if (searchTme === "") {
-                  return val;
-                } else if (
-                  val.name.toLowerCase().includes(searchTme.toLowerCase())
-                ) {
-                  return val;
-                } else {
-                  return null;
-                }
-              })
-              .map((item) => {
-                const { id, name, image } = item;
+          ? response.map((item) => {
+              const { id, name, image } = item;
 
-                return (
-                  <ContainerSearch>
-                    {searchTme.length >= 5 ? (
-                      <div onClick={() => LocalSto(item)}>
-                        <div key={id} style={{ textDecoration: "none" }}>
-                          <img src={image[0]} alt="img" />
-                        </div>
-                        <p>{name}</p>
+              return (
+                <ContainerSearch>
+                  {searchTme.length >= 5 ? (
+                    <div onClick={() => LocalSto(item)}>
+                      <div key={id} style={{ textDecoration: "none" }}>
+                        <img src={image[0]} alt="img" />
                       </div>
-                    ) : (
-                      ""
-                    )}
-                  </ContainerSearch>
-                );
-              })
+                      <p>{name}</p>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                </ContainerSearch>
+              );
+            })
           : ""}
       </div>
     </>
