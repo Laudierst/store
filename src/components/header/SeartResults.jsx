@@ -99,7 +99,7 @@ export const SeartResults = () => {
 
                 return (
                   <ContainerSearch>
-                    {searchTme.length >= 5 ? (
+                    {searchTme.length >= 4 ? (
                       <div onClick={() => LocalSto(item)}>
                         <div key={id} style={{ textDecoration: "none" }}>
                           <img src={image[0]} alt="img" />
