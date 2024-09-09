@@ -66,23 +66,7 @@ function Compra() {
     }
   };
 
-  //window.location.reload();
-
-  //console.log(cart);
-
   const Example = () => (
-    /* Deixei esse valores aqui para lembra os metodos que posso usar no ReactLoading
-    blank
-    balls
-    bars
-    bubbles
-    cubes
-    cylon
-    spin
-    spinningBubbles
-    spokes 
-    */
-
     //Aqui ja criamos um componente com ReactLoading para aaguarda o carregamento da pagia
     <LoadingPage>
       <ReactLoading type="spokes" color="aqua" height={"100%"} width={"100%"} />
@@ -111,13 +95,6 @@ function Compra() {
   let novo_amount = productAmount[0] - aumento;
   let aumentoPrice = cart[0].price * percentual;
   let novo_price = cart[0].price - aumentoPrice;
-
-  //Aqui crio letiaveis que recebe os valores que quero
-  //const name2 = cart[0].name ? cart[0].name : "";
-  //const price2 = cart[0].name ? novo_amount : "";
-  //const image2 = cart[0].name ? cart[0].image[0] : "";
-  //const description2 = cart[0].name ? cart[0].description : ""
-
   //E usso elas para esse arrey que vai ser enviado para api do mercado pado contida em minha api
 
   const priceProduct = Number(novo_amount);
@@ -130,102 +107,375 @@ function Compra() {
     description: "OnShops toda loja em promoção",
   };
 
-  /*let prod2 = {
-    title: "Camiseta",
-    price: 25,
-    image: "teste",
-    category: "Blusa",
-    description: "",
-  };
-
-  console.log(prod);
-  console.log(
-    "=================================================================="
-  );
-  console.log(prod2);
-  console.log(priceProduct);
-  */
-
-  //E usso elas para esse arrey que vai ser enviado para api do mercado pado contida em minha api
-  /*let prod2 = [
-  {
-      title: "Fone",
-      price: 25,
-      image: "https://m.media-amazon.com/images/I/41qM+itS5SL._AC_SY300_SX300_.jpg",
-      category: "placas",
-      description: "Isso é um teste",
-  },
-]
-
-const [ data2, setData2 ] = useState([])
-
-//console.log("data2", data2)
-
-useEffect(() => {
-  (async() => {
-    const req = await api.get("/compra")
-    const res = await req.data;
-
-    setData2(res)
-  })()
-},[])*/
-
-  /*const ts = data2.map(r => r.productslist)
-
-console.log(cart[0])*/
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let adress = `Estado: ${cep.state} , Cidade: ${cep.city} , Cep: ${cep.cep} , Barrio: ${cep.neighborhood} , Rua: ${cep.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`;
+    if (
+      cart[0] &&
+      cart[1] === undefined &&
+      cart[2] === undefined &&
+      cart[3] == undefined &&
+      cart[4] == undefined
+    ) {
+      let adress = `Estado: ${cep.state} , Cidade: ${cep.city} , Cep: ${cep.cep} , Barrio: ${cep.neighborhood} , Rua: ${cep.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`;
 
-    //let res1 = JSON.stringify(cart[0].image[0]);
-    let res4 = JSON.stringify(adress);
-    //let res5 = JSON.stringify(novo_amount);
+      //let res1 = JSON.stringify(cart[0].image[0]);
+      let res4 = JSON.stringify(adress);
+      let res5 = JSON.stringify(novo_amount);
 
-    const templeteParams = {
-      from_name: name ? name : "",
-      adress: `${res4}` ? `${res4}` : "",
-      email: email ? email : "",
-      phone: phone ? phone : "",
-      image1: `${cart[0].image}` ? `${cart[0].image}` : "",
-      nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
-      quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
-      price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
+      const templeteParams = {
+        from_name: name ? name : "",
+        adress: `${res4}` ? `${res4}` : "",
+        email: email ? email : "",
+        phone: phone ? phone : "",
 
-      cor1: `${cart[0].cor}` ? `${cart[0].cor}` : "",
-      medidas1: `${cart[0].size}` ? `${cart[0].size}` : "",
-      url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
-    };
+        image1: `${cart[0].image}` ? `${cart[0].image}` : "",
+        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
+        cor1: `${cart[0].cor}` ? `${cart[0].cor}` : "",
+        medidas1: `${cart[0].size}` ? `${cart[0].size}` : "",
+        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
 
-    //console.log(prod);
+        total: `${res5}` ? `${res5}` : "",
+      };
 
-    emailjs
-      .send(
-        "service_lflbrlm",
-        "template_6bgdvos",
-        templeteParams,
-        "uh-vq_J-Q9IBlCdVH"
-      )
-      .then(
-        (res) => {
-          console.log("EMAIL ENVIADO", res.status, res.text);
-        },
-        (err) => {
-          console.log("ERRO: ", err);
-        }
-      );
+      //console.log(prod);
 
-    const PagamentoMercadoPago = async () => {
-      await api.post("payment", prod).then(
-        (res) => (window.location.href = res.data.response.body.init_point),
-        (err) => {
-          alert(err.response.data);
-          //console.log(prod)
-        }
-      );
-    };
-    PagamentoMercadoPago();
+      emailjs
+        .send(
+          "service_lflbrlm",
+          "template_6bgdvos",
+          templeteParams,
+          "uh-vq_J-Q9IBlCdVH"
+        )
+        .then(
+          (res) => {
+            console.log("EMAIL ENVIADO", res.status, res.text);
+          },
+          (err) => {
+            console.log("ERRO: ", err);
+          }
+        );
+
+      const PagamentoMercadoPago = async () => {
+        await api.post("payment", prod).then(
+          (res) => (window.location.href = res.data.response.body.init_point),
+          (err) => {
+            alert(err.response.data);
+            //console.log(prod)
+          }
+        );
+      };
+      PagamentoMercadoPago();
+    }
+
+    if (
+      cart[0] &&
+      cart[1] &&
+      cart[2] === undefined &&
+      cart[3] == undefined &&
+      cart[4] == undefined
+    ) {
+      let adress = `Estado: ${cep.state} , Cidade: ${cep.city} , Cep: ${cep.cep} , Barrio: ${cep.neighborhood} , Rua: ${cep.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`;
+
+      //let res1 = JSON.stringify(cart[0].image[0]);
+      let res4 = JSON.stringify(adress);
+      let res5 = JSON.stringify(novo_amount);
+
+      const templeteParams = {
+        from_name: name ? name : "",
+        adress: `${res4}` ? `${res4}` : "",
+        email: email ? email : "",
+        phone: phone ? phone : "",
+
+        image1: `${cart[0].image}` ? `${cart[0].image}` : "",
+        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
+        cor1: `${cart[0].cor}` ? `${cart[0].cor}` : "",
+        medidas1: `${cart[0].size}` ? `${cart[0].size}` : "",
+        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
+
+        image1: `${cart[1].image}` ? `${cart[1].image}` : "",
+        nameproduct1: `${cart[1].name}` ? `${cart[1].name}` : "",
+        quanty1: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
+        price1: `${novo_price}` ? `${novo_price * cart[1].cartQuantity}` : "",
+        cor1: `${cart[1].cor}` ? `${cart[1].cor}` : "",
+        medidas1: `${cart[1].size}` ? `${cart[1].size}` : "",
+        url_product1: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
+
+        total: `${res5}` ? `${res5}` : "",
+      };
+
+      //console.log(prod);
+
+      emailjs
+        .send(
+          "service_lflbrlm",
+          "template_6bgdvos",
+          templeteParams,
+          "uh-vq_J-Q9IBlCdVH"
+        )
+        .then(
+          (res) => {
+            console.log("EMAIL ENVIADO", res.status, res.text);
+          },
+          (err) => {
+            console.log("ERRO: ", err);
+          }
+        );
+
+      const PagamentoMercadoPago = async () => {
+        await api.post("payment", prod).then(
+          (res) => (window.location.href = res.data.response.body.init_point),
+          (err) => {
+            alert(err.response.data);
+            //console.log(prod)
+          }
+        );
+      };
+      PagamentoMercadoPago();
+    }
+    if (
+      cart[0] &&
+      cart[1] &&
+      cart[2] &&
+      cart[3] == undefined &&
+      cart[4] == undefined
+    ) {
+      let adress = `Estado: ${cep.state} , Cidade: ${cep.city} , Cep: ${cep.cep} , Barrio: ${cep.neighborhood} , Rua: ${cep.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`;
+
+      //let res1 = JSON.stringify(cart[0].image[0]);
+      let res4 = JSON.stringify(adress);
+      let res5 = JSON.stringify(novo_amount);
+
+      const templeteParams = {
+        from_name: name ? name : "",
+        adress: `${res4}` ? `${res4}` : "",
+        email: email ? email : "",
+        phone: phone ? phone : "",
+
+        image1: `${cart[0].image}` ? `${cart[0].image}` : "",
+        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
+        cor1: `${cart[0].cor}` ? `${cart[0].cor}` : "",
+        medidas1: `${cart[0].size}` ? `${cart[0].size}` : "",
+        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
+
+        image2: `${cart[1].image}` ? `${cart[1].image}` : "",
+        nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
+        quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
+        price2: `${novo_price}` ? `${novo_price * cart[1].cartQuantity}` : "",
+        cor2: `${cart[1].cor}` ? `${cart[1].cor}` : "",
+        medidas2: `${cart[1].size}` ? `${cart[1].size}` : "",
+        url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
+
+        image3: `${cart[2].image}` ? `${cart[2].image}` : "",
+        nameproduct3: `${cart[2].name}` ? `${cart[2].name}` : "",
+        quanty3: `${cart[2].cartQuantity}` ? `${cart[2].cartQuantity}` : "",
+        price3: `${novo_price}` ? `${novo_price * cart[2].cartQuantity}` : "",
+        cor3: `${cart[2].cor}` ? `${cart[2].cor}` : "",
+        medidas3: `${cart[2].size}` ? `${cart[2].size}` : "",
+        url_product3: `${cart[2].url_product}` ? `${cart[2].url_product}` : "",
+
+        total: `${res5}` ? `${res5}` : "",
+      };
+
+      //console.log(prod);
+
+      emailjs
+        .send(
+          "service_lflbrlm",
+          "template_6bgdvos",
+          templeteParams,
+          "uh-vq_J-Q9IBlCdVH"
+        )
+        .then(
+          (res) => {
+            console.log("EMAIL ENVIADO", res.status, res.text);
+          },
+          (err) => {
+            console.log("ERRO: ", err);
+          }
+        );
+
+      const PagamentoMercadoPago = async () => {
+        await api.post("payment", prod).then(
+          (res) => (window.location.href = res.data.response.body.init_point),
+          (err) => {
+            alert(err.response.data);
+            //console.log(prod)
+          }
+        );
+      };
+      PagamentoMercadoPago();
+    }
+
+    if (cart[0] && cart[1] && cart[2] && cart[3] && cart[4] == undefined) {
+      let adress = `Estado: ${cep.state} , Cidade: ${cep.city} , Cep: ${cep.cep} , Barrio: ${cep.neighborhood} , Rua: ${cep.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`;
+
+      //let res1 = JSON.stringify(cart[0].image[0]);
+      let res4 = JSON.stringify(adress);
+      let res5 = JSON.stringify(novo_amount);
+
+      const templeteParams = {
+        from_name: name ? name : "",
+        adress: `${res4}` ? `${res4}` : "",
+        email: email ? email : "",
+        phone: phone ? phone : "",
+
+        image1: `${cart[0].image}` ? `${cart[0].image}` : "",
+        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
+        cor1: `${cart[0].cor}` ? `${cart[0].cor}` : "",
+        medidas1: `${cart[0].size}` ? `${cart[0].size}` : "",
+        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
+
+        image2: `${cart[1].image}` ? `${cart[1].image}` : "",
+        nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
+        quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
+        price2: `${novo_price}` ? `${novo_price * cart[1].cartQuantity}` : "",
+        cor2: `${cart[1].cor}` ? `${cart[1].cor}` : "",
+        medidas2: `${cart[1].size}` ? `${cart[1].size}` : "",
+        url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
+
+        image3: `${cart[2].image}` ? `${cart[2].image}` : "",
+        nameproduct3: `${cart[2].name}` ? `${cart[2].name}` : "",
+        quanty3: `${cart[2].cartQuantity}` ? `${cart[2].cartQuantity}` : "",
+        price3: `${novo_price}` ? `${novo_price * cart[2].cartQuantity}` : "",
+        cor3: `${cart[2].cor}` ? `${cart[2].cor}` : "",
+        medidas3: `${cart[2].size}` ? `${cart[2].size}` : "",
+        url_product3: `${cart[2].url_product}` ? `${cart[2].url_product}` : "",
+
+        image4: `${cart[3].image}` ? `${cart[3].image}` : "",
+        nameproduct4: `${cart[3].name}` ? `${cart[3].name}` : "",
+        quanty4: `${cart[3].cartQuantity}` ? `${cart[3].cartQuantity}` : "",
+        price4: `${novo_price}` ? `${novo_price * cart[3].cartQuantity}` : "",
+        cor4: `${cart[3].cor}` ? `${cart[3].cor}` : "",
+        medidas4: `${cart[3].size}` ? `${cart[3].size}` : "",
+        url_product4: `${cart[3].url_product}` ? `${cart[3].url_product}` : "",
+
+        total: `${res5}` ? `${res5}` : "",
+      };
+
+      //console.log(prod);
+
+      emailjs
+        .send(
+          "service_lflbrlm",
+          "template_6bgdvos",
+          templeteParams,
+          "uh-vq_J-Q9IBlCdVH"
+        )
+        .then(
+          (res) => {
+            console.log("EMAIL ENVIADO", res.status, res.text);
+          },
+          (err) => {
+            console.log("ERRO: ", err);
+          }
+        );
+
+      const PagamentoMercadoPago = async () => {
+        await api.post("payment", prod).then(
+          (res) => (window.location.href = res.data.response.body.init_point),
+          (err) => {
+            alert(err.response.data);
+            //console.log(prod)
+          }
+        );
+      };
+      PagamentoMercadoPago();
+    }
+
+    if (cart[0] && cart[1] && cart[2] && cart[3] && cart[4]) {
+      let adress = `Estado: ${cep.state} , Cidade: ${cep.city} , Cep: ${cep.cep} , Barrio: ${cep.neighborhood} , Rua: ${cep.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`;
+
+      //let res1 = JSON.stringify(cart[0].image[0]);
+      let res4 = JSON.stringify(adress);
+      let res5 = JSON.stringify(novo_amount);
+
+      const templeteParams = {
+        from_name: name ? name : "",
+        adress: `${res4}` ? `${res4}` : "",
+        email: email ? email : "",
+        phone: phone ? phone : "",
+
+        image1: `${cart[0].image}` ? `${cart[0].image}` : "",
+        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
+        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
+        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
+        cor1: `${cart[0].cor}` ? `${cart[0].cor}` : "",
+        medidas1: `${cart[0].size}` ? `${cart[0].size}` : "",
+        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
+
+        image2: `${cart[1].image}` ? `${cart[1].image}` : "",
+        nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
+        quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
+        price2: `${novo_price}` ? `${novo_price * cart[1].cartQuantity}` : "",
+        cor2: `${cart[1].cor}` ? `${cart[1].cor}` : "",
+        medidas2: `${cart[1].size}` ? `${cart[1].size}` : "",
+        url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
+
+        image3: `${cart[2].image}` ? `${cart[2].image}` : "",
+        nameproduct3: `${cart[2].name}` ? `${cart[2].name}` : "",
+        quanty3: `${cart[2].cartQuantity}` ? `${cart[2].cartQuantity}` : "",
+        price3: `${novo_price}` ? `${novo_price * cart[2].cartQuantity}` : "",
+        cor3: `${cart[2].cor}` ? `${cart[2].cor}` : "",
+        medidas3: `${cart[2].size}` ? `${cart[2].size}` : "",
+        url_product3: `${cart[2].url_product}` ? `${cart[2].url_product}` : "",
+
+        image4: `${cart[3].image}` ? `${cart[3].image}` : "",
+        nameproduct4: `${cart[3].name}` ? `${cart[3].name}` : "",
+        quanty4: `${cart[3].cartQuantity}` ? `${cart[3].cartQuantity}` : "",
+        price4: `${novo_price}` ? `${novo_price * cart[3].cartQuantity}` : "",
+        cor4: `${cart[3].cor}` ? `${cart[3].cor}` : "",
+        medidas4: `${cart[3].size}` ? `${cart[3].size}` : "",
+        url_product4: `${cart[3].url_product}` ? `${cart[3].url_product}` : "",
+
+        image5: `${cart[4].image}` ? `${cart[4].image}` : "",
+        nameproduct5: `${cart[4].name}` ? `${cart[4].name}` : "",
+        quanty5: `${cart[4].cartQuantity}` ? `${cart[4].cartQuantity}` : "",
+        price5: `${novo_price}` ? `${novo_price * cart[4].cartQuantity}` : "",
+        cor5: `${cart[4].cor}` ? `${cart[4].cor}` : "",
+        medidas5: `${cart[4].size}` ? `${cart[4].size}` : "",
+        url_product5: `${cart[4].url_product}` ? `${cart[4].url_product}` : "",
+
+        total: `${res5}` ? `${res5}` : "",
+      };
+
+      //console.log(prod);
+
+      emailjs
+        .send(
+          "service_lflbrlm",
+          "template_6bgdvos",
+          templeteParams,
+          "uh-vq_J-Q9IBlCdVH"
+        )
+        .then(
+          (res) => {
+            console.log("EMAIL ENVIADO", res.status, res.text);
+          },
+          (err) => {
+            console.log("ERRO: ", err);
+          }
+        );
+
+      const PagamentoMercadoPago = async () => {
+        await api.post("payment", prod).then(
+          (res) => (window.location.href = res.data.response.body.init_point),
+          (err) => {
+            alert(err.response.data);
+            //console.log(prod)
+          }
+        );
+      };
+      PagamentoMercadoPago();
+    }
   };
 
   //Nova mudança

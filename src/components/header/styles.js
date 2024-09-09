@@ -312,11 +312,7 @@ export const ContainerPRT = styled.div`
         margin: 0px 8px 1px 5px;
         margin-left: -15px;
         margin-bottom: 5px;
-        
-        & a {
-          color: #000000;
-        }
-
+    
         & .h4 {
           display: mome;
         }
@@ -370,7 +366,7 @@ export const ContainerPRT = styled.div`
         @media (max-width: 768px) {
           width: 100%;
           margin-left: -10px;
-          font-size: 1.8vw;
+          font-size: 2.5vw;
           margin-left: 1px;
         }
       }

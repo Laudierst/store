@@ -177,9 +177,9 @@ export default function CartFinalize() {
 								Proceguir com pagamento
 						</Button>*/
 
-            <Button>
-              <Link to="/compra">Finaliza comprar</Link>
-            </Button>
+            <Link to="/compra">
+              <Button>Finaliza comprar</Button>
+            </Link>
           )}
         </div>
       )}

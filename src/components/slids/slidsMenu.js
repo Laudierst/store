@@ -91,20 +91,18 @@ export const Coontainer = styled.div`
         padding: 5px;
         text-decoration: none;
 
-        @media (max-width: 1768px) {
-          font-size: 0.8vw;
-        }
-
-        @media (max-width: 768px){
-          font-size: 8px;
+        @media (max-width: 923px){
+          font-size: 10px;
           margin-left: 10px;
-          margin-top: 7px;
+          text-align: center;
         }
       }
 
-      @media (max-width: 768px){
-        margin-top: -10px;
+      @media (max-width: 923px){
+        text-align: center;
         width: 110%;
+        margin: auto;
+        display: flex;
       }
 
     }
