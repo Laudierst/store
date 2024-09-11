@@ -323,9 +323,9 @@ export const DescriptionProducts = () => {
     </LoadingPage>
   );
 
-  const frete = {
-    frete: "FRETE GRATIS",
-  };
+  //const frete = {
+  //  frete: "FRETE GRATIS PARA DODO O BRASIL",
+  //};
 
   const productProntoAddCard = [
     {
@@ -474,7 +474,7 @@ export const DescriptionProducts = () => {
             <Example />
           ) : (
             dataProductFilter.map((res) => {
-              const { name, quantity, image, color, slug } = res;
+              const { name, quantity, image, color, slug, frete } = res;
 
               /*const corImg = [
                 {
@@ -538,12 +538,11 @@ export const DescriptionProducts = () => {
                             style={{
                               fontWeight: "bold",
                               color: "green",
-                              font: 15,
+                              font: 18,
                             }}
                           >
-                            {frete.frete}
+                            Frete {frete}
                           </span>
-                          ``
                         </div>
                         <br />
                         <p style={{ fontSize: 20 }}>

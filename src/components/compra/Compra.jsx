@@ -44,20 +44,6 @@ function Compra() {
   const [cpf, setCpf] = useState("");
   const [code_compra] = useState(ConvertCode);
 
-  const code1 = code_compra;
-  const code2 = code_compra;
-  const code3 = code_compra;
-  const code4 = code_compra;
-  const code5 = code_compra;
-  const code6 = code_compra;
-  const code7 = code_compra;
-  const code8 = code_compra;
-  const code9 = code_compra;
-  const code10 = code_compra;
-  const code11 = code_compra;
-  const code12 = code_compra;
-  const code13 = code_compra;
-  const code14 = code_compra;
   //const [ productslist] = useState(res)
 
   const onchangeCep = (e) => {
@@ -322,7 +308,7 @@ function Compra() {
           : "",
         cor1: `${cartTres[0].cor}` ? `${cartTres[0].cor}` : "",
         medidas1: `${cartTres[0].size}` ? `${cartTres[0].size}` : "",
-        code_compra: code1,
+        codigo1: code_compra,
         url_product1: `${cartTres[0].url_product}`
           ? `${cartTres[0].url_product}`
           : "",
@@ -337,7 +323,7 @@ function Compra() {
           : "",
         cor2: `${cartTres[1].cor}` ? `${cartTres[1].cor}` : "",
         medidas2: `${cartTres[1].size}` ? `${cartTres[1].size}` : "",
-        code_compra: code2,
+        codigo2: code_compra,
         url_product2: `${cartTres[1].url_product}`
           ? `${cartTres[1].url_product}`
           : "",
@@ -460,11 +446,11 @@ function Compra() {
       }
 
       if (cartDois[0]) {
-        const ids = JSON.stringify(cartDois[0].id);
-        const names = JSON.stringify(cartDois[0].name);
-        const images = JSON.stringify(cartDois[0].image[0]);
+        const ids = JSON.stringify(cartDois[1].id);
+        const names = JSON.stringify(cartDois[1].name);
+        const images = JSON.stringify(cartDois[1].image[1]);
         const prices = JSON.stringify(novo_priceDois);
-        const cartQuantitys = JSON.stringify(cartDois[0].cartQuantity);
+        const cartQuantitys = JSON.stringify(cartDois[1].cartQuantity);
         const cvCodeCompra = JSON.stringify(GeraCode);
         const localTn = localStorage.getItem("tmMedidas");
         const localCor = localStorage.getItem("tmCores");
@@ -474,8 +460,8 @@ function Compra() {
 
         //console.log(localCor)
 
-        const tmMedidas = JSON.stringify(resTm[0].tm);
-        const tmCores = JSON.stringify(resCor[0].cor);
+        const tmMedidas = JSON.stringify(resTm[1].tm);
+        const tmCores = JSON.stringify(resCor[1].cor);
 
         let cvId = ids.replace(/"/g, "");
         let cvName = names.replace(/"/g, "");
@@ -508,33 +494,22 @@ function Compra() {
           "_______________________________________________________________________________________________________________",
         ];
 
-        const CreateCompra = {
-          name: name,
-          email: email,
-          phone: phone,
-          state: cep.state,
-          city: cep.city,
-          cep: cep.cep,
-          street: cep.street,
-          number: number,
-          district: cep.neighborhood,
-          apartment_or_house: house,
-          cpf: cpf,
-          code_compra: code_compra,
+        const CreateCompra2 = {
+          codigo2: code_compra,
           productslist: ArreyData,
-          productName: cartDois[0].name,
+          productName: cartDois[1].name,
           productPrice: prices,
           productQuantity: cvQuantity,
-          productImage: cartDois[0].image,
-          productSize: cartDois[0].size,
-          productClolor: cartDois[0].cor,
+          productImage: cartDois[1].image,
+          productSize: cartDois[1].size,
+          productClolor: cartDois[1].cor,
           productUrl: templeteParams.url_product1,
         };
 
         //console.log(CreateCompra);
 
         await api
-          .post("/compra", CreateCompra)
+          .post("/compra1", CreateCompra2)
           .then((res) => {
             toast.success("Estamos redirecinando para o mercado pago");
             //console.log(res)
@@ -573,7 +548,7 @@ function Compra() {
           : "",
         cor1: `${cartTres[0].cor}` ? `${cartTres[0].cor}` : "",
         medidas1: `${cartTres[0].size}` ? `${cartTres[0].size}` : "",
-        code_compra: code3,
+        codigo1: code_compra,
         url_product1: `${cartTres[0].url_product}`
           ? `${cartTres[0].url_product}`
           : "",
@@ -588,7 +563,7 @@ function Compra() {
           : "",
         cor2: `${cartTres[1].cor}` ? `${cartTres[1].cor}` : "",
         medidas2: `${cartTres[1].size}` ? `${cartTres[1].size}` : "",
-        code_compra: code4,
+        codigo2: code_compra,
         url_product2: `${cartTres[1].url_product}`
           ? `${cartTres[1].url_product}`
           : "",
@@ -603,7 +578,7 @@ function Compra() {
           : "",
         cor3: `${cartTres[2].cor}` ? `${cartTres[2].cor}` : "",
         medidas3: `${cartTres[2].size}` ? `${cartTres[2].size}` : "",
-        code_compra: code5,
+        codigo3: code_compra,
         url_product3: `${cartTres[2].url_product}`
           ? `${cartTres[2].url_product}`
           : "",
@@ -670,7 +645,7 @@ function Compra() {
           : "",
         cor1: `${cartQuatro[0].cor}` ? `${cartQuatro[0].cor}` : "",
         medidas1: `${cartQuatro[0].size}` ? `${cartQuatro[0].size}` : "",
-        code_compra: code6,
+        codigo1: code_compra,
         url_product1: `${cartQuatro[0].url_product}`
           ? `${cartQuatro[0].url_product}`
           : "",
@@ -685,7 +660,7 @@ function Compra() {
           : "",
         cor2: `${cartQuatro[1].cor}` ? `${cartQuatro[1].cor}` : "",
         medidas2: `${cartQuatro[1].size}` ? `${cartQuatro[1].size}` : "",
-        code_compra: code7,
+        codigo2: code_compra,
         url_product2: `${cartQuatro[1].url_product}`
           ? `${cartQuatro[1].url_product}`
           : "",
@@ -700,7 +675,7 @@ function Compra() {
           : "",
         cor3: `${cartQuatro[2].cor}` ? `${cartTres[2].cor}` : "",
         medidas3: `${cartQuatro[2].size}` ? `${cartTres[2].size}` : "",
-        code_compra: code8,
+        codigo3: code_compra,
         url_product3: `${cartQuatro[2].url_product}`
           ? `${cartQuatro[2].url_product}`
           : "",
@@ -715,7 +690,7 @@ function Compra() {
           : "",
         cor4: `${cartQuatro[3].cor}` ? `${cartQuatro[3].cor}` : "",
         medidas4: `${cartQuatro[3].size}` ? `${cartQuatro[3].size}` : "",
-        code_compra: code9,
+        codigo4: code_compra,
         url_product4: `${cartQuatro[3].url_product}`
           ? `${cartQuatro[3].url_product}`
           : "",
@@ -782,7 +757,7 @@ function Compra() {
           : "",
         cor1: `${cartSinco[0].cor}` ? `${cartUm[0].cor}` : "",
         medidas1: `${cartSinco[0].size}` ? `${cartSinco[0].size}` : "",
-        code_compra: code10,
+        codigo1: code_compra,
         url_product1: `${cartSinco[0].url_product}`
           ? `${cartSinco[0].url_product}`
           : "",
@@ -797,7 +772,7 @@ function Compra() {
           : "",
         cor2: `${cartSinco[1].cor}` ? `${cartSinco[1].cor}` : "",
         medidas2: `${cartSinco[1].size}` ? `${cartSinco[1].size}` : "",
-        code_compra: code11,
+        codigo2: code_compra,
         url_product2: `${cartSinco[1].url_product}`
           ? `${cartSinco[1].url_product}`
           : "",
@@ -812,7 +787,7 @@ function Compra() {
           : "",
         cor3: `${cartSinco[2].cor}` ? `${cartTres[2].cor}` : "",
         medidas3: `${cartSinco[2].size}` ? `${cartTres[2].size}` : "",
-        code_compra: code12,
+        codigo3: code_compra,
         url_product3: `${cartSinco[2].url_product}`
           ? `${cartSinco[2].url_product}`
           : "",
@@ -827,7 +802,7 @@ function Compra() {
           : "",
         cor4: `${cartSinco[3].cor}` ? `${cartQuatro[3].cor}` : "",
         medidas4: `${cartSinco[3].size}` ? `${cartQuatro[3].size}` : "",
-        code_compra: code13,
+        codigo4: code_compra,
         url_product4: `${cartSinco[3].url_product}`
           ? `${cartSinco[3].url_product}`
           : "",
@@ -842,7 +817,7 @@ function Compra() {
           : "",
         cor5: `${cartSinco[4].cor}` ? `${cartSinco[4].cor}` : "",
         medidas5: `${cartSinco[4].size}` ? `${cartSinco[4].size}` : "",
-        code_compra: code14,
+        codigo5: code_compra,
         url_product5: `${cartSinco[4].url_product}`
           ? `${cartSinco[4].url_product}`
           : "",
