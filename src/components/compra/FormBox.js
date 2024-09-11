@@ -20,7 +20,7 @@ export const FormBox = styled.div`
 
       @media (max-width: 923px){
         width: 14%;
-        position: absolute;
+        //position: absolute;
         margin-left: 40%;
         margin-top: 20px;
         //margin-top: 25px;

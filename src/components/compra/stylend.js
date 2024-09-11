@@ -15,8 +15,8 @@ export const CompraStyle = styled.div`
     & .btn-cep {
         border: none;
         padding: 5px;
-        position: absolute;
-        margin-left: -95px;
+        //position: absolute;
+        margin-left: -55px;
         margin-top: 50px;
 
         @media (max-width: 1650px) {
