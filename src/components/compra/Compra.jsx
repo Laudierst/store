@@ -13,12 +13,16 @@ console.clear();
 
 function Compra() {
   //Aqui estamos recebendo os respequitivos valores de arrey contido no estados gerenciado pelo redux
-  const cart = useSelector((state) => state.cart.cartItems);
+  const cartUm = useSelector((state) => state.cart.cartItems);
+  const cartDois = useSelector((state) => state.cart.cartItems);
+  const cartTres = useSelector((state) => state.cart.cartItems);
+  const cartQuatro = useSelector((state) => state.cart.cartItems);
+  const cartSinco = useSelector((state) => state.cart.cartItems);
   const cartTotal = useSelector((state) => state.cart);
   //const tmItens = useSelector((state) => state.cart.tmMedidas);
   //const tmCor = useSelector((state) => state.cart.tmCores);
 
-  //console.log(tmCor[0].cor)
+  console.log(cartUm[0].price, cartDois[1].price);
 
   const productAmount = [cartTotal.cartTotalAmount];
   //const productQuantity = [cartTotal.cartTotalQuantyti]
@@ -93,16 +97,29 @@ function Compra() {
   let percentual = 0.25;
   let aumento = productAmount[0] * percentual;
   let novo_amount = productAmount[0] - aumento;
-  let aumentoPrice = cart[0].price * percentual;
-  let novo_price = cart[0].price - aumentoPrice;
+  let aumentoPriceUm = cartUm[0]?.price * percentual;
+  let novo_priceUm = cartUm[0]?.price - aumentoPriceUm;
+
+  let aumentoPriceDois = cartDois[1]?.price * percentual;
+  let novo_priceDois = cartDois[1]?.price - aumentoPriceDois;
+
+  let aumentoPriceTres = cartTres[2]?.price * percentual;
+  let novo_priceTres = cartTres[2]?.price - aumentoPriceTres;
+
+  let aumentoPriceQuatro = cartQuatro[3]?.price * percentual;
+  let novo_priceQuatro = cartQuatro[3]?.price - aumentoPriceQuatro;
+
+  let aumentoPriceSinco = cartSinco[4]?.price * percentual;
+  let novo_priceSinco = cartSinco[4]?.price - aumentoPriceSinco;
+
   //E usso elas para esse arrey que vai ser enviado para api do mercado pado contida em minha api
 
   const priceProduct = Number(novo_amount);
 
   let prod = {
-    title: cart[0]?.name,
+    title: cartUm[0]?.name,
     price: priceProduct,
-    image: cart[0]?.image,
+    image: cartUm[0]?.image,
     category: "OnShops",
     description: "OnShops toda loja em promoção",
   };
@@ -111,15 +128,15 @@ function Compra() {
     e.preventDefault();
 
     if (
-      cart[0] &&
-      cart[1] === undefined &&
-      cart[2] === undefined &&
-      cart[3] == undefined &&
-      cart[4] == undefined
+      cartUm[0] &&
+      cartDois[1] === undefined &&
+      cartTres[2] === undefined &&
+      cartQuatro[3] == undefined &&
+      cartSinco[4] == undefined
     ) {
       let adress = `Estado: ${cep.state} , Cidade: ${cep.city} , Cep: ${cep.cep} , Barrio: ${cep.neighborhood} , Rua: ${cep.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`;
 
-      //let res1 = JSON.stringify(cart[0].image[0]);
+      //let res1 = JSON.stringify(cartUm[0].image[0]);
       let res4 = JSON.stringify(adress);
       let res5 = JSON.stringify(novo_amount);
 
@@ -129,13 +146,19 @@ function Compra() {
         email: email ? email : "",
         phone: phone ? phone : "",
 
-        image1: `${cart[0].image}` ? `${cart[0].image}` : "",
-        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
-        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
-        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
-        cor1: `${cart[0].cor}` ? `${cart[0].cor}` : "",
-        medidas1: `${cart[0].size}` ? `${cart[0].size}` : "",
-        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
+        image1: `${cartTres[0].image}` ? `${cartTres[0].image}` : "",
+        nameproduct1: `${cartTres[0].name}` ? `${cartTres[0].name}` : "",
+        quanty1: `${cartTres[0].cartQuantity}`
+          ? `${cartTres[0].cartQuantity}`
+          : "",
+        price1: `${novo_priceUm}`
+          ? `${novo_priceUm * cartTres[0].cartQuantity}`
+          : "",
+        cor1: `${cartTres[0].cor}` ? `${cartTres[0].cor}` : "",
+        medidas1: `${cartTres[0].size}` ? `${cartTres[0].size}` : "",
+        url_product1: `${cartTres[0].url_product}`
+          ? `${cartTres[0].url_product}`
+          : "",
 
         total: `${res5}` ? `${res5}` : "",
       };
@@ -171,15 +194,15 @@ function Compra() {
     }
 
     if (
-      cart[0] &&
-      cart[1] &&
-      cart[2] === undefined &&
-      cart[3] == undefined &&
-      cart[4] == undefined
+      cartUm[0] &&
+      cartDois[1] &&
+      cartTres[2] === undefined &&
+      cartQuatro[3] == undefined &&
+      cartSinco[4] == undefined
     ) {
       let adress = `Estado: ${cep.state} , Cidade: ${cep.city} , Cep: ${cep.cep} , Barrio: ${cep.neighborhood} , Rua: ${cep.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`;
 
-      //let res1 = JSON.stringify(cart[0].image[0]);
+      //let res1 = JSON.stringify(cartUm[0].image[0]);
       let res4 = JSON.stringify(adress);
       let res5 = JSON.stringify(novo_amount);
 
@@ -189,21 +212,33 @@ function Compra() {
         email: email ? email : "",
         phone: phone ? phone : "",
 
-        image1: `${cart[0].image}` ? `${cart[0].image}` : "",
-        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
-        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
-        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
-        cor1: `${cart[0].cor}` ? `${cart[0].cor}` : "",
-        medidas1: `${cart[0].size}` ? `${cart[0].size}` : "",
-        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
+        image1: `${cartTres[0].image}` ? `${cartTres[0].image}` : "",
+        nameproduct1: `${cartTres[0].name}` ? `${cartTres[0].name}` : "",
+        quanty1: `${cartTres[0].cartQuantity}`
+          ? `${cartTres[0].cartQuantity}`
+          : "",
+        price1: `${novo_priceUm}`
+          ? `${novo_priceUm * cartTres[0].cartQuantity}`
+          : "",
+        cor1: `${cartTres[0].cor}` ? `${cartTres[0].cor}` : "",
+        medidas1: `${cartTres[0].size}` ? `${cartTres[0].size}` : "",
+        url_product1: `${cartTres[0].url_product}`
+          ? `${cartTres[0].url_product}`
+          : "",
 
-        image1: `${cart[1].image}` ? `${cart[1].image}` : "",
-        nameproduct1: `${cart[1].name}` ? `${cart[1].name}` : "",
-        quanty1: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
-        price1: `${novo_price}` ? `${novo_price * cart[1].cartQuantity}` : "",
-        cor1: `${cart[1].cor}` ? `${cart[1].cor}` : "",
-        medidas1: `${cart[1].size}` ? `${cart[1].size}` : "",
-        url_product1: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
+        image2: `${cartTres[1].image}` ? `${cartTres[1].image}` : "",
+        nameproduct2: `${cartDois[1].name}` ? `${cartTres[1].name}` : "",
+        quanty2: `${cartTres[1].cartQuantity}`
+          ? `${cartTres[1].cartQuantity}`
+          : "",
+        price2: `${novo_priceDois}`
+          ? `${novo_priceDois * cartTres[1].cartQuantity}`
+          : "",
+        cor2: `${cartTres[1].cor}` ? `${cartTres[1].cor}` : "",
+        medidas2: `${cartTres[1].size}` ? `${cartTres[1].size}` : "",
+        url_product2: `${cartTres[1].url_product}`
+          ? `${cartTres[1].url_product}`
+          : "",
 
         total: `${res5}` ? `${res5}` : "",
       };
@@ -238,15 +273,15 @@ function Compra() {
       PagamentoMercadoPago();
     }
     if (
-      cart[0] &&
-      cart[1] &&
-      cart[2] &&
-      cart[3] == undefined &&
-      cart[4] == undefined
+      cartUm[0] &&
+      cartDois[1] &&
+      cartTres[2] &&
+      cartQuatro[3] == undefined &&
+      cartSinco[4] == undefined
     ) {
       let adress = `Estado: ${cep.state} , Cidade: ${cep.city} , Cep: ${cep.cep} , Barrio: ${cep.neighborhood} , Rua: ${cep.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`;
 
-      //let res1 = JSON.stringify(cart[0].image[0]);
+      //let res1 = JSON.stringify(cartUm[0].image[0]);
       let res4 = JSON.stringify(adress);
       let res5 = JSON.stringify(novo_amount);
 
@@ -256,29 +291,47 @@ function Compra() {
         email: email ? email : "",
         phone: phone ? phone : "",
 
-        image1: `${cart[0].image}` ? `${cart[0].image}` : "",
-        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
-        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
-        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
-        cor1: `${cart[0].cor}` ? `${cart[0].cor}` : "",
-        medidas1: `${cart[0].size}` ? `${cart[0].size}` : "",
-        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
+        image1: `${cartTres[0].image}` ? `${cartTres[0].image}` : "",
+        nameproduct1: `${cartTres[0].name}` ? `${cartTres[0].name}` : "",
+        quanty1: `${cartTres[0].cartQuantity}`
+          ? `${cartTres[0].cartQuantity}`
+          : "",
+        price1: `${novo_priceUm}`
+          ? `${novo_priceUm * cartTres[0].cartQuantity}`
+          : "",
+        cor1: `${cartTres[0].cor}` ? `${cartTres[0].cor}` : "",
+        medidas1: `${cartTres[0].size}` ? `${cartTres[0].size}` : "",
+        url_product1: `${cartTres[0].url_product}`
+          ? `${cartTres[0].url_product}`
+          : "",
 
-        image2: `${cart[1].image}` ? `${cart[1].image}` : "",
-        nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
-        quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
-        price2: `${novo_price}` ? `${novo_price * cart[1].cartQuantity}` : "",
-        cor2: `${cart[1].cor}` ? `${cart[1].cor}` : "",
-        medidas2: `${cart[1].size}` ? `${cart[1].size}` : "",
-        url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
+        image2: `${cartTres[1].image}` ? `${cartTres[1].image}` : "",
+        nameproduct2: `${cartDois[1].name}` ? `${cartTres[1].name}` : "",
+        quanty2: `${cartTres[1].cartQuantity}`
+          ? `${cartTres[1].cartQuantity}`
+          : "",
+        price2: `${novo_priceDois}`
+          ? `${novo_priceDois * cartTres[1].cartQuantity}`
+          : "",
+        cor2: `${cartTres[1].cor}` ? `${cartTres[1].cor}` : "",
+        medidas2: `${cartTres[1].size}` ? `${cartTres[1].size}` : "",
+        url_product2: `${cartTres[1].url_product}`
+          ? `${cartTres[1].url_product}`
+          : "",
 
-        image3: `${cart[2].image}` ? `${cart[2].image}` : "",
-        nameproduct3: `${cart[2].name}` ? `${cart[2].name}` : "",
-        quanty3: `${cart[2].cartQuantity}` ? `${cart[2].cartQuantity}` : "",
-        price3: `${novo_price}` ? `${novo_price * cart[2].cartQuantity}` : "",
-        cor3: `${cart[2].cor}` ? `${cart[2].cor}` : "",
-        medidas3: `${cart[2].size}` ? `${cart[2].size}` : "",
-        url_product3: `${cart[2].url_product}` ? `${cart[2].url_product}` : "",
+        image3: `${cartTres[2].image}` ? `${cartTres[2].image}` : "",
+        nameproduct3: `${cartTres[2].name}` ? `${cartTres[2].name}` : "",
+        quanty3: `${cartTres[2].cartQuantity}`
+          ? `${cartTres[2].cartQuantity}`
+          : "",
+        price3: `${novo_priceTres}`
+          ? `${novo_priceTres * cartTres[2].cartQuantity}`
+          : "",
+        cor3: `${cartTres[2].cor}` ? `${cartTres[2].cor}` : "",
+        medidas3: `${cartTres[2].size}` ? `${cartTres[2].size}` : "",
+        url_product3: `${cartTres[2].url_product}`
+          ? `${cartTres[2].url_product}`
+          : "",
 
         total: `${res5}` ? `${res5}` : "",
       };
@@ -313,10 +366,16 @@ function Compra() {
       PagamentoMercadoPago();
     }
 
-    if (cart[0] && cart[1] && cart[2] && cart[3] && cart[4] == undefined) {
+    if (
+      cartUm[0] &&
+      cartDois[1] &&
+      cartTres[2] &&
+      cartQuatro[3] &&
+      cartSinco[4] == undefined
+    ) {
       let adress = `Estado: ${cep.state} , Cidade: ${cep.city} , Cep: ${cep.cep} , Barrio: ${cep.neighborhood} , Rua: ${cep.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`;
 
-      //let res1 = JSON.stringify(cart[0].image[0]);
+      //let res1 = JSON.stringify(cartUm[0].image[0]);
       let res4 = JSON.stringify(adress);
       let res5 = JSON.stringify(novo_amount);
 
@@ -326,37 +385,61 @@ function Compra() {
         email: email ? email : "",
         phone: phone ? phone : "",
 
-        image1: `${cart[0].image}` ? `${cart[0].image}` : "",
-        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
-        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
-        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
-        cor1: `${cart[0].cor}` ? `${cart[0].cor}` : "",
-        medidas1: `${cart[0].size}` ? `${cart[0].size}` : "",
-        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
+        image1: `${cartQuatro[0].image}` ? `${cartQuatro[0].image}` : "",
+        nameproduct1: `${cartQuatro[0].name}` ? `${cartQuatro[0].name}` : "",
+        quanty1: `${cartQuatro[0].cartQuantity}`
+          ? `${cartQuatro[0].cartQuantity}`
+          : "",
+        price1: `${novo_priceUm}`
+          ? `${novo_priceUm * cartQuatro[0].cartQuantity}`
+          : "",
+        cor1: `${cartQuatro[0].cor}` ? `${cartQuatro[0].cor}` : "",
+        medidas1: `${cartQuatro[0].size}` ? `${cartQuatro[0].size}` : "",
+        url_product1: `${cartQuatro[0].url_product}`
+          ? `${cartQuatro[0].url_product}`
+          : "",
 
-        image2: `${cart[1].image}` ? `${cart[1].image}` : "",
-        nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
-        quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
-        price2: `${novo_price}` ? `${novo_price * cart[1].cartQuantity}` : "",
-        cor2: `${cart[1].cor}` ? `${cart[1].cor}` : "",
-        medidas2: `${cart[1].size}` ? `${cart[1].size}` : "",
-        url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
+        image2: `${cartQuatro[1].image}` ? `${cartQuatro[1].image}` : "",
+        nameproduct2: `${cartQuatro[1].name}` ? `${cartQuatro[1].name}` : "",
+        quanty2: `${cartQuatro[1].cartQuantity}`
+          ? `${cartQuatro[1].cartQuantity}`
+          : "",
+        price2: `${novo_priceDois}`
+          ? `${novo_priceDois * cartQuatro[1].cartQuantity}`
+          : "",
+        cor2: `${cartQuatro[1].cor}` ? `${cartQuatro[1].cor}` : "",
+        medidas2: `${cartQuatro[1].size}` ? `${cartQuatro[1].size}` : "",
+        url_product2: `${cartQuatro[1].url_product}`
+          ? `${cartQuatro[1].url_product}`
+          : "",
 
-        image3: `${cart[2].image}` ? `${cart[2].image}` : "",
-        nameproduct3: `${cart[2].name}` ? `${cart[2].name}` : "",
-        quanty3: `${cart[2].cartQuantity}` ? `${cart[2].cartQuantity}` : "",
-        price3: `${novo_price}` ? `${novo_price * cart[2].cartQuantity}` : "",
-        cor3: `${cart[2].cor}` ? `${cart[2].cor}` : "",
-        medidas3: `${cart[2].size}` ? `${cart[2].size}` : "",
-        url_product3: `${cart[2].url_product}` ? `${cart[2].url_product}` : "",
+        image3: `${cartQuatro[2].image}` ? `${cartTres[2].image}` : "",
+        nameproduct3: `${cartQuatro[2].name}` ? `${cartTres[2].name}` : "",
+        quanty3: `${cartQuatro[2].cartQuantity}`
+          ? `${cartQuatro[2].cartQuantity}`
+          : "",
+        price3: `${novo_priceTres}`
+          ? `${novo_priceTres * cartQuatro[2].cartQuantity}`
+          : "",
+        cor3: `${cartQuatro[2].cor}` ? `${cartTres[2].cor}` : "",
+        medidas3: `${cartQuatro[2].size}` ? `${cartTres[2].size}` : "",
+        url_product3: `${cartQuatro[2].url_product}`
+          ? `${cartQuatro[2].url_product}`
+          : "",
 
-        image4: `${cart[3].image}` ? `${cart[3].image}` : "",
-        nameproduct4: `${cart[3].name}` ? `${cart[3].name}` : "",
-        quanty4: `${cart[3].cartQuantity}` ? `${cart[3].cartQuantity}` : "",
-        price4: `${novo_price}` ? `${novo_price * cart[3].cartQuantity}` : "",
-        cor4: `${cart[3].cor}` ? `${cart[3].cor}` : "",
-        medidas4: `${cart[3].size}` ? `${cart[3].size}` : "",
-        url_product4: `${cart[3].url_product}` ? `${cart[3].url_product}` : "",
+        image4: `${cartQuatro[3].image}` ? `${cartQuatro[3].image}` : "",
+        nameproduct4: `${cartQuatro[3].name}` ? `${cartQuatro[3].name}` : "",
+        quanty4: `${cartQuatro[3].cartQuantity}`
+          ? `${cartQuatro[3].cartQuantity}`
+          : "",
+        price4: `${novo_priceQuatro}`
+          ? `${novo_priceQuatro * cartQuatro[3].cartQuantity}`
+          : "",
+        cor4: `${cartQuatro[3].cor}` ? `${cartQuatro[3].cor}` : "",
+        medidas4: `${cartQuatro[3].size}` ? `${cartQuatro[3].size}` : "",
+        url_product4: `${cartQuatro[3].url_product}`
+          ? `${cartQuatro[3].url_product}`
+          : "",
 
         total: `${res5}` ? `${res5}` : "",
       };
@@ -391,10 +474,16 @@ function Compra() {
       PagamentoMercadoPago();
     }
 
-    if (cart[0] && cart[1] && cart[2] && cart[3] && cart[4]) {
+    if (
+      cartUm[0] &&
+      cartDois[1] &&
+      cartTres[2] &&
+      cartQuatro[3] &&
+      cartSinco[4]
+    ) {
       let adress = `Estado: ${cep.state} , Cidade: ${cep.city} , Cep: ${cep.cep} , Barrio: ${cep.neighborhood} , Rua: ${cep.street}, Numero: ${data.number} , AP/Casa: ${data.apartment_or_house} , CPF: ${cpf}`;
 
-      //let res1 = JSON.stringify(cart[0].image[0]);
+      //let res1 = JSON.stringify(cartUm[0].image[0]);
       let res4 = JSON.stringify(adress);
       let res5 = JSON.stringify(novo_amount);
 
@@ -404,45 +493,75 @@ function Compra() {
         email: email ? email : "",
         phone: phone ? phone : "",
 
-        image1: `${cart[0].image}` ? `${cart[0].image}` : "",
-        nameproduct1: `${cart[0].name}` ? `${cart[0].name}` : "",
-        quanty1: `${cart[0].cartQuantity}` ? `${cart[0].cartQuantity}` : "",
-        price1: `${novo_price}` ? `${novo_price * cart[0].cartQuantity}` : "",
-        cor1: `${cart[0].cor}` ? `${cart[0].cor}` : "",
-        medidas1: `${cart[0].size}` ? `${cart[0].size}` : "",
-        url_product1: `${cart[0].url_product}` ? `${cart[0].url_product}` : "",
+        image1: `${cartSinco[0].image}` ? `${cartSinco[0].image}` : "",
+        nameproduct1: `${cartSinco[0].name}` ? `${cartSinco[0].name}` : "",
+        quanty1: `${cartSinco[0].cartQuantity}`
+          ? `${cartSinco[0].cartQuantity}`
+          : "",
+        price1: `${novo_priceUm}`
+          ? `${novo_priceUm * cartSinco[0].cartQuantity}`
+          : "",
+        cor1: `${cartSinco[0].cor}` ? `${cartUm[0].cor}` : "",
+        medidas1: `${cartSinco[0].size}` ? `${cartSinco[0].size}` : "",
+        url_product1: `${cartSinco[0].url_product}`
+          ? `${cartSinco[0].url_product}`
+          : "",
 
-        image2: `${cart[1].image}` ? `${cart[1].image}` : "",
-        nameproduct2: `${cart[1].name}` ? `${cart[1].name}` : "",
-        quanty2: `${cart[1].cartQuantity}` ? `${cart[1].cartQuantity}` : "",
-        price2: `${novo_price}` ? `${novo_price * cart[1].cartQuantity}` : "",
-        cor2: `${cart[1].cor}` ? `${cart[1].cor}` : "",
-        medidas2: `${cart[1].size}` ? `${cart[1].size}` : "",
-        url_product2: `${cart[1].url_product}` ? `${cart[1].url_product}` : "",
+        image2: `${cartSinco[1].image}` ? `${cartSinco[1].image}` : "",
+        nameproduct2: `${cartSinco[1].name}` ? `${cartSinco[1].name}` : "",
+        quanty2: `${cartSinco[1].cartQuantity}`
+          ? `${cartSinco[1].cartQuantity}`
+          : "",
+        price2: `${novo_priceDois}`
+          ? `${novo_priceDois * cartSinco[1].cartQuantity}`
+          : "",
+        cor2: `${cartSinco[1].cor}` ? `${cartSinco[1].cor}` : "",
+        medidas2: `${cartSinco[1].size}` ? `${cartSinco[1].size}` : "",
+        url_product2: `${cartSinco[1].url_product}`
+          ? `${cartSinco[1].url_product}`
+          : "",
 
-        image3: `${cart[2].image}` ? `${cart[2].image}` : "",
-        nameproduct3: `${cart[2].name}` ? `${cart[2].name}` : "",
-        quanty3: `${cart[2].cartQuantity}` ? `${cart[2].cartQuantity}` : "",
-        price3: `${novo_price}` ? `${novo_price * cart[2].cartQuantity}` : "",
-        cor3: `${cart[2].cor}` ? `${cart[2].cor}` : "",
-        medidas3: `${cart[2].size}` ? `${cart[2].size}` : "",
-        url_product3: `${cart[2].url_product}` ? `${cart[2].url_product}` : "",
+        image3: `${cartSinco[2].image}` ? `${cartTres[2].image}` : "",
+        nameproduct3: `${cartSinco[2].name}` ? `${cartTres[2].name}` : "",
+        quanty3: `${cartSinco[2].cartQuantity}`
+          ? `${cartSinco[2].cartQuantity}`
+          : "",
+        price3: `${novo_priceTres}`
+          ? `${novo_priceTres * cartSinco[2].cartQuantity}`
+          : "",
+        cor3: `${cartSinco[2].cor}` ? `${cartTres[2].cor}` : "",
+        medidas3: `${cartSinco[2].size}` ? `${cartTres[2].size}` : "",
+        url_product3: `${cartSinco[2].url_product}`
+          ? `${cartSinco[2].url_product}`
+          : "",
 
-        image4: `${cart[3].image}` ? `${cart[3].image}` : "",
-        nameproduct4: `${cart[3].name}` ? `${cart[3].name}` : "",
-        quanty4: `${cart[3].cartQuantity}` ? `${cart[3].cartQuantity}` : "",
-        price4: `${novo_price}` ? `${novo_price * cart[3].cartQuantity}` : "",
-        cor4: `${cart[3].cor}` ? `${cart[3].cor}` : "",
-        medidas4: `${cart[3].size}` ? `${cart[3].size}` : "",
-        url_product4: `${cart[3].url_product}` ? `${cart[3].url_product}` : "",
+        image4: `${cartSinco[3].image}` ? `${cartQuatro[3].image}` : "",
+        nameproduct4: `${cartSinco[3].name}` ? `${cartQuatro[3].name}` : "",
+        quanty4: `${cartSinco[3].cartQuantity}`
+          ? `${cartSinco[3].cartQuantity}`
+          : "",
+        price4: `${novo_priceQuatro}`
+          ? `${novo_priceQuatro * cartSinco[3].cartQuantity}`
+          : "",
+        cor4: `${cartSinco[3].cor}` ? `${cartQuatro[3].cor}` : "",
+        medidas4: `${cartSinco[3].size}` ? `${cartQuatro[3].size}` : "",
+        url_product4: `${cartSinco[3].url_product}`
+          ? `${cartSinco[3].url_product}`
+          : "",
 
-        image5: `${cart[4].image}` ? `${cart[4].image}` : "",
-        nameproduct5: `${cart[4].name}` ? `${cart[4].name}` : "",
-        quanty5: `${cart[4].cartQuantity}` ? `${cart[4].cartQuantity}` : "",
-        price5: `${novo_price}` ? `${novo_price * cart[4].cartQuantity}` : "",
-        cor5: `${cart[4].cor}` ? `${cart[4].cor}` : "",
-        medidas5: `${cart[4].size}` ? `${cart[4].size}` : "",
-        url_product5: `${cart[4].url_product}` ? `${cart[4].url_product}` : "",
+        image5: `${cartSinco[4].image}` ? `${cartSinco[4].image}` : "",
+        nameproduct5: `${cartSinco[4].name}` ? `${cartSinco[4].name}` : "",
+        quanty5: `${cartSinco[4].cartQuantity}`
+          ? `${cartSinco[4].cartQuantity}`
+          : "",
+        price5: `${novo_priceSinco}`
+          ? `${novo_priceSinco * cartSinco[4].cartQuantity}`
+          : "",
+        cor5: `${cartSinco[4].cor}` ? `${cartSinco[4].cor}` : "",
+        medidas5: `${cartSinco[4].size}` ? `${cartSinco[4].size}` : "",
+        url_product5: `${cartSinco[4].url_product}`
+          ? `${cartSinco[4].url_product}`
+          : "",
 
         total: `${res5}` ? `${res5}` : "",
       };
@@ -482,7 +601,7 @@ function Compra() {
 
   return (
     <>
-      {cart == "" ? (
+      {cartUm == "" ? (
         <Example />
       ) : (
         <CompraStyle>

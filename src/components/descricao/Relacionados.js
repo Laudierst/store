@@ -160,7 +160,7 @@ export const ProductRelacionados = styled.div`
       }
 
       & .oldPricereal {
-        font-size: 1.2rem;
+        font-size: 1.1;
         flex-grow: 1;
         color: #000000;
         opacity: 0.7;

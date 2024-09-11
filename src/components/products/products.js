@@ -248,7 +248,7 @@ export const ProductProd = styled.div`
       }
 
       & .oldPricereal {
-        font-size: 0.8rem;
+        font-size: 1.1;
         flex-grow: 1;
         color: #000000;
         opacity: 0.7;
