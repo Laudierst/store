@@ -6,7 +6,7 @@ import api from "../../api/api";
 import { useSelector } from "react-redux";
 import ReactLoading from "react-loading";
 import emailjs from "@emailjs/browser";
-//import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import axios from "axios";
 
 console.clear();
@@ -22,7 +22,7 @@ function Compra() {
   //const tmItens = useSelector((state) => state.cart.tmMedidas);
   //const tmCor = useSelector((state) => state.cart.tmCores);
 
-  console.log(cartUm[0].price, cartDois[1].price);
+  //console.log(cartUm[0].price, cartDois[1].price);
 
   const productAmount = [cartTotal.cartTotalAmount];
   //const productQuantity = [cartTotal.cartTotalQuantyti]
@@ -97,6 +97,7 @@ function Compra() {
   let percentual = 0.25;
   let aumento = productAmount[0] * percentual;
   let novo_amount = productAmount[0] - aumento;
+
   let aumentoPriceUm = cartUm[0]?.price * percentual;
   let novo_priceUm = cartUm[0]?.price - aumentoPriceUm;
 
@@ -146,18 +147,17 @@ function Compra() {
         email: email ? email : "",
         phone: phone ? phone : "",
 
-        image1: `${cartTres[0].image}` ? `${cartTres[0].image}` : "",
-        nameproduct1: `${cartTres[0].name}` ? `${cartTres[0].name}` : "",
-        quanty1: `${cartTres[0].cartQuantity}`
-          ? `${cartTres[0].cartQuantity}`
-          : "",
+        image1: `${cartUm[0].image}` ? `${cartUm[0].image}` : "",
+        nameproduct1: `${cartUm[0].name}` ? `${cartUm[0].name}` : "",
+        quanty1: `${cartUm[0].cartQuantity}` ? `${cartUm[0].cartQuantity}` : "",
         price1: `${novo_priceUm}`
-          ? `${novo_priceUm * cartTres[0].cartQuantity}`
+          ? `${novo_priceUm * cartTres[0]?.cartQuantity}`
           : "",
-        cor1: `${cartTres[0].cor}` ? `${cartTres[0].cor}` : "",
-        medidas1: `${cartTres[0].size}` ? `${cartTres[0].size}` : "",
-        url_product1: `${cartTres[0].url_product}`
-          ? `${cartTres[0].url_product}`
+        cor1: `${cartUm[0].cor}` ? `${cartUm[0].cor}` : "",
+        medidas1: `${cartUm[0].size}` ? `${cartUm[0].size}` : "",
+        codigo1: `${ConvertCode}` ? `${ConvertCode}` : "",
+        url_product1: `${cartUm[0].url_product}`
+          ? `${cartUm[0].url_product}`
           : "",
 
         total: `${res5}` ? `${res5}` : "",
@@ -169,7 +169,7 @@ function Compra() {
         .send(
           "service_lflbrlm",
           "template_6bgdvos",
-          templeteParams,
+          //templeteParams,
           "uh-vq_J-Q9IBlCdVH"
         )
         .then(
@@ -191,6 +191,91 @@ function Compra() {
         );
       };
       PagamentoMercadoPago();
+
+      if (cartUm[0]) {
+        const ids = JSON.stringify(cartUm[0].id);
+        const names = JSON.stringify(cartUm[0].name);
+        const images = JSON.stringify(cartUm[0].image[0]);
+        const prices = JSON.stringify(novo_priceUm);
+        const cartQuantitys = JSON.stringify(cartUm[0].cartQuantity);
+        const cvCodeCompra = JSON.stringify(GeraCode);
+        const localTn = localStorage.getItem("tmMedidas");
+        const localCor = localStorage.getItem("tmCores");
+
+        const resTm = JSON.parse(localTn);
+        const resCor = JSON.parse(localCor);
+
+        //console.log(localCor)
+
+        const tmMedidas = JSON.stringify(resTm[0].tm);
+        const tmCores = JSON.stringify(resCor[0].cor);
+
+        let cvId = ids.replace(/"/g, "");
+        let cvName = names.replace(/"/g, "");
+        let cvImage = images.replace(/"/g, "");
+        let cvPrice = prices.replace(/"/g, "");
+        let cvQuantity = cartQuantitys.replace(/"/g, "");
+        let cvTamnho = tmMedidas.replace(/"/g, "");
+        let cvCorres = tmCores.replace(/"/g, "");
+
+        let lembrete =
+          "Informação lenght: 2 = id, 3 = name, 4 = image, 5 = price, 6 = quantity, 7 = size, 8 = cor, 9 = code_compra";
+
+        const ArreyData = [
+          lembrete,
+          "______________________________________________________________________________________________________________",
+          cvId,
+          cvName,
+          cvImage,
+          cvPrice,
+          cvQuantity,
+          cvTamnho,
+          cvCorres,
+          cvCodeCompra,
+          "_______________________________________________________________________________________________________________",
+          "Dados do Cliente abaixo!",
+          "_______________________________________________________________________________________________________________",
+          "Nome: " + name,
+          "Telefone: " + phone,
+          "Email: " + email,
+          "_______________________________________________________________________________________________________________",
+        ];
+
+        const CreateCompra = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: state,
+          city: city,
+          cep: cep,
+          street: street,
+          number: number,
+          district: district,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cvName,
+          productPrice: prices,
+          productQuantity: cvQuantity,
+          productImage: cvImage,
+          productSize: cvTamnho,
+          productClolor: cvCorres,
+          productUrl: templeteParams.url_product1,
+        };
+
+        console.log(CreateCompra);
+
+        await api
+          .post("/compra", CreateCompra)
+          .then((res) => {
+            toast.success("Estamos redirecinando para o mercado pago");
+            //console.log(res)
+          })
+          .catch((msg) => {
+            console.log({ msg: msg.response.data });
+          });
+      }
     }
 
     if (

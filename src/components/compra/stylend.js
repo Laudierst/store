@@ -86,6 +86,7 @@ export const InputBox = styled.div`
     width: 30%;
     border-bottom: 2px solid #fff;
     display: inline-block;
+    font-weight: bold;
     
 
     & input{
@@ -104,6 +105,7 @@ export const InputBox = styled.div`
         @media (max-width: 768px){
             padding: 0;
             margin-top: -12px;
+            color: darck;
         }
     }
 
