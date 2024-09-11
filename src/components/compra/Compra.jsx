@@ -169,7 +169,7 @@ function Compra() {
         .send(
           "service_lflbrlm",
           "template_6bgdvos",
-          //templeteParams,
+          templeteParams,
           "uh-vq_J-Q9IBlCdVH"
         )
         .then(
