@@ -453,24 +453,24 @@ export const LoadPage = () => {
             <Example />
           ) : (
             dataProductFilter.map((res) => {
-              const { name, quantity, image, color, slug } = res;
+              const { name, quantity, image, color, slug, frete } = res;
 
               /*const corImg = [
-                {
-                  cor0: color[0],
-                  img0: slug[0],
-                  cor1: color[1],
-                  img1: slug[1],
-                  cor2: color[2],
-                  img2: slug[2],
-                  cor3: color[3],
-                  img4: slug[4],
-                  cor5: color[5],
-                  img5: slug[5],
-                  cor6: color[6],
-                  img6: slug[6],
-                },
-              ];*/
+                  {
+                    cor0: color[0],
+                    img0: slug[0],
+                    cor1: color[1],
+                    img1: slug[1],
+                    cor2: color[2],
+                    img2: slug[2],
+                    cor3: color[3],
+                    img4: slug[4],
+                    cor5: color[5],
+                    img5: slug[5],
+                    cor6: color[6],
+                    img6: slug[6],
+                  },
+                ];*/
               //console.log(dataCores);
 
               return (
@@ -517,12 +517,11 @@ export const LoadPage = () => {
                             style={{
                               fontWeight: "bold",
                               color: "green",
-                              font: 15,
+                              font: 18,
                             }}
                           >
-                            {frete.frete}
+                            Frete {frete}
                           </span>
-                          ``
                         </div>
                         <br />
                         <p style={{ fontSize: 20 }}>
@@ -915,7 +914,7 @@ export const LoadPage = () => {
             <Example />
           ) : (
             dataProductFilter.map((res) => {
-              const { description } = res;
+              const { description, image } = res;
 
               return (
                 <>
@@ -927,7 +926,7 @@ export const LoadPage = () => {
                         <div className="espaco2"></div>
                       )}
                     </div>
-
+                    {image[5] == "" ? "" : <p></p>}
                     <h4>
                       <strong>DESCRIÇÃO</strong>
                     </h4>
