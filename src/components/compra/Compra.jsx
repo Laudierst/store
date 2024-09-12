@@ -348,17 +348,6 @@ function Compra() {
             console.log("ERRO: ", err);
           }
         );
-      /*
-      const PagamentoMercadoPago = async () => {
-        await api.post("payment", prod).then(
-          (res) => (window.location.href = res.data.response.body.init_point),
-          (err) => {
-            alert(err.response.data);
-            //console.log(prod)
-          }
-        );
-      };
-      PagamentoMercadoPago();*/
 
       if (cartUm[0]) {
         const ids = JSON.stringify(cartUm[0].id);
@@ -366,6 +355,7 @@ function Compra() {
         const images = JSON.stringify(cartUm[0].image[0]);
         const prices = JSON.stringify(novo_priceUm);
         const cartQuantitys = JSON.stringify(cartUm[0].cartQuantity);
+        const cartQuantitys2 = JSON.stringify(cartUm[1].cartQuantity);
         const cvCodeCompra = JSON.stringify(GeraCode);
         const localTn = localStorage.getItem("tmMedidas");
         const localCor = localStorage.getItem("tmCores");
@@ -424,12 +414,35 @@ function Compra() {
           code_compra: code_compra,
           productslist: ArreyData,
           productName: cartUm[0].name,
-          productPrice: prices,
-          productQuantity: cvQuantity,
+          productPrice: cartUm[0].price,
+          productQuantity: cartQuantitys,
           productImage: cartUm[0].image,
           productSize: cartUm[0].size,
           productClolor: cartUm[0].cor,
-          productUrl: templeteParams.url_product1,
+          productUrl: cartUm[0].url_product,
+        };
+
+        const CreateCompra2 = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: cep.state,
+          city: cep.city,
+          cep: cep.cep,
+          street: cep.street,
+          number: number,
+          district: cep.neighborhood,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cartUm[1].name,
+          productPrice: cartUm[1].price,
+          productQuantity: cartQuantitys2,
+          productImage: cartUm[1].image,
+          productSize: cartUm[1].size,
+          productClolor: cartUm[1].cor,
+          productUrl: cartUm[1].url_product,
         };
 
         //console.log(CreateCompra);
@@ -443,73 +456,9 @@ function Compra() {
           .catch((msg) => {
             console.log({ msg: msg.response.data });
           });
-      }
-
-      if (cartDois[0]) {
-        const ids = JSON.stringify(cartDois[1].id);
-        const names = JSON.stringify(cartDois[1].name);
-        const images = JSON.stringify(cartDois[1].image[1]);
-        const prices = JSON.stringify(novo_priceDois);
-        const cartQuantitys = JSON.stringify(cartDois[1].cartQuantity);
-        const cvCodeCompra = JSON.stringify(GeraCode);
-        const localTn = localStorage.getItem("tmMedidas");
-        const localCor = localStorage.getItem("tmCores");
-
-        const resTm = JSON.parse(localTn);
-        const resCor = JSON.parse(localCor);
-
-        //console.log(localCor)
-
-        const tmMedidas = JSON.stringify(resTm[1].tm);
-        const tmCores = JSON.stringify(resCor[1].cor);
-
-        let cvId = ids.replace(/"/g, "");
-        let cvName = names.replace(/"/g, "");
-        let cvImage = images.replace(/"/g, "");
-        let cvPrice = prices.replace(/"/g, "");
-        let cvQuantity = cartQuantitys.replace(/"/g, "");
-        let cvTamnho = tmMedidas.replace(/"/g, "");
-        let cvCorres = tmCores.replace(/"/g, "");
-
-        let lembrete =
-          "Informação lenght: 2 = id, 3 = name, 4 = image, 5 = price, 6 = quantity, 7 = size, 8 = cor, 9 = code_compra";
-
-        const ArreyData = [
-          lembrete,
-          "______________________________________________________________________________________________________________",
-          cvId,
-          cvName,
-          cvImage,
-          cvPrice,
-          cvQuantity,
-          cvTamnho,
-          cvCorres,
-          cvCodeCompra,
-          "_______________________________________________________________________________________________________________",
-          "Dados do Cliente abaixo!",
-          "_______________________________________________________________________________________________________________",
-          "Nome: " + name,
-          "Telefone: " + phone,
-          "Email: " + email,
-          "_______________________________________________________________________________________________________________",
-        ];
-
-        const CreateCompra2 = {
-          codigo2: code_compra,
-          productslist: ArreyData,
-          productName: cartDois[1].name,
-          productPrice: prices,
-          productQuantity: cvQuantity,
-          productImage: cartDois[1].image,
-          productSize: cartDois[1].size,
-          productClolor: cartDois[1].cor,
-          productUrl: templeteParams.url_product1,
-        };
-
-        //console.log(CreateCompra);
 
         await api
-          .post("/compra1", CreateCompra2)
+          .post("/compra", CreateCompra2)
           .then((res) => {
             toast.success("Estamos redirecinando para o mercado pago");
             //console.log(res)
@@ -517,7 +466,20 @@ function Compra() {
           .catch((msg) => {
             console.log({ msg: msg.response.data });
           });
+
+        //alert("Ta chegando");
       }
+
+      const PagamentoMercadoPago = async () => {
+        await api.post("payment", prod).then(
+          (res) => (window.location.href = res.data.response.body.init_point),
+          (err) => {
+            alert(err.response.data);
+            //console.log(prod)
+          }
+        );
+      };
+      PagamentoMercadoPago();
     }
     if (
       cartUm[0] &&
@@ -604,7 +566,159 @@ function Compra() {
           }
         );
 
-      const PagamentoMercadoPago = async () => {
+      if (cartUm[0]) {
+        const ids = JSON.stringify(cartUm[0].id);
+        const names = JSON.stringify(cartUm[0].name);
+        const images = JSON.stringify(cartUm[0].image[0]);
+        const prices = JSON.stringify(novo_priceUm);
+        const cartQuantitys = JSON.stringify(cartUm[0].cartQuantity);
+        const cartQuantitys2 = JSON.stringify(cartUm[1].cartQuantity);
+        const cartQuantitys3 = JSON.stringify(cartUm[2].cartQuantity);
+        const cvCodeCompra = JSON.stringify(GeraCode);
+        const localTn = localStorage.getItem("tmMedidas");
+        const localCor = localStorage.getItem("tmCores");
+
+        const resTm = JSON.parse(localTn);
+        const resCor = JSON.parse(localCor);
+
+        //console.log(localCor)
+
+        const tmMedidas = JSON.stringify(resTm[0].tm);
+        const tmCores = JSON.stringify(resCor[0].cor);
+
+        let cvId = ids.replace(/"/g, "");
+        let cvName = names.replace(/"/g, "");
+        let cvImage = images.replace(/"/g, "");
+        let cvPrice = prices.replace(/"/g, "");
+        let cvQuantity = cartQuantitys.replace(/"/g, "");
+        let cvTamnho = tmMedidas.replace(/"/g, "");
+        let cvCorres = tmCores.replace(/"/g, "");
+
+        let lembrete =
+          "Informação lenght: 2 = id, 3 = name, 4 = image, 5 = price, 6 = quantity, 7 = size, 8 = cor, 9 = code_compra";
+
+        const ArreyData = [
+          lembrete,
+          "______________________________________________________________________________________________________________",
+          cvId,
+          cvName,
+          cvImage,
+          cvPrice,
+          cvQuantity,
+          cvTamnho,
+          cvCorres,
+          cvCodeCompra,
+          "_______________________________________________________________________________________________________________",
+          "Dados do Cliente abaixo!",
+          "_______________________________________________________________________________________________________________",
+          "Nome: " + name,
+          "Telefone: " + phone,
+          "Email: " + email,
+          "_______________________________________________________________________________________________________________",
+        ];
+
+        const CreateCompra = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: cep.state,
+          city: cep.city,
+          cep: cep.cep,
+          street: cep.street,
+          number: number,
+          district: cep.neighborhood,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cartUm[0].name,
+          productPrice: cartUm[0].price,
+          productQuantity: cartQuantitys,
+          productImage: cartUm[0].image,
+          productSize: cartUm[0].size,
+          productClolor: cartUm[0].cor,
+          productUrl: cartUm[0].url_product,
+        };
+
+        const CreateCompra2 = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: cep.state,
+          city: cep.city,
+          cep: cep.cep,
+          street: cep.street,
+          number: number,
+          district: cep.neighborhood,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cartUm[1].name,
+          productPrice: cartUm[1].price,
+          productQuantity: cartQuantitys2,
+          productImage: cartUm[1].image,
+          productSize: cartUm[1].size,
+          productClolor: cartUm[1].cor,
+          productUrl: cartUm[1].url_product,
+        };
+
+        const CreateCompra3 = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: cep.state,
+          city: cep.city,
+          cep: cep.cep,
+          street: cep.street,
+          number: number,
+          district: cep.neighborhood,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cartUm[2].name,
+          productPrice: cartUm[2].price,
+          productQuantity: cartQuantitys3,
+          productImage: cartUm[2].image,
+          productSize: cartUm[2].size,
+          productClolor: cartUm[2].cor,
+          productUrl: cartUm[2].url_product,
+        };
+
+        //console.log(CreateCompra);
+
+        await api
+          .post("/compra", CreateCompra)
+          .then((res) => {
+            //toast.success("Estamos redirecinando para o mercado pago");
+            //console.log(res)
+          })
+          .catch((msg) => {
+            console.log({ msg: msg.response.data });
+          });
+
+        await api
+          .post("/compra", CreateCompra2)
+          .then((res) => {
+            //toast.success("Estamos redirecinando para o mercado pago");
+            //console.log(res)
+          })
+          .catch((msg) => {
+            console.log({ msg: msg.response.data });
+          });
+
+        await api
+          .post("/compra", CreateCompra3)
+          .then((res) => {
+            toast.success("Estamos redirecinando para o mercado pago");
+            //console.log(res)
+          })
+          .catch((msg) => {
+            console.log({ msg: msg.response.data });
+          });
+      }
+      /*const PagamentoMercadoPago = async () => {
         await api.post("payment", prod).then(
           (res) => (window.location.href = res.data.response.body.init_point),
           (err) => {
@@ -613,7 +727,7 @@ function Compra() {
           }
         );
       };
-      PagamentoMercadoPago();
+      PagamentoMercadoPago();*/
     }
 
     if (
@@ -715,6 +829,193 @@ function Compra() {
             console.log("ERRO: ", err);
           }
         );
+
+      if (cartUm[0]) {
+        const ids = JSON.stringify(cartUm[0].id);
+        const names = JSON.stringify(cartUm[0].name);
+        const images = JSON.stringify(cartUm[0].image[0]);
+        const prices = JSON.stringify(novo_priceUm);
+        const cartQuantitys = JSON.stringify(cartUm[0].cartQuantity);
+        const cartQuantitys2 = JSON.stringify(cartUm[1].cartQuantity);
+        const cartQuantitys3 = JSON.stringify(cartUm[2].cartQuantity);
+        const cartQuantitys4 = JSON.stringify(cartUm[3].cartQuantity);
+        const cvCodeCompra = JSON.stringify(GeraCode);
+        const localTn = localStorage.getItem("tmMedidas");
+        const localCor = localStorage.getItem("tmCores");
+
+        const resTm = JSON.parse(localTn);
+        const resCor = JSON.parse(localCor);
+
+        //console.log(localCor)
+
+        const tmMedidas = JSON.stringify(resTm[0].tm);
+        const tmCores = JSON.stringify(resCor[0].cor);
+
+        let cvId = ids.replace(/"/g, "");
+        let cvName = names.replace(/"/g, "");
+        let cvImage = images.replace(/"/g, "");
+        let cvPrice = prices.replace(/"/g, "");
+        let cvQuantity = cartQuantitys.replace(/"/g, "");
+        let cvTamnho = tmMedidas.replace(/"/g, "");
+        let cvCorres = tmCores.replace(/"/g, "");
+
+        let lembrete =
+          "Informação lenght: 2 = id, 3 = name, 4 = image, 5 = price, 6 = quantity, 7 = size, 8 = cor, 9 = code_compra";
+
+        const ArreyData = [
+          lembrete,
+          "______________________________________________________________________________________________________________",
+          cvId,
+          cvName,
+          cvImage,
+          cvPrice,
+          cvQuantity,
+          cvTamnho,
+          cvCorres,
+          cvCodeCompra,
+          "_______________________________________________________________________________________________________________",
+          "Dados do Cliente abaixo!",
+          "_______________________________________________________________________________________________________________",
+          "Nome: " + name,
+          "Telefone: " + phone,
+          "Email: " + email,
+          "_______________________________________________________________________________________________________________",
+        ];
+
+        const CreateCompra = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: cep.state,
+          city: cep.city,
+          cep: cep.cep,
+          street: cep.street,
+          number: number,
+          district: cep.neighborhood,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cartUm[0].name,
+          productPrice: cartUm[0].price,
+          productQuantity: cartQuantitys,
+          productImage: cartUm[0].image,
+          productSize: cartUm[0].size,
+          productClolor: cartUm[0].cor,
+          productUrl: cartUm[0].url_product,
+        };
+
+        const CreateCompra2 = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: cep.state,
+          city: cep.city,
+          cep: cep.cep,
+          street: cep.street,
+          number: number,
+          district: cep.neighborhood,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cartUm[1].name,
+          productPrice: cartUm[1].price,
+          productQuantity: cartQuantitys2,
+          productImage: cartUm[1].image,
+          productSize: cartUm[1].size,
+          productClolor: cartUm[1].cor,
+          productUrl: cartUm[1].url_product,
+        };
+
+        const CreateCompra3 = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: cep.state,
+          city: cep.city,
+          cep: cep.cep,
+          street: cep.street,
+          number: number,
+          district: cep.neighborhood,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cartUm[2].name,
+          productPrice: cartUm[2].price,
+          productQuantity: cartQuantitys3,
+          productImage: cartUm[2].image,
+          productSize: cartUm[2].size,
+          productClolor: cartUm[2].cor,
+          productUrl: cartUm[2].url_product,
+        };
+
+        const CreateCompra4 = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: cep.state,
+          city: cep.city,
+          cep: cep.cep,
+          street: cep.street,
+          number: number,
+          district: cep.neighborhood,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cartUm[3].name,
+          productPrice: cartUm[3].price,
+          productQuantity: cartQuantitys4,
+          productImage: cartUm[3].image,
+          productSize: cartUm[3].size,
+          productClolor: cartUm[3].cor,
+          productUrl: cartUm[3].url_product,
+        };
+
+        //console.log(CreateCompra);
+
+        await api
+          .post("/compra", CreateCompra)
+          .then((res) => {
+            //toast.success("Estamos redirecinando para o mercado pago");
+            //console.log(res)
+          })
+          .catch((msg) => {
+            console.log({ msg: msg.response.data });
+          });
+
+        await api
+          .post("/compra", CreateCompra2)
+          .then((res) => {
+            //toast.success("Estamos redirecinando para o mercado pago");
+            //console.log(res)
+          })
+          .catch((msg) => {
+            console.log({ msg: msg.response.data });
+          });
+
+        await api
+          .post("/compra", CreateCompra3)
+          .then((res) => {
+            //toast.success("Estamos redirecinando para o mercado pago");
+            //console.log(res)
+          })
+          .catch((msg) => {
+            console.log({ msg: msg.response.data });
+          });
+
+        await api
+          .post("/compra", CreateCompra4)
+          .then((res) => {
+            toast.success("Estamos redirecinando para o mercado pago");
+            //console.log(res)
+          })
+          .catch((msg) => {
+            console.log({ msg: msg.response.data });
+          });
+      }
 
       const PagamentoMercadoPago = async () => {
         await api.post("payment", prod).then(
@@ -842,6 +1143,227 @@ function Compra() {
             console.log("ERRO: ", err);
           }
         );
+
+      if (cartUm[0]) {
+        const ids = JSON.stringify(cartUm[0].id);
+        const names = JSON.stringify(cartUm[0].name);
+        const images = JSON.stringify(cartUm[0].image[0]);
+        const prices = JSON.stringify(novo_priceUm);
+        const cartQuantitys = JSON.stringify(cartUm[0].cartQuantity);
+        const cartQuantitys2 = JSON.stringify(cartUm[1].cartQuantity);
+        const cartQuantitys3 = JSON.stringify(cartUm[2].cartQuantity);
+        const cartQuantitys4 = JSON.stringify(cartUm[3].cartQuantity);
+        const cartQuantitys5 = JSON.stringify(cartUm[4].cartQuantity);
+        const cvCodeCompra = JSON.stringify(GeraCode);
+        const localTn = localStorage.getItem("tmMedidas");
+        const localCor = localStorage.getItem("tmCores");
+
+        const resTm = JSON.parse(localTn);
+        const resCor = JSON.parse(localCor);
+
+        //console.log(localCor)
+
+        const tmMedidas = JSON.stringify(resTm[0].tm);
+        const tmCores = JSON.stringify(resCor[0].cor);
+
+        let cvId = ids.replace(/"/g, "");
+        let cvName = names.replace(/"/g, "");
+        let cvImage = images.replace(/"/g, "");
+        let cvPrice = prices.replace(/"/g, "");
+        let cvQuantity = cartQuantitys.replace(/"/g, "");
+        let cvTamnho = tmMedidas.replace(/"/g, "");
+        let cvCorres = tmCores.replace(/"/g, "");
+
+        let lembrete =
+          "Informação lenght: 2 = id, 3 = name, 4 = image, 5 = price, 6 = quantity, 7 = size, 8 = cor, 9 = code_compra";
+
+        const ArreyData = [
+          lembrete,
+          "______________________________________________________________________________________________________________",
+          cvId,
+          cvName,
+          cvImage,
+          cvPrice,
+          cvQuantity,
+          cvTamnho,
+          cvCorres,
+          cvCodeCompra,
+          "_______________________________________________________________________________________________________________",
+          "Dados do Cliente abaixo!",
+          "_______________________________________________________________________________________________________________",
+          "Nome: " + name,
+          "Telefone: " + phone,
+          "Email: " + email,
+          "_______________________________________________________________________________________________________________",
+        ];
+
+        const CreateCompra = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: cep.state,
+          city: cep.city,
+          cep: cep.cep,
+          street: cep.street,
+          number: number,
+          district: cep.neighborhood,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cartUm[0].name,
+          productPrice: cartUm[0].price,
+          productQuantity: cartQuantitys,
+          productImage: cartUm[0].image,
+          productSize: cartUm[0].size,
+          productClolor: cartUm[0].cor,
+          productUrl: cartUm[0].url_product,
+        };
+
+        const CreateCompra2 = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: cep.state,
+          city: cep.city,
+          cep: cep.cep,
+          street: cep.street,
+          number: number,
+          district: cep.neighborhood,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cartUm[1].name,
+          productPrice: cartUm[1].price,
+          productQuantity: cartQuantitys2,
+          productImage: cartUm[1].image,
+          productSize: cartUm[1].size,
+          productClolor: cartUm[1].cor,
+          productUrl: cartUm[1].url_product,
+        };
+
+        const CreateCompra3 = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: cep.state,
+          city: cep.city,
+          cep: cep.cep,
+          street: cep.street,
+          number: number,
+          district: cep.neighborhood,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cartUm[2].name,
+          productPrice: cartUm[2].price,
+          productQuantity: cartQuantitys3,
+          productImage: cartUm[2].image,
+          productSize: cartUm[2].size,
+          productClolor: cartUm[2].cor,
+          productUrl: cartUm[2].url_product,
+        };
+
+        const CreateCompra4 = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: cep.state,
+          city: cep.city,
+          cep: cep.cep,
+          street: cep.street,
+          number: number,
+          district: cep.neighborhood,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cartUm[3].name,
+          productPrice: cartUm[3].price,
+          productQuantity: cartQuantitys4,
+          productImage: cartUm[3].image,
+          productSize: cartUm[3].size,
+          productClolor: cartUm[3].cor,
+          productUrl: cartUm[3].url_product,
+        };
+
+        const CreateCompra5 = {
+          name: name,
+          email: email,
+          phone: phone,
+          state: cep.state,
+          city: cep.city,
+          cep: cep.cep,
+          street: cep.street,
+          number: number,
+          district: cep.neighborhood,
+          apartment_or_house: house,
+          cpf: cpf,
+          code_compra: code_compra,
+          productslist: ArreyData,
+          productName: cartUm[4].name,
+          productPrice: cartUm[4].price,
+          productQuantity: cartQuantitys5,
+          productImage: cartUm[4].image,
+          productSize: cartUm[4].size,
+          productClolor: cartUm[4].cor,
+          productUrl: cartUm[4].url_product,
+        };
+
+        //console.log(CreateCompra);
+
+        await api
+          .post("/compra", CreateCompra)
+          .then((res) => {
+            //toast.success("Estamos redirecinando para o mercado pago");
+            //console.log(res)
+          })
+          .catch((msg) => {
+            console.log({ msg: msg.response.data });
+          });
+
+        await api
+          .post("/compra", CreateCompra2)
+          .then((res) => {
+            //toast.success("Estamos redirecinando para o mercado pago");
+            //console.log(res)
+          })
+          .catch((msg) => {
+            console.log({ msg: msg.response.data });
+          });
+
+        await api
+          .post("/compra", CreateCompra3)
+          .then((res) => {
+            //toast.success("Estamos redirecinando para o mercado pago");
+            //console.log(res)
+          })
+          .catch((msg) => {
+            console.log({ msg: msg.response.data });
+          });
+
+        await api
+          .post("/compra", CreateCompra4)
+          .then((res) => {
+            //toast.success("Estamos redirecinando para o mercado pago");
+            //console.log(res)
+          })
+          .catch((msg) => {
+            console.log({ msg: msg.response.data });
+          });
+
+        await api
+          .post("/compra", CreateCompra5)
+          .then((res) => {
+            toast.success("Estamos redirecinando para o mercado pago");
+            //console.log(res)
+          })
+          .catch((msg) => {
+            console.log({ msg: msg.response.data });
+          });
+      }
 
       const PagamentoMercadoPago = async () => {
         await api.post("payment", prod).then(
