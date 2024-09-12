@@ -182,7 +182,7 @@ export const Buttons = styled.div`
     //margin-top: -3px;
     //margin-right: -35px;
     width: 40px;
-    margin-left: 83%;
+    margin-left: 81.5%;
     position: absolute;
     //border: solid 1px;
   }
