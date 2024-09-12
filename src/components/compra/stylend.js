@@ -51,7 +51,7 @@ export const CompraStyle = styled.div`
         background: rgb(14, 194, 14);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 923px) {
         display: flex;
         margin-top: -1px;
         justify-content: center;
@@ -133,9 +133,10 @@ export const InputBox = styled.div`
         }
     }
 
-    @media (max-width: 768px){
+    @media (max-width: 923px){
         margin: 20px;
         width: 120px;
+        margin-bottom: 2px;
     }
 `
 
@@ -171,15 +172,8 @@ export const ButtonBox = styled.button`
         width: 70%;
     }
 
-    @media (max-width: 970px){
-        margin-top: -10px;
-        margin-left: 15%;
-        font-size: 3vw;
-        width: 70%;
-    }
-
     @media (max-width: 923px){
-        margin-top: 10px;
+        margin-top: 25px;
         margin-left: 15%;
         font-size: 4vw;
         width: 70%;
