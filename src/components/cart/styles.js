@@ -48,6 +48,7 @@ export const CartContent = styled.div`
   z-index: 200;
   background-color: white;
   overflow-y: scroll;
+  border: 1px solid;
 
   @media (max-width: 768px) {
     min-width: 100%;
@@ -341,9 +342,9 @@ export const TableCartFinalize = styled.div`
 
 export const CartVazio = styled.div`
   width: 100%;
-  height: 100%;
+  height: 50%;
   margin: auto;
-  float: left;
+  display: flex;
 
   & a {
     text-decoration: none;

@@ -82,9 +82,8 @@ export const Container = styled.div`
         border: none;
       }  
       @media(max-width: 923px) {
-        width: 100%;
-        display: flex;
-        margin: auto;
+        width: 85%;
+        margin-left: 1px;
       }  
 
     }
@@ -179,11 +178,13 @@ export const Buttons = styled.div`
     }
   }
 
-  @media (max-width: 768px){
+  @media (max-width: 923px){
     //margin-top: -3px;
     //margin-right: -35px;
-    //margin-left: 8px;
-    //position: absolute;
+    width: 40px;
+    margin-left: 83%;
+    position: absolute;
+    //border: solid 1px;
   }
 `;
 

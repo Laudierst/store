@@ -11,6 +11,7 @@ import {
   removeFromCart,
   cauculateTotal,
 } from "../../redux/cart/cart";
+import cartVazio from "./cartVazio.png";
 //teste
 
 export default function CartFinalize() {
@@ -65,10 +66,7 @@ export default function CartFinalize() {
     return (
       <CartVazio>
         <Link to="/">Volta para as compras</Link>
-        <img
-          src="https://www.roboticaeducacional.art.br/images/cart-vazio.jpg"
-          alt="img"
-        />
+        <img src={cartVazio} alt="img" />
       </CartVazio>
     );
   };
