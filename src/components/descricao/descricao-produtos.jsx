@@ -935,7 +935,7 @@ export const DescriptionProducts = () => {
             <Example />
           ) : (
             dataProductFilter.map((res) => {
-              const { description } = res;
+              const { description, image } = res;
 
               return (
                 <>
@@ -947,7 +947,17 @@ export const DescriptionProducts = () => {
                         <div className="espaco2"></div>
                       )}
                     </div>
-
+                    {image[5] == "" ? (
+                      ""
+                    ) : (
+                      <p>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                      </p>
+                    )}
                     <h4>
                       <strong>DESCRIÇÃO</strong>
                     </h4>
