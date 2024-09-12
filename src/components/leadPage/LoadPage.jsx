@@ -302,10 +302,6 @@ export const LoadPage = () => {
     </LoadingPage>
   );
 
-  const frete = {
-    frete: "FRETE GRATIS",
-  };
-
   const productProntoAddCard = [
     {
       id: dataProductFilter[0]?.id,
