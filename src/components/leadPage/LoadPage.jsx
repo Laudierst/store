@@ -922,7 +922,16 @@ export const LoadPage = () => {
                         <div className="espaco2"></div>
                       )}
                     </div>
-                    {image[5] == "" ? "" : <p></p>}
+                    {image[5] == "" ? (
+                      ""
+                    ) : (
+                      <p>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                      </p>
+                    )}
                     <h4>
                       <strong>DESCRIÇÃO</strong>
                     </h4>
