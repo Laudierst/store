@@ -53,7 +53,7 @@ export const LoadPage = () => {
   //let url = window.location.pathname;
   //let parts = url.split("/");
   //let lastPart = parts.pop() || parts.pop();
-  const lastPart = "70a25d87-97a9-49a4-89a3-16ad90d3cdb3";
+  const lastPart = "831d8818-004e-4239-9d7b-69297a6c7bf8";
 
   const navigate = useNavigate();
 
@@ -922,16 +922,7 @@ export const LoadPage = () => {
                         <div className="espaco2"></div>
                       )}
                     </div>
-                    {image[5] == "" ? (
-                      ""
-                    ) : (
-                      <p>
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                      </p>
-                    )}
+                    {image[5] == "" ? "" : <p></p>}
                     <h4>
                       <strong>DESCRIÇÃO</strong>
                     </h4>

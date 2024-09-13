@@ -249,7 +249,7 @@ export const Pricipal = styled.div`
     }
 
     & .parte1 {
-      margin-top: 110px;
+      margin-top: -200px;
       padding: 5px;
       text-align: justify;
       width: 100%;

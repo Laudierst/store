@@ -12,7 +12,7 @@ export const SeartResult = ({ data }) => {
     cep,
     apartment_or_house,
     update_at,
-  } = data[0];
+  } = data;
 
   console.log(data[0], "l", name);
 

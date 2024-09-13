@@ -79,7 +79,7 @@ window.env = {
   "npm_package_browserslist_development_0": "last 1 chrome version",
   "npm_package_dependencies_axios": "^1.5.1",
   "npm_package_dependencies__fortawesome_react_fontawesome": "^0.1.14",
-  "PATH": "/tmp/yarn--1726112989831-0.9560707344622743:/home/hk/onshops-pjs/store-bkp/node_modules/.bin:/usr/local/share/.config/yarn/link/node_modules/.bin:/root/.nvm/versions/node/v21.7.3/libexec/lib/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v21.7.3/lib/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v21.7.3/bin/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v21.7.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games",
+  "PATH": "/tmp/yarn--1726197886612-0.7314927961263009:/home/hk/onshops-pjs/store-bkp/node_modules/.bin:/usr/local/share/.config/yarn/link/node_modules/.bin:/root/.nvm/versions/node/v21.7.3/libexec/lib/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v21.7.3/lib/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v21.7.3/bin/node_modules/npm/bin/node-gyp-bin:/root/.nvm/versions/node/v21.7.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games",
   "NODE": "/root/.nvm/versions/node/v21.7.3/bin/node",
   "npm_package_browserslist_development_1": "last 1 firefox version",
   "npm_package_dependencies_swiper": "^11.0.7",
