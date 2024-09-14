@@ -60,7 +60,6 @@ export const Pricipal = styled.div`
     grid-area: barra-lateral;
     background-color: transparent;
     
-    
     & h5 {
       font-weight: bold;
     }
@@ -164,7 +163,7 @@ export const Pricipal = styled.div`
     width: 100%;
     height: 100%;
     background-color: transparent;
-    margin-top: 30px;
+    margin-top: 70px;
 
     @media(max-width: 923px){
       & .espaco {

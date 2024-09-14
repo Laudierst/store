@@ -709,7 +709,6 @@ export const DescriptionProducts = () => {
                               </button>
                             )}
                           </div>
-                          <br />
                         </div>
                         <div>
                           {divideSizeArrey[0] == "Padrão" ||
@@ -951,7 +950,6 @@ export const DescriptionProducts = () => {
                       ""
                     ) : (
                       <p>
-                        <br />
                         <br />
                         <br />
                         <br />

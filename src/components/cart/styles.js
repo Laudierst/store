@@ -29,7 +29,7 @@ export const CartContainer = styled.div`
   }
   @media (max-width: 923px) {
     width: 75%;
-    margin-left: 20%;
+    margin-left: 19%;
     margin-top: -100px;
   }
 

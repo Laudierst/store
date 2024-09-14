@@ -49,7 +49,7 @@ export const Container = styled.div`
   //border: solid 1px;
 
   & .bg {
-    background: var(--color, red);
+    background: red;
     border-radius: 20px;
     padding: 1px;
     width: 20px;
@@ -159,7 +159,7 @@ export const Logo = styled.div`
 
 export const Buttons = styled.div`
   float: right;
-
+  margin-top: -20px;
   div {
     font-weight: 500;
 
@@ -182,8 +182,9 @@ export const Buttons = styled.div`
     //margin-top: -3px;
     //margin-right: -35px;
     width: 40px;
-    margin-left: 81.5%;
+    margin-left: 81.2%;
     position: absolute;
+    margin-top: -10px;
     //border: solid 1px;
   }
 `;

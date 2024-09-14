@@ -70,11 +70,11 @@ export const SeartResults = () => {
         </form>
         <Buttons>
           <div onClick={handleCartClick}>
-            <b className="bg">{length}</b>
+            {length === 0 ? "" : <b className="bg">{length}</b>}
             {length > 0 ? (
-              <SlBasketLoaded style={{ fontSize: 30, marginLeft: "-2px" }} />
+              <SlBasketLoaded style={{ fontSize: 35, marginLeft: "-2px" }} />
             ) : (
-              <SlBasket style={{ fontSize: 30 }} />
+              <SlBasket style={{ fontSize: 35 }} />
             )}
           </div>
         </Buttons>
