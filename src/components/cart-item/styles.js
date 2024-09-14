@@ -27,25 +27,29 @@ export const CartItemImage = styled.div`
   display: block;
   border-radius: 10px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  @media screen and (max-width: 923px) {
+    margin-top: -50px;
+  }
 `;
 
 export const CartItemInfo = styled.div`
-  display: flex;
   flex-direction: column;
-  font-size: 10px;
+  font-size: 16px;
   margin-left: 20px;
   flex: 1;
 
   p:nth-child(1) {
     font-weight: 600;
     margin-bottom: 5px;
+    width: 95%;
   }
 
   p:nth-child(2) {
     font-weight: 500;
   }
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 923px) {
     display: flex;
     flex-direction: column;
     font-size: 2.3vw;

@@ -53,6 +53,7 @@ export const CartContent = styled.div`
 
   @media (max-width: 923px) {
     min-width: 10%;
+    height: 36%;
   }
 `;
 export const CartTitle = styled.p`

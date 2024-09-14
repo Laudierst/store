@@ -131,7 +131,7 @@ export default function Footer() {
       </ContainerFooter>
       <ContainerFooter2>
         <div>
-          <h4>Forma de pagamento</h4>
+          <h4>Pagamento Aceito</h4>
           {imgCart.map((img) => (
             <img src={img.img} alt="im" />
           ))}
