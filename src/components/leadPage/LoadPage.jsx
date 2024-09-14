@@ -47,12 +47,11 @@ export const LoadPage = () => {
   const [categoroy, setCategory] = useState([]);
   //const [teste, setTeste] = useState([]);
 
-  //console.log(teste);
+  const lastPart = localStorage.getItem("id")
+    ? localStorage.getItem("id")
+    : "831d8818-004e-4239-9d7b-69297a6c7bf8";
 
-  //let url = window.location.pathname;
-  //let parts = url.split("/");
-  //let lastPart = parts.pop() || parts.pop();
-  //const lastPart = localStorage.getItem("id");
+  localStorage.setItem("id", lastPart);
 
   const navigate = useNavigate();
 
@@ -60,7 +59,7 @@ export const LoadPage = () => {
   const product = useSelector((productsSlice) => productsSlice.products.items);
 
   const dataProductFilter = product.filter(
-    (productData) => productData.id === "831d8818-004e-4239-9d7b-69297a6c7bf8"
+    (productData) => productData.id === lastPart
   );
 
   const priceFilter = dataProductFilter.map((pri) => pri.price);
@@ -69,27 +68,8 @@ export const LoadPage = () => {
   const divideSizeArrey = { ...sizeFilter[0] };
 
   const imgFilterImg6 = dataProductFilter.map((img6) => img6.image[5]);
-  //const divideImgArrey = { ...sizeFilter[0] };
-
-  /*useEffect(() => {
-    (async () => {
-      //const reqName = await api.get("/category");
-      //const resName = await reqName.data;
-      const req = await api.get(`/productcategoryid/${lastPart}`);
-      const res = await req.data.products_categories[0].categories.name;
-
-      const response = await imgFilterImg6;
-      setDataImm5(response);
-      setCategory(res);
-      //setCategoryData(res);
-    })();
-  }, []);*/
 
   const ProcessoImageCor = async () => {
-    //const reqName = await api.get("/category");
-    //const resName = await reqName.data;
-    //const req = await api.get(`/productcategoryid/${lastPart}`);
-    //const res = await req.data.products_categories[0].categories.name;
     const res = "category";
 
     console.log(res);
@@ -99,35 +79,6 @@ export const LoadPage = () => {
     setCategory(res);
     //setCategoryData(res);
   };
-
-  //console.log(categoroy);
-
-  /*useEffect(() => {
-    const fetchBusinesses = () => {
-      return fetch("`/productcategoryid/${lastPart}`", { method: "GET" })
-        .then((res) => normalizeResponseErrors(res))
-        .then((res) => {
-          setTeste(res.json());
-        })
-        .then((rcvdBusinesses) => {
-          // some stuff
-        })
-        .catch((err) => {
-          // some error handling
-        });
-    };
-    fetchBusinesses();
-  }, []);
-
-  /*useEffect(() => {
-    async function fetchData() {
-      // You can await here
-      const response = await imgFilterImg6;
-      setDataImm5(response);
-    }
-    fetchData();
-  }, []); // Or [] if effect doesn't need props or state
-  //console.log(imgFilterImg6, "ls");*/
 
   localStorage.setItem("tm", divideSizeArrey[0]);
   const recebeTm = localStorage.getItem("tm");
@@ -476,24 +427,6 @@ export const LoadPage = () => {
             dataProductFilter.map((res) => {
               const { name, quantity, image, color, slug, frete } = res;
 
-              /*const corImg = [
-                {
-                  cor0: color[0],
-                  img0: slug[0],
-                  cor1: color[1],
-                  img1: slug[1],
-                  cor2: color[2],
-                  img2: slug[2],
-                  cor3: color[3],
-                  img4: slug[4],
-                  cor5: color[5],
-                  img5: slug[5],
-                  cor6: color[6],
-                  img6: slug[6],
-                },
-              ];*/
-              //console.log(dataCores);
-
               return (
                 <>
                   <div className="div">
@@ -544,28 +477,28 @@ export const LoadPage = () => {
                             Frete {frete}
                           </span>
                         </div>
-                        <br />
                         <p style={{ fontSize: 20 }}>
                           <strong style={{ fontSize: 20 }}>Cor: </strong>
                           {dataCores}
+                          <span
+                            style={{
+                              border: "none",
+                              padding: 5,
+                              borderRadius: 5,
+                            }}
+                          >
+                            {dataSlug ? (
+                              <img
+                                className="slugImgDiv"
+                                src={dataSlug}
+                                alt={dataSlug}
+                              />
+                            ) : (
+                              dataSlug
+                            )}
+                          </span>
                         </p>
-                        <span
-                          style={{
-                            border: "none",
-                            padding: 5,
-                            borderRadius: 5,
-                          }}
-                        >
-                          {dataSlug ? (
-                            <img
-                              className="slugImgDiv"
-                              src={dataSlug}
-                              alt={dataSlug}
-                            />
-                          ) : (
-                            dataSlug
-                          )}
-                        </span>
+
                         <div>
                           <div
                             role="group"
@@ -723,9 +656,10 @@ export const LoadPage = () => {
                             ""
                           ) : (
                             <div>
+                              <br />
                               <p>
                                 <strong style={{ fontSize: 20 }}>
-                                  Tamnho:{" "}
+                                  Tamanho:{" "}
                                 </strong>
                                 <span
                                   style={{

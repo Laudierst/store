@@ -54,7 +54,7 @@ export function Header() {
             </a>
           </li>
           <li>
-            <a href="/descpage">
+            <a href="/novidades">
               <AiFillAlert className="text-white h5 m-1 mb-2 p" />
               Novidade
             </a>

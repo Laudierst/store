@@ -100,35 +100,6 @@ export const DescriptionProducts = () => {
     //setCategoryData(res);
   };
 
-  //console.log(categoroy);
-
-  /*useEffect(() => {
-    const fetchBusinesses = () => {
-      return fetch("`/productcategoryid/${lastPart}`", { method: "GET" })
-        .then((res) => normalizeResponseErrors(res))
-        .then((res) => {
-          setTeste(res.json());
-        })
-        .then((rcvdBusinesses) => {
-          // some stuff
-        })
-        .catch((err) => {
-          // some error handling
-        });
-    };
-    fetchBusinesses();
-  }, []);
-
-  /*useEffect(() => {
-    async function fetchData() {
-      // You can await here
-      const response = await imgFilterImg6;
-      setDataImm5(response);
-    }
-    fetchData();
-  }, []); // Or [] if effect doesn't need props or state
-  //console.log(imgFilterImg6, "ls");*/
-
   localStorage.setItem("tm", divideSizeArrey[0]);
   const recebeTm = localStorage.getItem("tm");
 

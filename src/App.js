@@ -38,7 +38,7 @@ import { LoadPage } from "./components/leadPage/LoadPage"
 import { Acessorio } from "./components/categorys/Acessorio";
 import { ProductsLoading } from "./components/products/ProductsLoading";
 
-console.log("teste ls")
+//console.log("teste ls")
 
 register()
 // eslint-disable-next-line import/first
@@ -69,22 +69,6 @@ function App() {
     });
 
   },[])
-
-  /*setTimeout(() => {
-    localStorage.clear()
-  },30000)*/
-
-  //const localId = localStorage.getItem("id")
-
-  //let url = window.location.pathname;
-  //let parts = url.split("/");
-  //let lastPart = parts.pop() || parts.pop();
-
-  //window.history.pushState(null, null, `/${localId}`) 
-
-  /*useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
-  }, []);*/
   
   const router = createBrowserRouter([
     {
@@ -98,18 +82,18 @@ function App() {
     },
 
     {
-      path: "/descpage",
+      path: `/desc`,
+      element: <DescriptionProducts />,
+    },
+
+    {
+      path: "/novidades",
       element: <LoadPage />,
     },
 
     {
       path: "/cart",
       element: <Cart />,
-    },
-
-    {
-      path: `/desc`,
-      element: <DescriptionProducts />,
     },
 
     {

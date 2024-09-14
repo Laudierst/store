@@ -16,13 +16,6 @@ export function Realacionandos() {
 
   const [data, setData] = useState([]);
 
-  /*const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
-  }*/
-
   //const localId = localStorage.getItem("categoryId")
 
   const { isLoading } = useQuery("meuproduto", async () => {
@@ -37,15 +30,6 @@ export function Realacionandos() {
   });
 
   const lastPart = localStorage.getItem("id");
-  //const BNT = localStorage.getItem("name")
-
-  //let url = window.location.pathname;
-  //let parts = url.split("/");
-  //let lastPart = parts.pop() || parts.pop();
-
-  //const productFilter = product.filter(product => product)
-  //const prodFilter = [...productFilter]
-  //const dataProductFilter2 = prodFilter.filter(productData => (productData.id === localId))
 
   const filterProduct = data.map((pro) => pro);
   const dataProductFilter = filterProduct.filter(
