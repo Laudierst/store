@@ -115,8 +115,9 @@ export const Pricipal = styled.div`
     }
 
     .slugImgDiv {
-      width: 20%;
+      width: 25%;
       margin: 2px;
+      border-radius: 5px;
       border-radius: 5px;
     }
 

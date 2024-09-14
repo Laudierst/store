@@ -476,24 +476,6 @@ export const DescriptionProducts = () => {
             dataProductFilter.map((res) => {
               const { name, quantity, image, color, slug, frete } = res;
 
-              /*const corImg = [
-                {
-                  cor0: color[0],
-                  img0: slug[0],
-                  cor1: color[1],
-                  img1: slug[1],
-                  cor2: color[2],
-                  img2: slug[2],
-                  cor3: color[3],
-                  img4: slug[4],
-                  cor5: color[5],
-                  img5: slug[5],
-                  cor6: color[6],
-                  img6: slug[6],
-                },
-              ];*/
-              //console.log(dataCores);
-
               return (
                 <>
                   <div className="div">
@@ -544,28 +526,28 @@ export const DescriptionProducts = () => {
                             Frete {frete}
                           </span>
                         </div>
-                        <br />
                         <p style={{ fontSize: 20 }}>
                           <strong style={{ fontSize: 20 }}>Cor: </strong>
                           {dataCores}
+                          <span
+                            style={{
+                              border: "none",
+                              padding: 5,
+                              borderRadius: 5,
+                            }}
+                          >
+                            {dataSlug ? (
+                              <img
+                                className="slugImgDiv"
+                                src={dataSlug}
+                                alt={dataSlug}
+                              />
+                            ) : (
+                              dataSlug
+                            )}
+                          </span>
                         </p>
-                        <span
-                          style={{
-                            border: "none",
-                            padding: 5,
-                            borderRadius: 5,
-                          }}
-                        >
-                          {dataSlug ? (
-                            <img
-                              className="slugImgDiv"
-                              src={dataSlug}
-                              alt={dataSlug}
-                            />
-                          ) : (
-                            dataSlug
-                          )}
-                        </span>
+
                         <div>
                           <div
                             role="group"
@@ -723,9 +705,10 @@ export const DescriptionProducts = () => {
                             ""
                           ) : (
                             <div>
+                              <br />
                               <p>
                                 <strong style={{ fontSize: 20 }}>
-                                  Tamnho:{" "}
+                                  Tamanho:{" "}
                                 </strong>
                                 <span
                                   style={{
