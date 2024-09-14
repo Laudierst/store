@@ -25,12 +25,13 @@ export const ContainerFooter = styled.div`
       0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
       0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
     position: absolute;
-    margin-left: 100px;
+    //margin-left: 100px;
     margin-top: -25px;
-    color: aqua;
+    margin: auto;
+    color: white;
 
     @media (max-width: 768px) {
-      margin-left: 16px;
+      //margin-left: 16px;
       margin-top: 0px;
       font-size: 8vw;
     }
@@ -84,8 +85,9 @@ export const ContainerFooter = styled.div`
 
     @media (max-width: 768px) {
         & h5 {
-          margin: auto;
-          display: flex;
+          text-align: center;
+          margin-top: -75px;
+          font-size: 11px;
         }
       }
 
@@ -168,9 +170,9 @@ export const ContainerFooter2 = styled.div`
       height: 17vh;
 
       @media screen and (max-width: 768px) {
-        margin-top: -10px;
-      width: 100%;
-      height: 10vh;
+        margin-top: 12px;
+        width: 100%;
+        height: 5vh;
       }
     }
   }
@@ -190,7 +192,7 @@ export const ContainerFooter2 = styled.div`
       height: 8vh;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 923px) {
       margin-left: 20px;
 
       & h3 {
@@ -198,11 +200,11 @@ export const ContainerFooter2 = styled.div`
       }
 
       & h4 {
-        font-size: 12px;
+        font-size: 11px;
       }
 
       & img {
-        width: 18px;
+        width: 15px;
         height: 2vh;
         margin: 1px;
         margin-top: 1px;

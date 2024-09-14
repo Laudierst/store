@@ -38,7 +38,7 @@ export function Realacionandos() {
 
   const lastPart = localStorage.getItem("id");
   //const BNT = localStorage.getItem("name")
-  
+
   //let url = window.location.pathname;
   //let parts = url.split("/");
   //let lastPart = parts.pop() || parts.pop();
@@ -83,7 +83,7 @@ export function Realacionandos() {
 
     //const ids = localStorage.getItem("id");
     //navigate("/desc/" + ids)
-	  window.location.reload()
+    window.location.reload();
 
     //window.history.pushState(null, null, "/" + ids);
     //window.location.reload();
@@ -115,7 +115,10 @@ export function Realacionandos() {
                     </p>
                   </span>
                   <h3 className="oldPrice h3Relation">R${price},00 </h3>
-                  <h4 className="oldPricereal h4Relation"> R$ {novo_price},00</h4>
+                  <h4 className="oldPricereal h4Relation">
+                    {" "}
+                    R$ {novo_price},00
+                  </h4>
                 </div>
               </Link>
             );

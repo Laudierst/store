@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const ProductRelacionados = styled.div`
-  width: 100%;
+  width: 85%;
   background: transparent;
-  margin-left: 30px;
+  margin: auto;
+  display: flex;
 
   @media (max-width: 923px) {
     width: 96%;
@@ -24,16 +25,6 @@ export const ProductRelacionados = styled.div`
 
   & .section {
     width: 100%;
-
-    & h2 {
-      font-weight: bold;
-      color: #000000;
-      text-shadow: 0 2px 0 rgb(121, 116, 116), 0 3px 0 #c9c9c9, 0 1px 0 #bbb,
-      0 1px 0 #b9b9b9, 0 1px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
-      0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
-      0 3px 1px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
-      0 10px 10px rgba(0, 0, 0, 0.2), 0 30px 30px rgba(0, 0, 0, 0.15);
-    }
 
     & .divRelation {
       width: 220px;
@@ -78,7 +69,6 @@ export const ProductRelacionados = styled.div`
 
       & .h3Relation {
         color: #000000;
-        font-weight: bold;
         text-align: center;
       }
 
@@ -115,25 +105,17 @@ export const ProductRelacionados = styled.div`
       color: #00A650;
     }
 
-    & .cartImg {
-      width: 50px;
-      height: 50px;
-      flex-grow: 1;
-      color: #000000;
-      opacity: 0.7;
-      padding: 3px;
-    }
-
     & .oldPricereal {
-      font-size: 1.8rem;
+      font-size: 2rem;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       flex-grow: 1;
-      font-weight: initial;
+      font-weight: bold;
       color: #000000;
       opacity: 0.7;
       padding: 3px;
     }
 
-    & .buttonRelation {
+    & button {
       background-color: rgba(0, 255, 255, 0.39); /*#00FF00*/
       width: 90%;
       margin: auto;
@@ -149,17 +131,50 @@ export const ProductRelacionados = styled.div`
       }
 
     }
+
+    & .p {
+      margin-top: -5px;
+      font-size: 12px;
+      margin-bottom: 2px;
+      margin-left: 5px;
+      text-align: center;
+    }
+
+    & .frete {
+      font-size: 15px;
+      color: #00A650;
+    }
+
+    & .cartImg {
+      width: 25px;
+      height: 25px;
+      flex-grow: 1;
+      color: #000000;
+      opacity: 0.7;
+      padding: 3px;
+
+    }
     
+    & .oldPricereal {
+      font-size: 1.2rem;
+      flex-grow: 1;
+      color: #000000;
+      opacity: 0.7;
+      padding: 3px;
+      
+    }
+    
+
+
     @media (max-width: 923px) {
       width: 30%;
-      margin: 5px;
 
-      & .h5Relation {
+      & h5 {
         font-size: 0.9rem;
       }
 
       & .oldPricereal {
-        font-size: 1.2rem;
+        font-size: 1.1;
         flex-grow: 1;
         color: #000000;
         opacity: 0.7;
@@ -211,9 +226,8 @@ export const ProductRelacionados = styled.div`
       & .h3Relation {
         margin-top: 0px;
         color: #000000;
-        font-weight: bold;
         text-align: center;
-        font-size: 5vw;
+        font-size: 2vw;
       }
 
       & .spanRelation {
