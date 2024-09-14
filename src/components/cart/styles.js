@@ -28,7 +28,7 @@ export const CartContainer = styled.div`
     
   }
   @media (max-width: 923px) {
-    width: 75%;
+    width: 78%;
     margin-left: 19%;
     margin-top: -100px;
   }
@@ -43,15 +43,16 @@ export const CartEscapeArea = styled.div`
 `;
 
 export const CartContent = styled.div`
-  height: 100%;
-  min-width: 100%;
+  height: 60%;
+  min-width: 8%;
   z-index: 200;
   background-color: white;
   overflow-y: scroll;
   border: 1px solid;
+  position: fixed;
 
-  @media (max-width: 768px) {
-    min-width: 100%;
+  @media (max-width: 923px) {
+    min-width: 10%;
   }
 `;
 export const CartTitle = styled.p`

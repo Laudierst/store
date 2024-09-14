@@ -26,7 +26,7 @@ import { MarginTop, Pricipal } from "./desc";
 //import { ImageList } from "@material-ui/core";
 import { ProductImageMini } from "./products_desc";
 import Footer from "./footer/footer";
-import api from "../../api/api";
+//import api from "../../api/api";
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -43,17 +43,16 @@ export const LoadPage = () => {
   const [dataSlug, setdataSlug] = useState("");
   const [dataCores, setDatacores] = useState("");
   const [dataTamanho, setTamanho] = useState("");
-  const [dataImg5, setDataImm5] = useState([]);
+  const [dataImg5, setDataImm5] = useState("");
   const [categoroy, setCategory] = useState([]);
+  //const [teste, setTeste] = useState([]);
 
-  //console.log(categoroy);
-  //123Xerebebel*
-  //123xerebebel*
+  //console.log(teste);
 
   //let url = window.location.pathname;
   //let parts = url.split("/");
   //let lastPart = parts.pop() || parts.pop();
-  const lastPart = "831d8818-004e-4239-9d7b-69297a6c7bf8";
+  //const lastPart = localStorage.getItem("id");
 
   const navigate = useNavigate();
 
@@ -61,7 +60,7 @@ export const LoadPage = () => {
   const product = useSelector((productsSlice) => productsSlice.products.items);
 
   const dataProductFilter = product.filter(
-    (productData) => productData.id === lastPart
+    (productData) => productData.id === "831d8818-004e-4239-9d7b-69297a6c7bf8"
   );
 
   const priceFilter = dataProductFilter.map((pri) => pri.price);
@@ -71,18 +70,6 @@ export const LoadPage = () => {
 
   const imgFilterImg6 = dataProductFilter.map((img6) => img6.image[5]);
   //const divideImgArrey = { ...sizeFilter[0] };
-
-  const ProcessoImageCor = async () => {
-    //const reqName = await api.get("/category");
-    //const resName = await reqName.data;
-    const req = await api.get(`/productcategoryid/${lastPart}`);
-    const res = await req.data.products_categories[0].categories.name;
-
-    const response = await imgFilterImg6;
-    setDataImm5(response);
-    setCategory(res);
-    //setCategoryData(res);
-  };
 
   /*useEffect(() => {
     (async () => {
@@ -97,6 +84,40 @@ export const LoadPage = () => {
       //setCategoryData(res);
     })();
   }, []);*/
+
+  const ProcessoImageCor = async () => {
+    //const reqName = await api.get("/category");
+    //const resName = await reqName.data;
+    //const req = await api.get(`/productcategoryid/${lastPart}`);
+    //const res = await req.data.products_categories[0].categories.name;
+    const res = "category";
+
+    console.log(res);
+
+    const response = await imgFilterImg6;
+    setDataImm5(response);
+    setCategory(res);
+    //setCategoryData(res);
+  };
+
+  //console.log(categoroy);
+
+  /*useEffect(() => {
+    const fetchBusinesses = () => {
+      return fetch("`/productcategoryid/${lastPart}`", { method: "GET" })
+        .then((res) => normalizeResponseErrors(res))
+        .then((res) => {
+          setTeste(res.json());
+        })
+        .then((rcvdBusinesses) => {
+          // some stuff
+        })
+        .catch((err) => {
+          // some error handling
+        });
+    };
+    fetchBusinesses();
+  }, []);
 
   /*useEffect(() => {
     async function fetchData() {
@@ -302,6 +323,10 @@ export const LoadPage = () => {
     </LoadingPage>
   );
 
+  //const frete = {
+  //  frete: "FRETE GRATIS PARA DODO O BRASIL",
+  //};
+
   const productProntoAddCard = [
     {
       id: dataProductFilter[0]?.id,
@@ -452,21 +477,21 @@ export const LoadPage = () => {
               const { name, quantity, image, color, slug, frete } = res;
 
               /*const corImg = [
-                  {
-                    cor0: color[0],
-                    img0: slug[0],
-                    cor1: color[1],
-                    img1: slug[1],
-                    cor2: color[2],
-                    img2: slug[2],
-                    cor3: color[3],
-                    img4: slug[4],
-                    cor5: color[5],
-                    img5: slug[5],
-                    cor6: color[6],
-                    img6: slug[6],
-                  },
-                ];*/
+                {
+                  cor0: color[0],
+                  img0: slug[0],
+                  cor1: color[1],
+                  img1: slug[1],
+                  cor2: color[2],
+                  img2: slug[2],
+                  cor3: color[3],
+                  img4: slug[4],
+                  cor5: color[5],
+                  img5: slug[5],
+                  cor6: color[6],
+                  img6: slug[6],
+                },
+              ];*/
               //console.log(dataCores);
 
               return (
@@ -684,7 +709,6 @@ export const LoadPage = () => {
                               </button>
                             )}
                           </div>
-                          <br />
                         </div>
                         <div>
                           {divideSizeArrey[0] == "Padrão" ||
@@ -922,7 +946,16 @@ export const LoadPage = () => {
                         <div className="espaco2"></div>
                       )}
                     </div>
-                    {image[5] == "" ? "" : <p></p>}
+                    {image[5] == "" ? (
+                      ""
+                    ) : (
+                      <p>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                      </p>
+                    )}
                     <h4>
                       <strong>DESCRIÇÃO</strong>
                     </h4>
