@@ -90,6 +90,7 @@ export const ProductProd = styled.div`
       font-weight: bold;
 
       &:hover {
+        width: 110px;
         border: 1px solid;
         border-color: cyan;
         opacity: 0.8;

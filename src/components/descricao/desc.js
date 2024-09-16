@@ -217,17 +217,31 @@ export const Pricipal = styled.div`
       }
     }
 
+    & .cartDosesVezes {
+      word-break: keep-all;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    & .EnvioParaTodoPais {
+      word-break: keep-all;
+      font-weight: bold;
+      font-size: 20px;
+     
+    }
+
 		& .buttonCompra {
 			border: none;
 			width: 100%;
 			background: aqua;
 			margin: 2px;
-			padding: 5px;
+			padding: 10px;
 			border-radius: 6px;
 			font-weight: bold;
+      font-size: 20px;
 			
 			&:hover {
-				background: #FDD201;
+				background: #03CACA;
 				box-shadow: 0 0 0 0.3px black;
 			}
 

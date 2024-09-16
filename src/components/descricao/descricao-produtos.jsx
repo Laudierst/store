@@ -801,19 +801,22 @@ export const DescriptionProducts = () => {
                   </div>
                   <div className="div">
                     <div>
-                      <div className="">
-                        <strong>Envio para todo o país</strong>
+                      <div>
+                        <strong className="EnvioParaTodoPais">
+                          Envio para todo o país
+                        </strong>
                         <br />
                         <span>
                           Saiba os prazos de entrega e as formas de envio.
                         </span>
                         <div>
                           <p>
-                            <strong>Disponivel em Estoque</strong>
-                            <div>disponivel ({quantity})</div>
-
-                            <br />
-                            <strong>Finalize sua compra aqui!</strong>
+                            <strong className="EnvioParaTodoPais">
+                              Disponivel em Estoque
+                            </strong>
+                            <div className="EnvioParaTodoPais">
+                              disponivel ({quantity})
+                            </div>
                           </p>
                         </div>
 
@@ -839,25 +842,30 @@ export const DescriptionProducts = () => {
                         <div>
                           <br />
                           <p>
-                            <SwapHorizIcon /> <strong>Devolução Gratis</strong>{" "}
+                            <SwapHorizIcon />{" "}
+                            <stron className="EnvioParaTodoPais" g>
+                              Devolução Gratis
+                            </stron>{" "}
                             <br />
                             <span>
                               Você tem 7 dias a partir da data de recebimento.
                             </span>
                           </p>
                         </div>
-                        <br />
                         <div>
                           <p>
                             <VerifiedUserIcon />{" "}
-                            <strong>Compra Garantida</strong> <br />
+                            <strong className="EnvioParaTodoPais">
+                              Compra Garantida
+                            </strong>{" "}
+                            <br />
                             <span>
-                              eceba o produto que está esperando ou devolvemos o
-                              dinheiro.
+                              Receba o produto que está esperando ou devolvemos
+                              o dinheiro.
                             </span>
-                            <span>
-                              <FaCreditCard style={{ margin: "10px" }} /> Em até
-                              12x sem juros
+                            <br />
+                            <span className="cartDosesVezes">
+                              <FaCreditCard /> Em até 12x sem juros
                               <br />
                               {imgCart.map((imgCard) => (
                                 <img
