@@ -90,7 +90,6 @@ export const ProductProd = styled.div`
       font-weight: bold;
 
       &:hover {
-        width: 110px;
         border: 1px solid;
         border-color: cyan;
         opacity: 0.8;
@@ -103,6 +102,10 @@ export const ProductProd = styled.div`
         font-weight: bold;
         font-size: 0.8rem;
         text-align: center;
+
+        @media (max-width: 923px) {
+          width: 110px;
+        }
       }
 
       & img {

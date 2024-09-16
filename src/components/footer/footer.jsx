@@ -73,10 +73,7 @@ export default function Footer() {
       img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/hipercard@2x.png",
     },
     {
-      img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/payment-method-types/pix@2x.png",
-    },
-    {
-      img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/discover@2x.png",
+      img: "https://www.designi.com.br/images/preview/10028350.jpg",
     },
   ];
 
@@ -131,7 +128,7 @@ export default function Footer() {
       </ContainerFooter>
       <ContainerFooter2>
         <div>
-          <h4>Pagamento Aceito</h4>
+          <h4>Bandeiras</h4>
           {imgCart.map((img) => (
             <img src={img.img} alt="im" />
           ))}
