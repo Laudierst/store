@@ -918,6 +918,17 @@ export const DescriptionProducts = () => {
                         <br />
                         <br />
                         <br />
+                        <br />
+                        <br />
+                      </p>
+                    )}
+
+                    {dataSlug == "" ? (
+                      ""
+                    ) : (
+                      <p>
+                        <br />
+                        <br />
                       </p>
                     )}
                     <h4>
