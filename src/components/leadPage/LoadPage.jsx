@@ -888,6 +888,8 @@ export const LoadPage = () => {
                         <br />
                         <br />
                         <br />
+                        <br />
+                        <br />
                       </p>
                     )}
                     {dataSlug == "" ? (
