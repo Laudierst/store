@@ -49,7 +49,7 @@ export const LoadPage = () => {
 
   const lastPart = localStorage.getItem("id")
     ? localStorage.getItem("id")
-    : "d6cb56d9-8e1d-4712-98b5-be87f0452530";
+    : "674135a2-a2ed-4546-ab49-6930ac6dce49";
 
   localStorage.setItem("id", lastPart);
 
