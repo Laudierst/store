@@ -1,7 +1,13 @@
 /* eslint-disable eqeqeq */
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Button, CartVazio, SubTotal, TableCartFinalize } from "./styles";
+import {
+  Button,
+  CartVazio,
+  ContainerImg,
+  SubTotal,
+  TableCartFinalize,
+} from "./styles";
 import { Link } from "react-router-dom";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { FaPlus, FaWindowMinimize } from "react-icons/fa";
@@ -11,7 +17,8 @@ import {
   removeFromCart,
   cauculateTotal,
 } from "../../redux/cart/cart";
-import cartVazio from "./cartVazio.png";
+//import cartVazio from "./cartVazio.png";
+import cartVazio from "./images/cartVazio.png";
 //teste
 
 export default function CartFinalize() {
@@ -64,10 +71,16 @@ export default function CartFinalize() {
 
   const carrinhoVazio = () => {
     return (
-      <CartVazio>
-        <Link to="/">Volta para as compras</Link>
-        <img src={cartVazio} alt="img" />
-      </CartVazio>
+      <>
+        <CartVazio>
+          <Link className="a" to="/">
+            Volta para o inicio
+          </Link>
+        </CartVazio>
+        <ContainerImg>
+          <img src={cartVazio} alt="img" />
+        </ContainerImg>
+      </>
     );
   };
 
@@ -86,7 +99,7 @@ export default function CartFinalize() {
               <thead>
                 <tr className="m-auto h3">
                   <Link to="/" className="logoTitle">
-                    StylesTop
+                    PensanoEmMim
                   </Link>
                   <h2>Seu carrimho</h2>
                 </tr>
@@ -182,7 +195,11 @@ export default function CartFinalize() {
         </div>
       )}
       <div>
-        <SubTotal>Total: R$ {novo_amount},00</SubTotal>
+        {novo_amount == "" ? (
+          ""
+        ) : (
+          <SubTotal>Total: R$ {novo_amount},00</SubTotal>
+        )}
       </div>
     </>
   );

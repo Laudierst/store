@@ -136,12 +136,12 @@ export const TableCartFinalize = styled.div`
         0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
       }
 
-      &:hover {
+      /*&:hover {
         background: gray;
         color: rgba(0, 255, 255, 0.582);
         padding: 10px;
         border-radius: 8px;
-      }
+      }*/
     }
 
     & .namePosition {
@@ -161,12 +161,12 @@ export const TableCartFinalize = styled.div`
 
     & td {
       & .div1 {
-        width: 108px;
-        border: none;
+        width: 115px;
+        border: solid 1px;
         border-radius: 8px;
 
         & button {
-          background-color: white;
+          //background-color: white;
 
           @media (max-width: 923px) {
             margin-top: -3px;
@@ -214,11 +214,26 @@ export const TableCartFinalize = styled.div`
         }
       }
 
+      & .divimg {
+          position: absolute;
+
+          & img {
+            width: 150px;
+            height: 150px;
+          }
+          //margin-top: -5px;
+        }
+
       @media screen and (max-width: 923px) {
         font-size: 3vw;
 
         & .divimg {
           position: absolute;
+
+          & img {
+            width: 65px;
+            height: 90px;
+          }
           //margin-top: -5px;
         }
 
@@ -274,10 +289,18 @@ export const TableCartFinalize = styled.div`
         }
 
         .btnButton {
-          border: solid 0.1px;
+          border: none;
           border-radius: 8px;
           padding-left: 5px;
           padding-right: 5px;
+          background-color: transparent;
+          font-weight: lighter;
+          color: white;
+
+          @media(max-width: 923px) {
+            width: 89px;
+            height: 1px;
+          }
         }
 
         & .button {
@@ -348,10 +371,10 @@ export const CartVazio = styled.div`
   margin: auto;
   display: flex;
 
-  & a {
+  & .a {
     text-decoration: none;
-    margin-left: 20px;
-    margin-top: 10px;
+    display: block;
+    text-align: center;
     font-weight: bold;
     font-size: 2vw;
     width: 30%;
@@ -359,12 +382,16 @@ export const CartVazio = styled.div`
     text-shadow: 0 0 0 10px #000000;
   }
 
-  & img {
-    width: 100%;
-  }
-
   @media (max-width: 768px) {
    
+  }
+`
+
+export const ContainerImg = styled.div`
+   & img {
+    width: 100%;
+    margin: auto;
+    display: flex;
   }
 `
 
