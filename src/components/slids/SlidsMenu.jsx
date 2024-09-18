@@ -56,16 +56,16 @@ export function SlidsMenu() {
                 <div className="image">
                   <img
                     src={
-                      data[0].image === 0
+                      data[0]?.image === 0
                         ? "/imgCategory/calca-f.webp"
-                        : data[0].image
+                        : data[0]?.image
                     }
                     alt="img"
                   />
                 </div>
               </div>
               <div className="info">
-                <span className="name">{data[0].name}</span>
+                <span className="name">{data[0]?.name}</span>
               </div>
             </Link>
           </div>
@@ -302,7 +302,7 @@ export function SlidsMenu() {
               <Link to="/intimo">
                 <div className="item">
                   <div className="image">
-                    <img src={data[].image === 0 ? /imgCategory/intima.webp" : data[0].image} alt="img" />
+                    <img src={data[].image === 0 ? /imgCategory/intima.webp" : data[0]?.image} alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -314,7 +314,7 @@ export function SlidsMenu() {
               <Link to="/relogio">
                 <div className="item">
                   <div className="image">
-                    <img src={data[14].image === "" ? "/imgCategory/Relogio.webp" : data[0].image} : data[14].image} alt="img" />
+                    <img src={data[14].image === "" ? "/imgCategory/Relogio.webp" : data[0]?.image} : data[14].image} alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -326,7 +326,7 @@ export function SlidsMenu() {
               <Link to="/acessorio">
                 <div className="item">
                   <div className="image">
-                    <img src={data[14].image === "" ? "/imgCategory/Acessorio.webp" : data[0].image} : data[15].image} alt="img" />
+                    <img src={data[14].image === "" ? "/imgCategory/Acessorio.webp" : data[0]?.image} : data[15].image} alt="img" />
                   </div>
                 </div>
                 <div className="info">
@@ -338,7 +338,7 @@ export function SlidsMenu() {
               <Link to="/relogio">
                 <div className="item">
                   <div className="image">
-                    <img src={data[].image === 0 ? /imgCategory/relogio.webp" : data[0].image} alt="img" />
+                    <img src={data[].image === 0 ? /imgCategory/relogio.webp" : data[0]?.image} alt="img" />
                   </div>
                 </div>
                 <div className="info">
