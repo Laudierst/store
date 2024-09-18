@@ -43,10 +43,11 @@ export function Meuproduto() {
       <ContainerAMR>
         <img src="Logo.png" alt="img" className="img" />
         <Logo>
-          <a href="/">OnShops</a>
+          <a href="/">PensanoEmMim</a>
         </Logo>
         <a href="/">
-          <AiFillAlert className="mb-2 h4" /> ENCONTRE SEU PEDIDO AQUI - Onshops
+          <AiFillAlert className="mb-2 h4" /> ENCONTRE SEU PEDIDO AQUI -
+          PensanoEmMim
         </a>
       </ContainerAMR>
       <ContainerAMR2>

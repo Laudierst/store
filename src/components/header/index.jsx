@@ -16,12 +16,12 @@ export function Header() {
         <Logo>
           <a href="/">
             <img src={logosimples} alt="img" className="img3" />
-            OnShops
+            PensanoEmMim
           </a>
         </Logo>
         <a href="/">
-          <AiFillAlert className="mb-2 h4" /> SUPER OFERTAS - OnShops tem de
-          tudo
+          <AiFillAlert className="mb-2 h4" /> SUPER OFERTAS - PensanoEmMim tem
+          de tudo
         </a>
       </ContainerAMR>
 

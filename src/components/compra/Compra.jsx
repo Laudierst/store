@@ -122,8 +122,8 @@ function Compra() {
     title: cartUm[0]?.name,
     price: priceProduct,
     image: cartUm[0]?.image,
-    category: "OnShops",
-    description: "OnShops toda loja em promoção",
+    category: "PensanoEmMim",
+    description: "PensanoEmMim toda loja em promoção",
   };
 
   const handleSubmit = async (e) => {
