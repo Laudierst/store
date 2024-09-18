@@ -1,6 +1,6 @@
 {
-  "short_name": "OnShops",
-  "name": "OnShops tem de tudo",
+  "short_name": "PensanoEmMim",
+  "name": "PensanoEmMim tem de tudo",
   "manifest_version": 3,
   "version": "0.0.1",
   "start_url": ".",
@@ -24,6 +24,6 @@
       "sizes": "512x512"
     }
   ],
-  "description": "A OnShops é uma loja de variedades para você aproveitar o maximo.",
-  "id": "OnShops"
+  "description": "A PensanoEmMim é uma loja de variedades para você aproveitar o maximo.",
+  "id": "PensanoEmMim"
 }
