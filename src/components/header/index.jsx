@@ -7,7 +7,7 @@ import logosimples from "./images/LogoTop2.png";
 
 // Styles
 import { Container, Logo, ContainerAMR, ContainerPRT } from "./styles";
-import { SeartResults } from "./SeartResults";
+//import { SeartResults } from "./SeartResults";
 
 export function Header() {
   return (
@@ -25,7 +25,7 @@ export function Header() {
         </a>
       </ContainerAMR>
 
-      <SeartResults />
+      {/*<SeartResults />*/}
       <Container></Container>
       <ContainerPRT>
         <ul>
