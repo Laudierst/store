@@ -18,6 +18,7 @@ import { useSelector } from "react-redux";
 import { ProductsLoading } from "./ProductsLoading";
 import imgCopy from "./images/Decontos.gif";
 import "./styles.css";
+import api from "../../api/api";
 
 export const Products = () => {
   useEffect(() => {
@@ -33,6 +34,18 @@ export const Products = () => {
     });
   };
 
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const req = await api.get("/category");
+      const res = await req.data;
+
+      setData(res);
+    })();
+  }, []);
+
+  console.log(data);
   //const products = useSelector(productSlace => productSlace.products.items)
 
   function LocalSto(e) {
