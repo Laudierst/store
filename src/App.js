@@ -26,13 +26,13 @@ import { Camisetam } from "./components/categorys/Camisetam";
 import { Informatica } from "./components/categorys/Informatica";
 import { Body } from "./components/categorys/Body"
 import { Estetica } from "./components/categorys/Estetica"
-import { PoliticasDevolucaoTroca } from "./components/politicaTrocaDevolucao/politicaTrocaDevolucao";
 import { Meuproduto } from "./components/Meuproduto";
 import { Products } from "./components/products/Products"
 import { Bone } from "./components/categorys/Bone";
 import { Eletronica } from "./components/categorys/Eletronica";
 import { Smartphone } from "./components/categorys/Smartphone";
 import { register } from "swiper/element/bundle"
+import { PoliticasDevolucaoTroca } from "./components/politicaTrocaDevolucao/politicaTrocaDevolucao";
 import { DescriptionProducts } from "./components/descricao/descricao-produtos";
 import { LoadPage } from "./components/leadPage/LoadPage"
 import { Acessorio } from "./components/categorys/Acessorio";
