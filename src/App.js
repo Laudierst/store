@@ -86,10 +86,10 @@ function App() {
     //  element: <DescriptionProducts />,
     //},
 //
-    {
-      path: "/novidades",
-      element: <LoadPage />,
-    },
+    //{
+    //  path: "/novidades",
+    //  element: <LoadPage />,
+    //},
 
     {
       path: "/cart",
