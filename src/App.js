@@ -9,33 +9,33 @@ import Cart from "./components/cart";
 import CartFinalize from "./components/cart/cartFinalize";
 import Politicas from "./components/politica/Politicas";
 //import ReactGA from "react-ga" 
-import Compra from "./components/compra/Compra";
-import { Vestido } from "./components/categorys/Vestido";
-import { Calcado } from "./components/categorys/Calcado";
-import { Relogio } from "./components/categorys/Relogio";
-import { AudioVideo } from "./components/categorys/AudioVideo";
-import { Intima } from "./components/categorys/Intima";
-import { Macaquinho } from "./components/categorys/Macaquinho";
-import { Conjuntof } from "./components/categorys/Conjuntof";
-import { Calcaf } from "./components/categorys/Calcaf";
-import { Bolsa } from "./components/categorys/Bolsa";
-import { Shortf } from "./components/categorys/Shortf";
-import { Saia } from "./components/categorys/Saia";
-import { Camisetaf } from "./components/categorys/Camisetaf";
-import { Camisetam } from "./components/categorys/Camisetam";
-import { Informatica } from "./components/categorys/Informatica";
-import { Body } from "./components/categorys/Body"
-import { Estetica } from "./components/categorys/Estetica"
-import { PoliticasDevolucaoTroca } from "./components/politicaTrocaDevolucao/politicaTrocaDevolucao";
-import { Meuproduto } from "./components/Meuproduto";
-import { Products } from "./components/products/ProductsList"
-import { Bone } from "./components/categorys/Bone";
-import { Eletronica } from "./components/categorys/Eletronica";
-import { Smartphone } from "./components/categorys/Smartphone";
+//import Compra from "./components/compra/Compra";
+//import { Vestido } from "./components/categorys/Vestido";
+//import { Calcado } from "./components/categorys/Calcado";
+//import { Relogio } from "./components/categorys/Relogio";
+//import { AudioVideo } from "./components/categorys/AudioVideo";
+//import { Intima } from "./components/categorys/Intima";
+//import { Macaquinho } from "./components/categorys/Macaquinho";
+//import { Conjuntof } from "./components/categorys/Conjuntof";
+//import { Calcaf } from "./components/categorys/Calcaf";
+//import { Bolsa } from "./components/categorys/Bolsa";
+//import { Shortf } from "./components/categorys/Shortf";
+//import { Saia } from "./components/categorys/Saia";
+//import { Camisetaf } from "./components/categorys/Camisetaf";
+//import { Camisetam } from "./components/categorys/Camisetam";
+//import { Informatica } from "./components/categorys/Informatica";
+//import { Body } from "./components/categorys/Body"
+//import { Estetica } from "./components/categorys/Estetica"
+//import { Meuproduto } from "./components/Meuproduto";
+//import { Bone } from "./components/categorys/Bone";
+//import { Eletronica } from "./components/categorys/Eletronica";
+//import { Smartphone } from "./components/categorys/Smartphone";
+//import { DescriptionProducts } from "./components/descricao/descricao-produtos";
+//import { LoadPage } from "./components/leadPage/LoadPage"
+//import { Acessorio } from "./components/categorys/Acessorio";
 import { register } from "swiper/element/bundle"
-import { DescriptionProducts } from "./components/descricao/descricao-produtos";
-import { LoadPage } from "./components/leadPage/LoadPage"
-import { Acessorio } from "./components/categorys/Acessorio";
+import { Products } from "./components/products/Products"
+import { PoliticasDevolucaoTroca } from "./components/politicaTrocaDevolucao/politicaTrocaDevolucao";
 import { ProductsLoading } from "./components/products/ProductsLoading";
 
 //console.log("teste ls")
@@ -81,21 +81,13 @@ function App() {
       element: <ProductsLoading />,
     },
 
-    {
-      path: `/desc`,
-      element: <DescriptionProducts />,
-    },
-
-    {
-      path: "/novidades",
-      element: <LoadPage />,
-    },
-
+    
+    
     {
       path: "/cart",
       element: <Cart />,
     },
-
+    
     {
       path: "/cartFinali",
       element: <CartFinalize />,
@@ -108,92 +100,100 @@ function App() {
       path: "/politicatrocadevolucao",
       element: <PoliticasDevolucaoTroca />,
     },
-    {
-      path: "/compra",
-      element: <Compra />,
-    },
-    {
-      path: "/vestido",
-      element: <Vestido />,
-    }, {
-      path: "/calcados",
-      element: <Calcado />,
-    },
-    {
-      path: "/relogio",
-      element: <Relogio />,
-    },
-    {
-      path: "/audiovideo",
-      element: <AudioVideo />,
-    },
-    {
-      path: "/intimo",
-      element: <Intima />,
-    },
-    {
-      path: "/macaquinho",
-      element: <Macaquinho />,
-    },
-    {
-      path: "/conjuntof",
-      element: <Conjuntof />,
-    },
-    {
-      path: "/calcaf",
-      element: <Calcaf />,
-    },
-    {
-      path: "/bolsa",
-      element: <Bolsa />,
-    },
-    {
-      path: "/acessorio",
-      element: <Acessorio />,
-    },
-    {
-      path: "/body",
-      element: <Body />,
-    },
-    {
-      path: "/shortf",
-      element: <Shortf />,
-    },
-    {
-      path: "/saia",
-      element: <Saia />,
-    },
-    {
-      path: "/camisetaf",
-      element: <Camisetaf />,
-    },{
-      path: "/camisetam",
-      element: <Camisetam />,
-    },
-    {
-      path: "/informatica",
-      element: <Informatica />,
-    },
-    {
-      path: "/estetica",
-      element: <Estetica />,
-    },
-    {
-      path: "/meuproduto",
-      element: <Meuproduto />,
-    },
-    {
-      path: "/bone",
-      element: <Bone />,
-    },
-    {
-      path: "/eletronico",
-      element: <Eletronica />,
-    },
-    {
-      path: "/smartphone",
-      element: <Smartphone />,
-    }
+    //{
+    //  path: `/desc`,
+    //  element: <DescriptionProducts />,
+    //},
+    //{
+    //  path: "/novidades",
+    //  element: <LoadPage />,
+    //},
+    //{
+    //  path: "/compra",
+    //  element: <Compra />,
+    //},
+    //{
+    //  path: "/vestido",
+    //  element: <Vestido />,
+    //}, {
+    //  path: "/calcados",
+    //  element: <Calcado />,
+    //},
+    //{
+    //  path: "/relogio",
+    //  element: <Relogio />,
+    //},
+    //{
+    //  path: "/audiovideo",
+    //  element: <AudioVideo />,
+    //},
+    //{
+    //  path: "/intimo",
+    //  element: <Intima />,
+    //},
+    //{
+    //  path: "/macaquinho",
+    //  element: <Macaquinho />,
+    //},
+    //{
+    //  path: "/conjuntof",
+    //  element: <Conjuntof />,
+    //},
+    //{
+    //  path: "/calcaf",
+    //  element: <Calcaf />,
+    //},
+    //{
+    //  path: "/bolsa",
+    //  element: <Bolsa />,
+    //},
+    //{
+    //  path: "/acessorio",
+    //  element: <Acessorio />,
+    //},
+    //{
+    //  path: "/body",
+    //  element: <Body />,
+    //},
+    //{
+    //  path: "/shortf",
+    //  element: <Shortf />,
+    //},
+    //{
+    //  path: "/saia",
+    //  element: <Saia />,
+    //},
+    //{
+    //  path: "/camisetaf",
+    //  element: <Camisetaf />,
+    //},{
+    //  path: "/camisetam",
+    //  element: <Camisetam />,
+    //},
+    //{
+    //  path: "/informatica",
+    //  element: <Informatica />,
+    //},
+    //{
+    //  path: "/estetica",
+    //  element: <Estetica />,
+    //},
+    //{
+    //  path: "/meuproduto",
+    //  element: <Meuproduto />,
+    //},
+    //{
+    //  path: "/bone",
+    //  element: <Bone />,
+    //},
+    //{
+    //  path: "/eletronico",
+    //  element: <Eletronica />,
+    //},
+    //{
+    //  path: "/smartphone",
+    //  element: <Smartphone />,
+    //}
 
   ]);  
 
