@@ -34,7 +34,7 @@ import { Eletronica } from "./components/categorys/Eletronica";
 import { Smartphone } from "./components/categorys/Smartphone";
 import { register } from "swiper/element/bundle"
 //import { DescriptionProducts } from "./components/descricao/descricao-produtos";
-import { LoadPage } from "./components/leadPage/LoadPage"
+//import { LoadPage } from "./components/leadPage/LoadPage"
 import { Acessorio } from "./components/categorys/Acessorio";
 import { ProductsLoading } from "./components/products/ProductsLoading";
 
