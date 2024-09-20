@@ -190,7 +190,7 @@ export const Products = () => {
       <Header />
       <SlidsProducts />
       {<SlidsMenu />}
-      {filterCategoryBolsaFeminina[0]?.name == "" ? (
+      {filterCategoryBolsaFeminina == "" ? (
         <ProductsLoading />
       ) : (
         <div>
@@ -238,7 +238,7 @@ export const Products = () => {
           </ProductProd>
           <TitleProduct>
             <h2 className="titleProduct">
-              {filterCategoryCalcados[0]?.name == ""
+              {filterCategoryCalcados == ""
                 ? ""
                 : filterCategoryCalcados[0]?.name}
             </h2>
@@ -280,7 +280,7 @@ export const Products = () => {
           </ProductProd>
           <TitleProduct>
             <h2 className="titleProduct">
-              {filterCategoryVestido[0]?.name == ""
+              {filterCategoryVestido == ""
                 ? ""
                 : filterCategoryVestido[0]?.name}
             </h2>
@@ -365,9 +365,7 @@ export const Products = () => {
           </ProductProd>
           <TitleProduct>
             <h2 className="titleProduct">
-              {filterCategorySaia[0]?.name == ""
-                ? ""
-                : filterCategorySaia[0]?.name}
+              {filterCategorySaia == "" ? "" : filterCategorySaia[0]?.name}
             </h2>
             <hr />
           </TitleProduct>
@@ -421,9 +419,7 @@ export const Products = () => {
           {/* <SlidsListProductsRevert />*/}
           <TitleProduct>
             <h2 className="titleProduct">
-              {filterCategoryBody[0]?.name == ""
-                ? ""
-                : filterCategoryBody[0]?.name}
+              {filterCategoryBody == "" ? "" : filterCategoryBody[0]?.name}
             </h2>
             <hr />
           </TitleProduct>
@@ -463,7 +459,7 @@ export const Products = () => {
           </ProductProd>
           <TitleProduct>
             <h2 className="titleProduct">
-              {filterCategoryEstetica[0]?.name == ""
+              {filterCategoryEstetica == ""
                 ? ""
                 : filterCategoryEstetica[0]?.name}
             </h2>
@@ -510,7 +506,7 @@ export const Products = () => {
             ) : (
               <>
                 <h2 className="titleProduct">
-                  {filterCategoryMacaquinho[0]?.name == ""
+                  {filterCategoryMacaquinho == ""
                     ? ""
                     : filterCategoryMacaquinho[0]?.name}
                 </h2>
@@ -562,7 +558,7 @@ export const Products = () => {
             ) : (
               <>
                 <h2 className="titleProduct">
-                  {filterCategoryIntimo[0]?.name == ""
+                  {filterCategoryIntimo == ""
                     ? ""
                     : filterCategoryIntimo[0]?.name}
                 </h2>
@@ -579,7 +575,7 @@ export const Products = () => {
               <>
                 <TitleProduct>
                   <h2 className="titleProduct">
-                    {filterCategoryEletronico[0]?.name == ""
+                    {filterCategoryEletronico == ""
                       ? ""
                       : filterCategoryEletronico[0]?.name}
                   </h2>
@@ -684,7 +680,7 @@ export const Products = () => {
                   ) : (
                     <>
                       <h2 className="titleProduct">
-                        {filterCategoryAcessorio[0]?.name == ""
+                        {filterCategoryAcessorio == ""
                           ? ""
                           : filterCategoryAcessorio[0]?.name}
                       </h2>
@@ -704,7 +700,7 @@ export const Products = () => {
                     ) : (
                       <ProductProd>
                         <section>
-                          {Intimos[0]?.map((res) =>
+                          {Intimos.map((res) =>
                             res.map((req) => {
                               //console.log(filterCategoryVestido)
 
@@ -754,7 +750,7 @@ export const Products = () => {
                       ) : (
                         <>
                           <h2 className="titleProduct">
-                            {filterCategoryIntimo[0]?.name == ""
+                            {filterCategoryIntimo == ""
                               ? ""
                               : filterCategoryIntimo[0]?.name}
                           </h2>
@@ -768,7 +764,7 @@ export const Products = () => {
                       ) : (
                         <ProductProd>
                           <section>
-                            {Acessorios[0]?.map((res) =>
+                            {Acessorios.map((res) =>
                               res.map((req) => {
                                 //console.log(filterCategoryVestido)
 
