@@ -190,7 +190,7 @@ export const Products = () => {
       <Header />
       <SlidsProducts />
       {<SlidsMenu />}
-      {filterCategoryBolsaFeminina == "" ? (
+      {filterCategoryBolsaFeminina[0]?.name == "" ? (
         <ProductsLoading />
       ) : (
         <div>
@@ -238,7 +238,7 @@ export const Products = () => {
           </ProductProd>
           <TitleProduct>
             <h2 className="titleProduct">
-              {filterCategoryCalcados == ""
+              {filterCategoryCalcados[0]?.name == ""
                 ? ""
                 : filterCategoryCalcados[0]?.name}
             </h2>
@@ -280,7 +280,7 @@ export const Products = () => {
           </ProductProd>
           <TitleProduct>
             <h2 className="titleProduct">
-              {filterCategoryVestido == ""
+              {filterCategoryVestido[0]?.name == ""
                 ? ""
                 : filterCategoryVestido[0]?.name}
             </h2>
@@ -365,7 +365,9 @@ export const Products = () => {
           </ProductProd>
           <TitleProduct>
             <h2 className="titleProduct">
-              {filterCategorySaia == "" ? "" : filterCategorySaia[0]?.name}
+              {filterCategorySaia[0]?.name == ""
+                ? ""
+                : filterCategorySaia[0]?.name}
             </h2>
             <hr />
           </TitleProduct>
@@ -419,7 +421,9 @@ export const Products = () => {
           {/* <SlidsListProductsRevert />*/}
           <TitleProduct>
             <h2 className="titleProduct">
-              {filterCategoryBody == "" ? "" : filterCategoryBody[0]?.name}
+              {filterCategoryBody[0]?.name == ""
+                ? ""
+                : filterCategoryBody[0]?.name}
             </h2>
             <hr />
           </TitleProduct>
@@ -459,7 +463,7 @@ export const Products = () => {
           </ProductProd>
           <TitleProduct>
             <h2 className="titleProduct">
-              {filterCategoryEstetica == ""
+              {filterCategoryEstetica[0]?.name == ""
                 ? ""
                 : filterCategoryEstetica[0]?.name}
             </h2>
@@ -506,7 +510,7 @@ export const Products = () => {
             ) : (
               <>
                 <h2 className="titleProduct">
-                  {filterCategoryMacaquinho == ""
+                  {filterCategoryMacaquinho[0]?.name == ""
                     ? ""
                     : filterCategoryMacaquinho[0]?.name}
                 </h2>
@@ -558,7 +562,7 @@ export const Products = () => {
             ) : (
               <>
                 <h2 className="titleProduct">
-                  {filterCategoryIntimo == ""
+                  {filterCategoryIntimo[0]?.name == ""
                     ? ""
                     : filterCategoryIntimo[0]?.name}
                 </h2>
@@ -575,7 +579,7 @@ export const Products = () => {
               <>
                 <TitleProduct>
                   <h2 className="titleProduct">
-                    {filterCategoryEletronico == ""
+                    {filterCategoryEletronico[0]?.name == ""
                       ? ""
                       : filterCategoryEletronico[0]?.name}
                   </h2>
@@ -680,7 +684,7 @@ export const Products = () => {
                   ) : (
                     <>
                       <h2 className="titleProduct">
-                        {filterCategoryAcessorio == ""
+                        {filterCategoryAcessorio[0]?.name == ""
                           ? ""
                           : filterCategoryAcessorio[0]?.name}
                       </h2>
@@ -750,7 +754,7 @@ export const Products = () => {
                       ) : (
                         <>
                           <h2 className="titleProduct">
-                            {filterCategoryIntimo == ""
+                            {filterCategoryIntimo[0]?.name == ""
                               ? ""
                               : filterCategoryIntimo[0]?.name}
                           </h2>
