@@ -23,7 +23,7 @@ export function Meuproduto() {
     }
   });
 
-  console.log(products);
+  //console.log(products);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -36,7 +36,7 @@ export function Meuproduto() {
   //Filtro de pesquisa do input
   const filterData = products?.filter((e) => e.code_compra == dados);
 
-  console.log(dados);
+  //console.log(dados);
 
   return (
     <>
