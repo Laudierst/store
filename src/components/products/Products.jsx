@@ -3,25 +3,22 @@
 //import { useHistory } from 'react-router-dom'
 //import ReactLoading from 'react-loading';
 //import { useSelector } from 'react-redux';
-//import { ProductProd, ContainerVerMais, TitleProduct } from "./products";
-//import { FaCreditCard } from "react-icons/fa";
-//import { Link } from "react-router-dom";
-//import { useEffect, useState } from "react";
+import { ProductProd, ContainerVerMais, TitleProduct } from "./products";
+import { FaCreditCard } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Header } from "../header";
-//import SlidsProducts from "../slids/SlidsProducts";
+import SlidsProducts from "../slids/SlidsProducts";
 //import { SlidsMenu } from "../slids/SlidsMenu";
 import Footer from "../footer/footer";
-//import { SlidsListProducts } from "../slids/SlidsListProducts";
-//import { SlidsListProductsRevert } from "../slids/SlidsListProductsRevert";
-//import { urlNova } from '../../redux/cart/cart';
-//import { useSelector } from "react-redux";
-//import { ProductsLoading } from "./ProductsLoading";
-//import imgCopy from "./images/Decontos.gif";
+import { SlidsListProducts } from "../slids/SlidsListProducts";
+import { useSelector } from "react-redux";
+import { ProductsLoading } from "./ProductsLoading";
+import imgCopy from "./images/Decontos.gif";
 import "./styles.css";
-//import api from "../../api/api";
+import api from "../../api/api";
 
 export const Products = () => {
-  /*
   useEffect(() => {
     window.scroll({
       top: 100,
@@ -46,9 +43,9 @@ export const Products = () => {
     })();
   }, []);
 
-  //console.log(data);
+  console.log(data);
   //const products = useSelector(productSlace => productSlace.products.items)
-  
+
   function LocalSto(e) {
     localStorage.removeItem("id");
     localStorage.removeItem("bar_code");
@@ -185,13 +182,12 @@ export const Products = () => {
 
   const nameCategory = "Calça Feminina";
   const nameCategory1 = "Conjunto Feminina";
-*/
+
   return (
     <>
       <Header />
-      {/*<SlidsProducts />
-      {<SlidsMenu />}
-      {/*
+      <SlidsProducts />
+      {/*<SlidsMenu />*/}
       {filterCategoryBolsaFeminina == "" ? (
         <ProductsLoading />
       ) : (
@@ -418,7 +414,7 @@ export const Products = () => {
               <img src={imgCopy} alt="img" className="imgCopy" />
             </a>
           </>
-          {/* <SlidsListProductsRevert />
+          {/* <SlidsListProductsRevert />*/}
           <TitleProduct>
             <h2 className="titleProduct">
               {filterCategoryBody == "" ? "" : filterCategoryBody[0]?.name}
@@ -819,7 +815,6 @@ export const Products = () => {
           </ContainerVerMais>
         </div>
       )}
-    */}
       <Footer />
     </>
   );
