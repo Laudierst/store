@@ -77,10 +77,12 @@ export const Products = () => {
   const tsLoading = [categorys];
   const listCategory = tsLoading.map((res) => res.items);
 
+  const listCategorys = [listCategory];
+
   //console.log(categorys, "teste") 790e0e23-e3ec-4084-b61d-986aa062e8c6
 
   //Filtragem de categorias por id
-  const filterCategoryBlusaFeminina = listCategory[0]?.filter(
+  const filterCategoryBlusaFeminina = listCategorys[0]?.filter(
     (categ) => categ.id == "93158fac-7da5-4502-ab51-fd88b147fba7"
   );
   const dataBlusaFeminina = filterCategoryBlusaFeminina.map(
@@ -88,9 +90,11 @@ export const Products = () => {
   );
   const BlusaFeminina = dataBlusaFeminina.map((res) => res);
 
-  console.log(BlusaFeminina);
+  let BlusaFemininas = [BlusaFeminina];
 
-  const filterCategoryBolsaFeminina = listCategory[0]?.filter(
+  //console.log(BlusaFeminina);
+
+  const filterCategoryBolsaFeminina = listCategorys[0]?.filter(
     (categ) => categ.id == "ecd13019-463a-4966-a9ce-52b50bec3448"
   );
   const dataBolsaFeminina = filterCategoryBolsaFeminina.map(
@@ -98,7 +102,7 @@ export const Products = () => {
   );
   const BolsaFeminina = dataBolsaFeminina.map((res) => res);
 
-  const filterCategoryCalcados = listCategory[0]?.filter(
+  const filterCategoryCalcados = listCategorys[0]?.filter(
     (categ) => categ.id == "e3dbb7aa-d442-4721-ac17-18c61e895da8"
   );
   const dataCalcados = filterCategoryCalcados.map(
@@ -106,7 +110,7 @@ export const Products = () => {
   );
   const Calcados = dataCalcados.map((res) => res);
 
-  const filterCategoryVestido = listCategory[0]?.filter(
+  const filterCategoryVestido = listCategorys[0]?.filter(
     (categ) => categ.id == "0daf8636-e40d-42dd-ac1c-8df574068932"
   );
   const dataVestido = filterCategoryVestido.map(
@@ -114,7 +118,7 @@ export const Products = () => {
   );
   const Vestido = dataVestido.map((res) => res);
 
-  const filterCategoryConjuntoFeminino = listCategory[0]?.filter(
+  const filterCategoryConjuntoFeminino = listCategorys[0]?.filter(
     (categ) => categ.id == "89669525-dace-4256-a783-9ad59cd03622"
   );
   const dataConjuntoFeminino = filterCategoryConjuntoFeminino.map(
@@ -122,13 +126,13 @@ export const Products = () => {
   );
   const ConjuntoFeminino = dataConjuntoFeminino.map((res) => res);
 
-  const filterCategorySaia = listCategory[0]?.filter(
+  const filterCategorySaia = listCategorys[0]?.filter(
     (categ) => categ.id == "a8990632-bace-4550-b722-6bae4fd37b02"
   );
   const dataSaia = filterCategorySaia.map((res) => res.products_categories);
   const Saia = dataSaia.map((res) => res);
 
-  const filterCategoryEletronico = listCategory[0]?.filter(
+  const filterCategoryEletronico = listCategorys[0]?.filter(
     (categ) => categ.id == "a9ea721a-f1f0-4fd0-b8ea-402430da8f9d"
   );
   const dataEletronico = filterCategoryEletronico.map(
@@ -136,13 +140,13 @@ export const Products = () => {
   );
   const Eletronico = dataEletronico.map((res) => res);
 
-  const filterCategoryBody = listCategory[0]?.filter(
+  const filterCategoryBody = listCategorys[0]?.filter(
     (categ) => categ.id == "faa46edc-e25d-49e6-9054-6a47dde483d4"
   );
   const dataBody = filterCategoryBody.map((res) => res.products_categories);
   const Body = dataBody.map((res) => res);
 
-  const filterCategoryEstetica = listCategory[0]?.filter(
+  const filterCategoryEstetica = listCategorys[0]?.filter(
     (categ) => categ.id == "0d45c7cc-493f-481f-8b26-d5294fe1601c"
   );
   const dataEstetica = filterCategoryEstetica.map(
@@ -150,7 +154,7 @@ export const Products = () => {
   );
   const Estetica = dataEstetica.map((res) => res);
 
-  const filterCategoryMacaquinho = listCategory[0]?.filter(
+  const filterCategoryMacaquinho = listCategorys[0]?.filter(
     (categ) => categ.id == "389354f6-0fbe-4ff3-8fd7-1b56e68db756"
   );
   const dataMacaquinho = filterCategoryMacaquinho.map(
@@ -158,19 +162,25 @@ export const Products = () => {
   );
   const Macaquinho = dataMacaquinho.map((res) => res);
 
-  const filterCategoryIntimo = listCategory[0]?.filter(
+  const filterCategoryIntimo = listCategorys[0]?.filter(
     (categ) => categ.id == "3c83dc7a-b3f1-42d9-8098-90763370e84c"
   );
   const dataIntimo = filterCategoryIntimo.map((res) => res.products_categories);
   const Intimo = dataIntimo.map((res) => res);
 
-  const filterCategoryAcessorio = listCategory[0]?.filter(
+  const filterCategoryAcessorio = listCategorys[0]?.filter(
     (categ) => categ.id == "69553e36-9e1d-4807-b089-470725b510f6"
   );
-  const dataAcessorio = filterCategoryAcessorio.map(
+
+  let filterCategoryAcessorios = [filterCategoryAcessorio];
+
+  const dataAcessorio = filterCategoryAcessorios[0]?.map(
     (res) => res.products_categories
   );
-  const Acessorio = dataAcessorio.map((res) => res);
+
+  let dataAcessorios = [dataAcessorio];
+
+  const Acessorio = dataAcessorios.map((res) => res);
 
   //console.log(Vestido[0][2])
 
@@ -199,7 +209,7 @@ export const Products = () => {
           </TitleProduct>
           <ProductProd>
             <section>
-              {BlusaFeminina.map((res) =>
+              {BlusaFemininas.map((res) =>
                 res.map((req) => {
                   //localStorage.removeItem("id")
                   const { id, name, image, price } = req.products;
