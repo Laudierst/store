@@ -19,6 +19,8 @@ export const SeartResults = () => {
   const products = useSelector((state) => state.products.items);
   //const data = [products];
 
+  const productItens = [products];
+
   const handleCartClick = () => {
     setCartIsVisible(true);
   };
@@ -50,16 +52,6 @@ export const SeartResults = () => {
     window.location.reload();
   }
 
-  /*const response = products
-    ?.filter((val) => {
-      if (searchTme === "") {
-        return val;
-      } else if (val.name.toLowerCase().includes(searchTme.toLowerCase())) {
-        return val;
-      }
-    })
-    .map((item) => item);*/
-
   //const resutList = data.map((item) => {
   return (
     <>
@@ -82,7 +74,7 @@ export const SeartResults = () => {
       </Container>
       <div>
         {searchTme.length >= 6
-          ? products
+          ? productItens[0]
               ?.filter((val) => {
                 if (searchTme === "") {
                   return val;

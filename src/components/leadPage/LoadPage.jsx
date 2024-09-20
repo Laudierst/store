@@ -58,16 +58,20 @@ export const LoadPage = () => {
   const cart = useSelector((cartItems) => cartItems.cart.cartItems.length);
   const product = useSelector((productsSlice) => productsSlice.products.items);
 
-  const dataProductFilter = product?.filter(
+  const productLists = [product];
+
+  const dataProductFilter = productLists[0]?.filter(
     (productData) => productData.id === lastPart
   );
 
-  const priceFilter = dataProductFilter.map((pri) => pri.price);
+  let dataProductFilterList = [dataProductFilter];
 
-  const sizeFilter = dataProductFilter.map((pri) => pri.size);
+  const priceFilter = dataProductFilterList[0]?.map((pri) => pri.price);
+
+  const sizeFilter = dataProductFilterList[0]?.map((pri) => pri.size);
   const divideSizeArrey = { ...sizeFilter[0] };
 
-  const imgFilterImg6 = dataProductFilter.map((img6) => img6.image[5]);
+  const imgFilterImg6 = dataProductFilterList[0]?.map((img6) => img6.image[5]);
 
   const ProcessoImageCor = async () => {
     const res = "category";

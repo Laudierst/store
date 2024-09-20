@@ -41,11 +41,12 @@ export function SlidsDescriptionOfertas() {
   //const dataProductFilter2 = prodFilter?.filter(productData => (productData.id === localId))
 
   const filterProduct = data.map((pro) => pro);
-  const dataProductFilter = filterProduct?.filter(
+  const dataProducts = [filterProduct];
+  const dataProductFilter = dataProducts[0]?.filter(
     (productData) => productData.id === localId
   );
   const filterProductBarcode = dataProductFilter.map((pro) => pro.bar_code);
-  const dataProductFilterBarcodeList = filterProduct?.filter(
+  const dataProductFilterBarcodeList = dataProducts[0]?.filter(
     (productData) => productData.bar_code == filterProductBarcode[0][0]
   );
 

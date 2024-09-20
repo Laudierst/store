@@ -32,7 +32,10 @@ export const Comentarios = () => {
   const comentarios = useSelector(
     (comnetarioSlice) => comnetarioSlice.comentarios.items
   );
-  const comnetFilter = comentarios?.filter(
+
+  const productComent = [comentarios];
+
+  const comnetFilter = productComent[0]?.filter(
     (comentData) => comentData.idProduct === localId
   );
   //console.log(comnetFilter, " t");

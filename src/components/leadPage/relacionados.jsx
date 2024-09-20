@@ -32,11 +32,12 @@ export function Realacionandos() {
   const lastPart = localStorage.getItem("id");
 
   const filterProduct = data.map((pro) => pro);
-  const dataProductFilter = filterProduct?.filter(
+  const dataProduct = [filterProduct];
+  const dataProductFilter = dataProduct[0]?.filter(
     (productData) => productData.id === lastPart
   );
   const filterProductBarcode = dataProductFilter.map((pro) => pro.bar_code);
-  const dataProductFilterBarcodeList = filterProduct?.filter(
+  const dataProductFilterBarcodeList = dataProduct[0]?.filter(
     (productData) => productData.bar_code == filterProductBarcode[0]
   );
 

@@ -48,11 +48,15 @@ export function Realacionandos() {
   //const dataProductFilter2 = prodFilter?.filter(productData => (productData.id === localId))
 
   const filterProduct = data.map((pro) => pro);
-  const dataProductFilter = filterProduct?.filter(
+  const filterListProducters = [filterProduct];
+  const dataProductFilter = filterListProducters[0]?.filter(
     (productData) => productData.id === lastPart
   );
+
+  const filterListProducts = [filterProduct];
+
   const filterProductBarcode = dataProductFilter.map((pro) => pro.bar_code);
-  const dataProductFilterBarcodeList = filterProduct?.filter(
+  const dataProductFilterBarcodeList = filterListProducts[0]?.filter(
     (productData) => productData.bar_code == filterProductBarcode[0]
   );
 
