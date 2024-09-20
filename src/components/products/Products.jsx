@@ -197,7 +197,7 @@ export const Products = () => {
           <SlidsListProducts />
           <TitleProduct>
             <h2 className="titleProduct">
-              {filterCategoryBlusaFeminina[0]?.name == "Blusas"
+              {filterCategoryBlusaFeminina == "Blusas"
                 ? nameCategory
                 : filterCategoryBlusaFeminina[0]?.name}
             </h2>
@@ -322,7 +322,7 @@ export const Products = () => {
           </ProductProd>
           <TitleProduct>
             <h2 className="titleProduct">
-              {filterCategoryConjuntoFeminino[0]?.name == "Conjunto F"
+              {filterCategoryConjuntoFeminino == "Conjunto F"
                 ? nameCategory1
                 : filterCategoryConjuntoFeminino[0]?.name}
             </h2>
