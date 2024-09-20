@@ -700,7 +700,7 @@ export const Products = () => {
                     ) : (
                       <ProductProd>
                         <section>
-                          {Intimos.map((res) =>
+                          {Intimos[0]?.map((res) =>
                             res.map((req) => {
                               //console.log(filterCategoryVestido)
 
@@ -764,7 +764,7 @@ export const Products = () => {
                       ) : (
                         <ProductProd>
                           <section>
-                            {Acessorios.map((res) =>
+                            {Acessorios[0]?.map((res) =>
                               res.map((req) => {
                                 //console.log(filterCategoryVestido)
 
