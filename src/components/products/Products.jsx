@@ -8,12 +8,12 @@ import { FaCreditCard } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Header } from "../header";
-import SlidsProducts from "../slids/SlidsProducts";
-import { SlidsMenu } from "../slids/SlidsMenu";
+//import SlidsProducts from "../slids/SlidsProducts";
+//import { SlidsMenu } from "../slids/SlidsMenu";
 import Footer from "../footer/footer";
-import { SlidsListProducts } from "../slids/SlidsListProducts";
+//import { SlidsListProducts } from "../slids/SlidsListProducts";
 import { useSelector } from "react-redux";
-import { ProductsLoading } from "./ProductsLoading";
+//import { ProductsLoading } from "./ProductsLoading";
 import imgCopy from "./images/Decontos.gif";
 import "./styles.css";
 import api from "../../api/api";
@@ -186,13 +186,15 @@ export const Products = () => {
   return (
     <>
       <Header />
-      <SlidsProducts />
-      {<SlidsMenu />}
+      {/*<SlidsProducts />*/}
+      {/*<SlidsMenu />*/}
       {filterCategoryBolsaFeminina == "" ? (
-        <ProductsLoading />
+        {
+          /*<ProductsLoading />*/
+        }
       ) : (
         <div>
-          <SlidsListProducts />
+          {/*<SlidsListProducts />*/}
           <TitleProduct>
             <h2 className="titleProduct">
               {filterCategoryBlusaFeminina == "Blusas"
