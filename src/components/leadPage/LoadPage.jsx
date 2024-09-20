@@ -58,7 +58,7 @@ export const LoadPage = () => {
   const cart = useSelector((cartItems) => cartItems.cart.cartItems.length);
   const product = useSelector((productsSlice) => productsSlice.products.items);
 
-  const dataProductFilter = product.filter(
+  const dataProductFilter = product?.filter(
     (productData) => productData.id === lastPart
   );
 

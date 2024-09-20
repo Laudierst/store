@@ -1,6 +1,6 @@
 export const SeartResult = ({ data }) => {
   const dataJson = [data];
-  const filterData = dataJson.filter((resData) => resData[0]);
+  const filterData = dataJson?.filter((resData) => resData[0]);
 
   const resutList = data.map((item) => {
     return (

@@ -51,7 +51,7 @@ export const SeartResults = () => {
   }
 
   /*const response = products
-    .filter((val) => {
+    ?.filter((val) => {
       if (searchTme === "") {
         return val;
       } else if (val.name.toLowerCase().includes(searchTme.toLowerCase())) {
@@ -83,7 +83,7 @@ export const SeartResults = () => {
       <div>
         {searchTme.length >= 6
           ? products
-              .filter((val) => {
+              ?.filter((val) => {
                 if (searchTme === "") {
                   return val;
                 } else if (

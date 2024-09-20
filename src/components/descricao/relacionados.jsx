@@ -43,16 +43,16 @@ export function Realacionandos() {
   //let parts = url.split("/");
   //let lastPart = parts.pop() || parts.pop();
 
-  //const productFilter = product.filter(product => product)
+  //const productFilter = product?.filter(product => product)
   //const prodFilter = [...productFilter]
-  //const dataProductFilter2 = prodFilter.filter(productData => (productData.id === localId))
+  //const dataProductFilter2 = prodFilter?.filter(productData => (productData.id === localId))
 
   const filterProduct = data.map((pro) => pro);
-  const dataProductFilter = filterProduct.filter(
+  const dataProductFilter = filterProduct?.filter(
     (productData) => productData.id === lastPart
   );
   const filterProductBarcode = dataProductFilter.map((pro) => pro.bar_code);
-  const dataProductFilterBarcodeList = filterProduct.filter(
+  const dataProductFilterBarcodeList = filterProduct?.filter(
     (productData) => productData.bar_code == filterProductBarcode[0]
   );
 

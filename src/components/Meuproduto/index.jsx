@@ -34,7 +34,7 @@ export function Meuproduto() {
   };
 
   //Filtro de pesquisa do input
-  const filterData = products.filter((e) => e.code_compra == dados);
+  const filterData = products?.filter((e) => e.code_compra == dados);
 
   console.log(dados);
 
