@@ -26,8 +26,8 @@ import { MarginTop, Pricipal } from "./desc2";
 //import { ImageList } from "@material-ui/core";
 import { ProductImageMini } from "./products_desc_2";
 import Footer from "./footer/footer";
-import { useQuery } from 'react-query'
-import api from '../../api/api'
+import { useQuery } from "react-query";
+import api from "../../api/api";
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -44,23 +44,24 @@ export const DescriptionProducts = () => {
   const [dataCores, setDatacores] = useState("");
   const [dataTamanho, setTamanho] = useState("");
 
-  const { data, isLoading } = useQuery("todos", () => {
-    return api.get("/product").then((res) => (res.data))
-},{
-    retry: 5,
-    refetchOnWindowFocus: true,
-    refetchInterval: 20000,
-    initialData: [{ id: "1", name: "Laudier" }]
-}
+  const { data, isLoading } = useQuery(
+    "todos",
+    () => {
+      return api.get("/product").then((res) => res.data);
+    },
+    {
+      retry: 5,
+      refetchOnWindowFocus: true,
+      refetchInterval: 20000,
+      initialData: [{ id: "1", name: "Laudier" }],
+    }
+  );
 
-)
+  const dataList = [data];
 
-const dataList = [data]
-
-if(isLoading){
-    return <div className='loading'>Carregando...</div>
-}
-
+  if (isLoading) {
+    return <div className="loading">Carregando...</div>;
+  }
 
   let url = window.location.pathname;
   let parts = url.split("/");
@@ -70,8 +71,9 @@ if(isLoading){
 
   const cart = useSelector((cartItems) => cartItems.cart.cartItems.length);
   const product = useSelector((productsSlice) => productsSlice.products.items);
+  const productList = [product];
 
-  const dataProductFilter = product.filter(
+  const dataProductFilter = productList[0]?.filter(
     (productData) => productData.id === lastPart
   );
 
@@ -283,8 +285,8 @@ if(isLoading){
 
   return (
     <>
-      <Header/>
-      <MarginTop/>
+      <Header />
+      <MarginTop />
       <Pricipal>
         <section>
           {dataProductFilter == "" ? (
@@ -345,7 +347,6 @@ if(isLoading){
                     modules={[EffectCreative]}
                   >
                     {imgList.map((imgData) =>
-                    
                       imgData == "" ? (
                         ""
                       ) : (
@@ -353,12 +354,7 @@ if(isLoading){
                           key={id}
                           style={{ background: "transparent" }}
                         >
-                          <img
-                            src={imgData}
-                            id="logo"
-                            alt=""
-                            className="img"
-                          />
+                          <img src={imgData} id="logo" alt="" className="img" />
                         </SwiperSlide>
                       )
                     )}
@@ -421,7 +417,7 @@ if(isLoading){
                       {image[5] == "" ? (
                         ""
                       ) : (
-                        <Video style={{width: 350, height: 230}}>
+                        <Video style={{ width: 350, height: 230 }}>
                           <source src={image[5]} type="video/webm" />
                         </Video>
                       )}
@@ -470,7 +466,7 @@ if(isLoading){
                                 height: 25,
                                 display: "inline-block",
                                 margin: "5PX",
-                                border: "solid 1px"
+                                border: "solid 1px",
                               }}
                             />
                           ))}
@@ -622,9 +618,7 @@ if(isLoading){
                                     borderRadius: 5,
                                   }}
                                 >
-                                  {dataTamanho
-                                    ? dataTamanho
-                                    : "Sem tamanho"}
+                                  {dataTamanho ? dataTamanho : "Sem tamanho"}
                                 </span>
                               </p>
                               {divideSizeArrey[0] ? (
@@ -639,7 +633,7 @@ if(isLoading){
                               )}
                               {divideSizeArrey[1] ? (
                                 <button
-                                  className="btnButtonTamanho"  
+                                  className="btnButtonTamanho"
                                   onClick={() => setTamanho(divideSizeArrey[1])}
                                 >
                                   {divideSizeArrey[1]}
@@ -730,7 +724,7 @@ if(isLoading){
                             </div>
                           )}
                         </div>
-                        
+
                         <div></div>
                       </div>
                     </div>
@@ -820,14 +814,12 @@ if(isLoading){
               );
             })
           )}
-          <>
-          
-          </>
+          <></>
         </footer>
       </Pricipal>
-      <Realacionandos/>
-      <Comentarios/>
-      <Footer/>
+      <Realacionandos />
+      <Comentarios />
+      <Footer />
     </>
   );
 };

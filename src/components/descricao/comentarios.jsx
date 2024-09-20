@@ -32,7 +32,10 @@ export const Comentarios = () => {
   const comentarios = useSelector(
     (comnetarioSlice) => comnetarioSlice.comentarios.items
   );
-  const comnetFilter = comentarios.filter(
+
+  const coment = [comentarios];
+
+  const comnetFilter = coment[0]?.filter(
     (comentData) => comentData.idProduct === localId
   );
   //console.log(comnetFilter, " t");
@@ -45,7 +48,7 @@ export const Comentarios = () => {
         type="button"
         className="btnButtonModal"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        data-bs-target="#exampleModal" 
 
       >
         Deixe seu comentario
