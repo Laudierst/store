@@ -8,8 +8,8 @@
 //import { Link } from "react-router-dom";
 //import { useEffect, useState } from "react";
 import { Header } from "../header";
-import SlidsProducts from "../slids/SlidsProducts";
-import { SlidsMenu } from "../slids/SlidsMenu";
+//import SlidsProducts from "../slids/SlidsProducts";
+//import { SlidsMenu } from "../slids/SlidsMenu";
 import Footer from "../footer/footer";
 //import { SlidsListProducts } from "../slids/SlidsListProducts";
 //import { SlidsListProductsRevert } from "../slids/SlidsListProductsRevert";
@@ -189,7 +189,7 @@ export const Products = () => {
   return (
     <>
       <Header />
-      <SlidsProducts />
+      {/*<SlidsProducts />
       {<SlidsMenu />}
       {/*
       {filterCategoryBolsaFeminina == "" ? (
