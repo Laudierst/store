@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import SlidsProducts from "../slids/SlidsProducts";
 import { SlidsMenu } from "../slids/SlidsMenu";
 import Footer from "../footer/footer";
-//import { SlidsListProducts } from "../slids/SlidsListProducts";
+import { SlidsListProducts } from "../slids/SlidsListProducts";
 import "./styles.css";
 import api from "../../api/api";
 
@@ -67,7 +67,7 @@ export const Products = () => {
       <SlidsMenu />
 
       <div>
-        {/*<SlidsListProducts />*/}
+        <SlidsListProducts />
 
         <ProductProd>
           <section>
