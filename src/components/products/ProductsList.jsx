@@ -35,11 +35,9 @@ export const Products = () => {
     })();
   }, []);
 
-  const ts = [data];
-
-  console.log(data);
-  console.log("======================================");
-  console.log(ts);
+  //const limitPrducts = data.length;
+  //console.log("=================== limitPrducts ===================");
+  //console.log(limitPrducts);
   //const products = useSelector(productSlace => productSlace.products.items)
 
   function LocalSto(e) {
