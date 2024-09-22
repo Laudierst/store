@@ -12,9 +12,9 @@ export default function Politicas() {
         </Link>
         <h2>Política Privacidade</h2>
         <p>
-          A sua privacidade é importante para nós. É política do PensanoEmMim
+          A sua privacidade é importante para nós. É política do PensandoEmMim
           respeitar a sua privacidade em relação a qualquer informação sua que
-          possamos coletar no site PensanoEmMim, e outros sites que possuímos e
+          possamos coletar no site PensandoEmMim, e outros sites que possuímos e
           operamos.
         </p>
         <p>
@@ -81,7 +81,7 @@ export default function Politicas() {
         <p>Compromisso do Usuário</p>
         <p>
           O usuário se compromete a fazer uso adequado dos conteúdos e da
-          informação que o PensanoEmMim oferece no site e com caráter
+          informação que o PensandoEmMim oferece no site e com caráter
           enunciativo, mas não limitativo:
         </p>
         <span>
@@ -95,7 +95,7 @@ export default function Politicas() {
         </span>
         <span>
           C) Não causar danos aos sistemas físicos (hardwares) e lógicos
-          (softwares) do PensanoEmMim, de seus fornecedores ou terceiros, para
+          (softwares) do PensandoEmMim, de seus fornecedores ou terceiros, para
           introduzir ou disseminar vírus informáticos ou quaisquer outros
           sistemas de hardware ou software que sejam capazes de causar danos
           anteriormente mencionados.

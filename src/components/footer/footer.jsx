@@ -105,7 +105,7 @@ export default function Footer() {
     <>
       <ContainerFooter>
         <Link to="/">
-          <h2>PensanoEmMim</h2>
+          <h2>PensandoEmMim</h2>
         </Link>
 
         <form onSubmit={sendEmail} name="contact" nelify>
@@ -147,7 +147,7 @@ export default function Footer() {
       </ContainerFooter2>
       <ShareSocial
         style={{ backgroundColor: "#fffff", /*"#001414"*/ width: "100%" }}
-        url="https://PensanoEmMim.com.br"
+        url="https://PensandoEmMim.com.br"
         socialTypes={[
           "facebook",
           "whatsApp",
@@ -167,7 +167,7 @@ export default function Footer() {
             Trabalhamos com total responsabilidade para que você, receba seu
             produto ou devolvemos seu dinheiro d volta.
           </strong>
-          <p>&copy; Todos os direitos reservado PensanoEmMim</p>
+          <p>&copy; Todos os direitos reservado PensandoEmMim</p>
         </div>
         <div>
           <url>
