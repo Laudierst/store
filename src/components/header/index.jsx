@@ -14,13 +14,13 @@ export function Header() {
     <>
       <ContainerAMR>
         <Logo>
-          <a href="/">
+          <a href="/" className="a-color">
             <img src={logosimples} alt="img" className="img3" />
-            PensanoEmMim
+            PensadoEmMim
           </a>
         </Logo>
-        <a href="/">
-          <AiFillAlert className="mb-2 h4" /> SUPER OFERTAS - PensanoEmMim tem
+        <a href="/" style={{ fontSize: 13 }}>
+          <AiFillAlert className="mb-2 h5" /> SUPER OFERTAS - PensanoEmMim tem
           de tudo
         </a>
       </ContainerAMR>

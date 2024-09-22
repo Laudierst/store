@@ -133,18 +133,21 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.div`
+  text-align: center;
   font-weight: bold;
   font-size: 2.5vw;
+  color: aqua;
   text-shadow: 0 5px 0 rgb(121, 116, 116), 0 3px 0 #c9c9c9, 0 1px 0 #bbb,
     0 1px 0 #b9b9b9, 0 1px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
     0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
     0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
 
-  & a {
+  & .a-color {
     margin-left: 1px;
-    color: white;
+    color: aqua;
     text-decoration: none;
+    text-align: center;
 
     &:hover {
       color: white;
@@ -202,11 +205,11 @@ export const ContainerAMR = styled.div`
 
   & .img3 {
     position: absolute;
-    width: 5%;
-    margin-left: -200px;
+    width: 4%;
+    margin-left: -100px;
     border-radius: 50px;
     padding: 10px;
-    margin-top: -5px;
+    margin-top: 1px;
 
     @media (max-width: 1750px) {
       margin-left: -175px;
@@ -221,9 +224,9 @@ export const ContainerAMR = styled.div`
     }
 
     @media (max-width: 1300px) {
-      margin-left: -135px;
+      margin-left: -100px;
       margin-top: -5px;
-      width: 5%;
+      width: 4%;
     }
     
     @media (max-width: 1100px) {
@@ -233,20 +236,14 @@ export const ContainerAMR = styled.div`
     }
 
     @media(max-width: 1024px) {
-      margin-left: -110px;
-      margin-top: -10px;
+      margin-left: -70px;
+      margin-top: -4px;
       width: 5%;
     }
 
     @media(max-width: 923px) {
-      margin-left: -110px;
-      margin-top: -10px;
-      width: 5%;
-    }
-
-    @media(max-width: 768px) {
-      margin-left: -115px;
-      margin-top: -5px;
+      margin-left: -60px;
+      margin-top: -6px;
       width: 14%;
     }
   }
