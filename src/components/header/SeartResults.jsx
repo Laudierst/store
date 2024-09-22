@@ -73,7 +73,7 @@ export const SeartResults = () => {
         <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
       </Container>
       <div>
-        {searchTme.length >= 6
+        {searchTme.length >= 4
           ? productItens[0]
               ?.filter((val) => {
                 if (searchTme === "") {
