@@ -113,12 +113,11 @@ export const TableCartFinalize = styled.div`
     }
 
     & .logoTitle {
-      position: absolute;
       text-decoration: none;
-      margin-left: -30%;
+      text-align: center;
       font-weight: bold;
       font-size: 2.5vw;
-      color: white;
+      color: aqua;
       text-shadow: 0 4px 0 rgb(121, 116, 116), 0 3px 0 #c9c9c9, 0 1px 0 #bbb,
         0 1px 0 #b9b9b9, 0 1px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
         0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
@@ -126,7 +125,7 @@ export const TableCartFinalize = styled.div`
         0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
 
       @media(max-width: 780px) {
-        margin-left: -35%;
+        text-align: center;
         font-size: 5.5vw;
 
         text-shadow: 0 1px 0 rgb(121, 116, 116), 0 3px 0 #c9c9c9, 0 1px 0 #bbb,

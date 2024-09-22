@@ -101,10 +101,11 @@ export default function CartFinalize() {
                   <Link to="/" className="logoTitle">
                     PensanoEmMim
                   </Link>
-                  <h2>Seu carrimho</h2>
                 </tr>
               </thead>
+              <br />
               <hr />
+              <h2 style={{ textAlign: "center" }}>Seu carrimho</h2>
               <tbody>
                 {cart.map((res) => {
                   const { id, image, price, name, size, cor, cartQuantity } =
