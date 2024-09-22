@@ -16,11 +16,11 @@ export function Header() {
         <Logo>
           <a href="/" className="a-color">
             <img src={logosimples} alt="img" className="img3" />
-            PensadoEmMim
+            PensandoEmMim
           </a>
         </Logo>
         <a href="/" style={{ fontSize: 13 }}>
-          <AiFillAlert className="mb-2 h5" /> SUPER OFERTAS - PensanoEmMim tem
+          <AiFillAlert className="mb-2 h5" /> SUPER OFERTAS - PensandoEmMim tem
           de tudo
         </a>
       </ContainerAMR>
