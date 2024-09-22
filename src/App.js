@@ -27,7 +27,7 @@ import { Informatica } from "./components/categorys/Informatica";
 import { Body } from "./components/categorys/Body"
 import { Estetica } from "./components/categorys/Estetica"
 import { Meuproduto } from "./components/Meuproduto";
-import { Products } from "./components/products/Products"
+import { Products } from "./components/products/ProductsList"
 import { Bone } from "./components/categorys/Bone";
 import { Eletronica } from "./components/categorys/Eletronica";
 import { Smartphone } from "./components/categorys/Smartphone";
