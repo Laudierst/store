@@ -135,7 +135,7 @@ export default function Footer() {
             className="a-img"
           />
           <a
-            href="https://download938.mediafire.com/l0vkcln7i0sgFE4lwTyj_i5KwwHrhu33WexuKffec_8HHLY2ZAJSfWvcGXYDW1JQ4Bv3XfI6fD5-xd8O7xjtAHHll8HY-Cg0P0zHOrqLLR0ErtlDrCpG7BEl2OK4fboCvyjQ-2QR8uRlI0Hnly9Y6RR6-9QzZaOFQCLEmEH_1qh-06o/lz10ioydz2bk1mt/PensandoEmMim.apk"
+            href="https://www.mediafire.com/file/lz10ioydz2bk1mt/PensandoEmMim.apk/file"
             target="_blank"
             rel="noopener noreferrer"
             className="t"
