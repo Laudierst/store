@@ -10,10 +10,67 @@ export const ContainerFooter = styled.div`
   padding: 50px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
+  & .a {
+      position: absolute;
+      margin-top: 20px;
+      margin-left: 500px;
+      font-weight: bold;
+      background-color: white;
+      padding: 5px;
+      border-radius: 3px;
+    }
+  
+  @media (max-width: 1550px) {
+    & .a {
+      position: absolute;
+      margin-top: 20px;
+      margin-left: 350px;
+      font-weight: bold;
+      background-color: white;
+      padding: 5px;
+      border-radius: 3px;
+    }
+  }
+
+  @media (max-width: 1350px) {
+    & .a {
+      position: absolute;
+      margin-top: 20px;
+      margin-left: 300px;
+      font-weight: bold;
+      background-color: white;
+      padding: 5px;
+      border-radius: 3px;
+    }
+  }
+
+  @media (max-width: 1150px) {
+    & .a {
+      position: absolute;
+      margin-top: 10px;
+      margin-left: 240px;
+      font-weight: bold;
+      background-color: white;
+      padding: 5px;
+      border-radius: 3px;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     margin-top: 60px;
     width: 100%;
+
+    & .a {
+      position: absolute;
+      margin-top: -43px;
+      margin-left: 100px;
+      font-weight: bold;
+      background-color: white;
+      padding: 5px;
+      border-radius: 3px;
+    }
   }
+
 
 
   & h2 {
