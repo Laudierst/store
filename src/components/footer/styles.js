@@ -18,6 +18,12 @@ export const ContainerFooter = styled.div`
       background-color: white;
       padding: 5px;
       border-radius: 3px;
+      text-decoration: none;
+
+      &:hover {
+        background-color: aqua;
+        color: green;
+      }
     }
   
   @media (max-width: 1550px) {
