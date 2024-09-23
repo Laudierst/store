@@ -85,7 +85,7 @@ export const ContainerFooter = styled.div`
     & .a {
       position: absolute;
       margin-top: -43px;
-      margin-left: 100px;
+      margin-left: 90px;
       font-weight: bold;
       background-color: white;
       padding: 5px;
@@ -109,7 +109,7 @@ export const ContainerFooter = styled.div`
     color: white;
 
     @media (max-width: 768px) {
-      //margin-left: 16px;
+      margin-left: 25px;
       margin-top: 0px;
       font-size: 8vw;
     }
