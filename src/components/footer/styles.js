@@ -10,6 +10,22 @@ export const ContainerFooter = styled.div`
   padding: 50px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
+  & .a-img {
+    width: 50px;
+    height: 10;
+    border-radius: 10px;
+    margin: 5px;
+
+    @media screen and (max-width: 768px) {
+      width: 30px;
+      margin: 0px;
+    }
+  }
+
+  & .t {
+    text-decoration: none;
+  }
+
   & .a {
       position: absolute;
       margin-top: 20px;
@@ -17,7 +33,7 @@ export const ContainerFooter = styled.div`
       font-weight: bold;
       background-color: white;
       padding: 5px;
-      border-radius: 3px;
+      border-radius: 6px;
       text-decoration: none;
 
       &:hover {

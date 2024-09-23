@@ -125,14 +125,21 @@ export default function Footer() {
           <input type="submit" value="Enviar" className="btnInput" />
           {/*<textarea name="message" id="" cols="100%" rows="4" placeholder='Message'></textarea>*/}
         </form>
-        <a
-          href="https://download938.mediafire.com/l0vkcln7i0sgFE4lwTyj_i5KwwHrhu33WexuKffec_8HHLY2ZAJSfWvcGXYDW1JQ4Bv3XfI6fD5-xd8O7xjtAHHll8HY-Cg0P0zHOrqLLR0ErtlDrCpG7BEl2OK4fboCvyjQ-2QR8uRlI0Hnly9Y6RR6-9QzZaOFQCLEmEH_1qh-06o/lz10ioydz2bk1mt/PensandoEmMim.apk"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="a"
-        >
-          BAIXAR APK
-        </a>
+        <div className="a">
+          <img
+            src="https://w7.pngwing.com/pngs/638/295/png-transparent-android-software-development-logo-android-text-grass-desktop-wallpaper-thumbnail.png"
+            alt="img"
+            className="a-img"
+          />
+          <a
+            href="https://download938.mediafire.com/l0vkcln7i0sgFE4lwTyj_i5KwwHrhu33WexuKffec_8HHLY2ZAJSfWvcGXYDW1JQ4Bv3XfI6fD5-xd8O7xjtAHHll8HY-Cg0P0zHOrqLLR0ErtlDrCpG7BEl2OK4fboCvyjQ-2QR8uRlI0Hnly9Y6RR6-9QzZaOFQCLEmEH_1qh-06o/lz10ioydz2bk1mt/PensandoEmMim.apk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="t"
+          >
+            BAIXAR APK
+          </a>
+        </div>
       </ContainerFooter>
       <ContainerFooter2>
         <div>
