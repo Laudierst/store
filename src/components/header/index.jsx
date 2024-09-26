@@ -30,19 +30,13 @@ export function Header() {
       <ContainerPRT>
         <ul>
           <li>
-            <a
-              href="https://wa.me/5575998172448?text=Ol%C3%A1%20tudo%20bem%2C%20gostaria%20de%20saber%20mais%20sobre%20alguns%20produtos%20da%20Loja%3F"
-              target="blank"
-            >
+            <a href="/" target="blank">
               <AiOutlineWhatsApp className="text-white h5 m-1 mb-2 p" />
               Contato
             </a>
           </li>
           <li>
-            <a
-              href="https://rastreamento.correios.com.br/app/index.php"
-              target="blank"
-            >
+            <a href="/" target="blank">
               <BsTruck className="text-white h5 m-1 mb-2 p" />
               Rastreio
             </a>
