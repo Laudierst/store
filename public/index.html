@@ -12,26 +12,55 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <link rel="stylesheet" href="/css/video-react.css" />
-   
+
     <title>Pensandoemmim</title>
     <script id="react-dotenv" src="./env.js"></script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-53KHKC4DTM"></script>
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-53KHKC4DTM"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-53KHKC4DTM');
+      gtag("config", "G-53KHKC4DTM");
     </script>
-   
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-K9NPVGZ7");
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
 
   <body class="body">
     <div id="root"></div>
 
     <script type="module" src="/src/index.js"></script>
-    
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-K9NPVGZ7"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
   </body>
 </html>
