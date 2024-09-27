@@ -134,7 +134,7 @@ export default function Footer() {
             alt="img"
             className="a-img"
           />
-          <a href={apk} target="_blank" rel="noopener noreferrer" className="t">
+          <a href="/" target="_blank" rel="noopener noreferrer" className="t">
             BAIXAR APK
           </a>
         </div>
