@@ -10,7 +10,7 @@ import pac from "./images/pac@2x.png";
 import sedex from "./images/sedex@2x.png";
 import trasport from "./images/transportadoras.jpg";
 import seloSeguranca from "./images/selo-seguranca.png";
-import apk from "./PensandoEmMim.apk";
+//import apk from "./PensandoEmMim.apk";
 //import ssl from "./images/ssl.png";
 //import { Height } from '@material-ui/icons';
 
