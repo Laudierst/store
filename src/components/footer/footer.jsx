@@ -10,6 +10,7 @@ import pac from "./images/pac@2x.png";
 import sedex from "./images/sedex@2x.png";
 import trasport from "./images/transportadoras.jpg";
 import seloSeguranca from "./images/selo-seguranca.png";
+import apk from "./PensandoEmMim.apk";
 //import ssl from "./images/ssl.png";
 //import { Height } from '@material-ui/icons';
 
@@ -101,6 +102,8 @@ export default function Footer() {
     },
   ];
 
+  //"https://www.mediafire.com/file/lz10ioydz2bk1mt/PensandoEmMim.apk/file"
+
   return (
     <>
       <ContainerFooter>
@@ -131,12 +134,7 @@ export default function Footer() {
             alt="img"
             className="a-img"
           />
-          <a
-            href="https://www.mediafire.com/file/lz10ioydz2bk1mt/PensandoEmMim.apk/file"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="t"
-          >
+          <a href={apk} target="_blank" rel="noopener noreferrer" className="t">
             BAIXAR APK
           </a>
         </div>
