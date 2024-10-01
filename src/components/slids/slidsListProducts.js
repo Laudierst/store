@@ -90,12 +90,15 @@ export const CoontainerSlids = styled.div`
 
   & .buttons1 {
     left: 0;
+    right: 0;
+    bottom: 0;
+    top: 90%;
     position: absolute;
     width: 60px;
     height: 170px;
     background-color:rgba(255, 255, 255, 0);
     z-index: 99;
-    display: flex;
+    //display: flex;
     align-items: center;
     justify-content: center;
     /*overflow: hidden;*/
@@ -104,17 +107,17 @@ export const CoontainerSlids = styled.div`
     margin-left: -1%;
     margin-top: 162px;
 
-   @media (max-width: 968px){
-    margin-top: -40px;
-    width: 30%;
-    height: 170px;
-    color: whitesmoke;
-    display: none;
-   }
+    @media (max-width: 968px){
+      width: 30%;
+      height: 170px;
+      color: whitesmoke;
+      display: none;
+    }
 }
 
 & .buttons2 {
   right: 0;
+  top: 144%;
   position: absolute;
   width: 60px;
   height: 170px;
@@ -130,9 +133,12 @@ export const CoontainerSlids = styled.div`
   margin-top: -332px;
 
   @media (max-width: 1650px) {
-    margin-top: -250px;
+    top: 142%;
   }
-  
+
+  @media (max-width: 1150px) {
+    top: 122%;
+  }  
 
   @media (max-width: 768px) {
     margin-top: -130px;

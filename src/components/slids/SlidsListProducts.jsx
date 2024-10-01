@@ -68,7 +68,7 @@ export const SlidsListProducts = () => {
   return (
     <>
       <CoontainerSlids>
-        <div className="" style={{ width: 50 }}>
+        <div className="">
           <button onClick={(e) => hendleLeftClik(e)}>
             <MdNavigateBefore className="buttons1" />
           </button>
@@ -88,7 +88,7 @@ export const SlidsListProducts = () => {
             );
           })}
         </div>
-        <div className="" style={{ width: 10 }}>
+        <div className="">
           <button onClick={(e) => hendleRigthClik(e)}>
             <MdNavigateNext className="buttons2" />
           </button>
