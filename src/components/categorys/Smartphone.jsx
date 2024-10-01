@@ -64,7 +64,7 @@ export const Smartphone = () => {
       const reqName = await api.get("/category");
       const resName = await reqName.data;
       const req = await api.get(
-        "/category/eef260e6-4706-4a33-9ef6-caef4ac8ddbf"
+        "/category/04b2fd55-2604-49d7-b5a7-0ee7415086af"
       );
       const res = await req.data[0].products_categories;
 

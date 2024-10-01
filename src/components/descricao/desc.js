@@ -24,7 +24,7 @@ export const Pricipal = styled.div`
     width: 98%;
     height: 75vh;
     border: none;
-    margin-top: -30px;
+    margin-top: -15px;
 
     @media (max-width: 1650px){
       height: 100vh;

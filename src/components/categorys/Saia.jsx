@@ -77,7 +77,7 @@ export const Saia = () => {
 
   //const teste = categoroyVestido.map(img => img)
 
-  //console.log(categoroy)
+  console.log(categoroyData, "teste");
 
   /*const [promo, setPromo] = useState([])
 
@@ -94,7 +94,7 @@ export const Saia = () => {
 
   const NameCategory = categoroy.map((res) => res.name);
 
-  //console.log(NameCategory)
+  console.log(NameCategory);
 
   /*
     var salario = 100;
