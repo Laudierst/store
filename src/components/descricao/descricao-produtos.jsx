@@ -480,7 +480,7 @@ export const DescriptionProducts = () => {
                           <TiStarHalfOutline
                             style={{ fontSize: 18, color: "#ffc107" }}
                           />
-                          <span> | {quantity} Vendido</span>
+                          <span> | {quantity * 3} Vendido</span>
                           <p></p>
                           <span>ESSE É UM DOS MAIS VENDIDOS NA LOJA</span>
                         </div>

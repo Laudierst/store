@@ -120,7 +120,7 @@ export const ProductImageMini = styled.div`
       }
 
       @media (max-width: 1750px) {
-        margin-left: -40px;
+        margin-left: -10px;
       }
     
 
