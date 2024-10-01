@@ -3,15 +3,26 @@ import React, { useState } from "react";
 import { ContainerFooter, ContainerFooter1, ContainerFooter2 } from "./styles";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
-import { ShareSocial } from "react-share-social";
+//import { ShareSocial } from "react-share-social";
 import { toast } from "react-toastify";
 import correios from "./images/correios@2x.png";
 import pac from "./images/pac@2x.png";
 import sedex from "./images/sedex@2x.png";
 import trasport from "./images/transportadoras.jpg";
 import seloSeguranca from "./images/selo-seguranca.png";
-//import ssl from "./images/ssl.png";
-//import { Height } from '@material-ui/icons';
+import apk from "./PensandoEmMim.apk";
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  RedditIcon,
+  TelegramIcon,
+  TelegramShareButton,
+  TumblrIcon,
+  TumblrShareButton,
+  WhatsappIcon,
+  WhatsappShareButton,
+  RedditShareButton,
+} from "react-share";
 
 export default function Footer() {
   const [name, setName] = useState([]);
@@ -73,10 +84,7 @@ export default function Footer() {
       img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/hipercard@2x.png",
     },
     {
-      img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/payment-method-types/pix@2x.png",
-    },
-    {
-      img: "https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/br/discover@2x.png",
+      img: "https://www.designi.com.br/images/preview/10028350.jpg",
     },
   ];
 
@@ -103,6 +111,8 @@ export default function Footer() {
       seguro: seloSeguranca,
     },
   ];
+
+  //"https://www.mediafire.com/file/lz10ioydz2bk1mt/PensandoEmMim.apk/file"
 
   return (
     <>
@@ -134,19 +144,14 @@ export default function Footer() {
             alt="img"
             className="a-img"
           />
-          <a
-            href="https://www.mediafire.com/file/lz10ioydz2bk1mt/PensandoEmMim.apk/file"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="t"
-          >
+          <a href={apk} target="_blank" rel="noopener noreferrer" className="t">
             BAIXAR APK
           </a>
         </div>
       </ContainerFooter>
       <ContainerFooter2>
         <div>
-          <h4>Forma de pagamento</h4>
+          <h4>Bandeiras</h4>
           {imgCart.map((img) => (
             <img src={img.img} alt="im" />
           ))}
@@ -163,22 +168,7 @@ export default function Footer() {
           ))}
         </div>
       </ContainerFooter2>
-      <ShareSocial
-        style={{ backgroundColor: "#fffff", /*"#001414"*/ width: "100%" }}
-        url="https://PensandoEmMim.com.br"
-        socialTypes={[
-          "facebook",
-          "whatsApp",
-          "twitter",
-          "linkedin",
-          "reddit",
-          "line",
-          "instapaper",
-          "email",
-          "ok",
-          "email",
-        ]}
-      />
+
       <ContainerFooter1>
         <div>
           <strong>
@@ -193,6 +183,22 @@ export default function Footer() {
             <li>Phone: (75) 998239680</li>
             <li>CNPJ: 11.363.576/0001-30</li>
           </url>
+          <br />
+          <FacebookShareButton url="https://pensandoemmim.com/novidades">
+            <FacebookIcon size={30} />
+          </FacebookShareButton>
+          <WhatsappShareButton url="https://pensandoemmim.com/novidades">
+            <WhatsappIcon size={30} />
+          </WhatsappShareButton>
+          <TelegramShareButton url="https://pensandoemmim.com/novidades">
+            <TelegramIcon size={30} />
+          </TelegramShareButton>
+          <RedditShareButton url="https://pensandoemmim.com/novidades">
+            <RedditIcon size={30} />
+          </RedditShareButton>
+          <TumblrShareButton url="https://pensandoemmim.com/novidades">
+            <TumblrIcon size={30} />
+          </TumblrShareButton>
         </div>
       </ContainerFooter1>
     </>
