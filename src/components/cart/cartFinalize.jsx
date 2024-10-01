@@ -84,9 +84,9 @@ export default function CartFinalize() {
     );
   };
 
-  let percentual = 0.25;
-  let aumento = cart2.cartTotalAmount * percentual;
-  let novo_amount = cart2.cartTotalAmount - aumento;
+  //let percentual = 0.25;
+  //let aumento = cart2.cartTotalAmount * percentual;
+  //let novo_amount = cart2.cartTotalAmount - aumento;
 
   return (
     <>
@@ -111,9 +111,9 @@ export default function CartFinalize() {
                   const { id, image, price, name, size, cor, cartQuantity } =
                     res;
 
-                  let percentual = 0.25;
-                  let aumento = price * percentual;
-                  let novo_price = price - aumento;
+                  //let percentual = 0.25;
+                  //let aumento = price * percentual;
+                  //let novo_price = price - aumento;
 
                   return (
                     <tr>
@@ -159,7 +159,7 @@ export default function CartFinalize() {
                         <td>
                           <div className="div2">
                             <strong>
-                              Preco: R$ {novo_price * res.cartQuantity},00
+                              Preco: R$ {price * res.cartQuantity},00
                             </strong>
 
                             <button
@@ -196,10 +196,10 @@ export default function CartFinalize() {
         </div>
       )}
       <div>
-        {novo_amount == "" ? (
+        {cart2.cartTotalAmount == "" ? (
           ""
         ) : (
-          <SubTotal>Total: R$ {novo_amount},00</SubTotal>
+          <SubTotal>Total: R$ {cart2.cartTotalAmount},00</SubTotal>
         )}
       </div>
     </>
