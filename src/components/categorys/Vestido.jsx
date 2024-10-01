@@ -73,7 +73,7 @@ export const Vestido = () => {
     })();
   }, []);
 
-  //console.log(categoroy); //list category
+  console.log(categoroy); //list category
   //console.clear();
 
   const NameCategory = categoroy.map((res) => res.name);

@@ -89,7 +89,7 @@ export const Calcado = () => {
           <br />
           <TitleProduct>
             <h2 className="titleProduct">
-              {categoroy == "" ? "" : NameCategory[13]}
+              {categoroy == "" ? "" : NameCategory[12]}
             </h2>
             <hr />
           </TitleProduct>

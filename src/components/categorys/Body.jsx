@@ -115,7 +115,7 @@ export const Body = () => {
           <br />
           <TitleProduct>
             <h2 className="titleProduct">
-              {categoroy == "" ? "" : NameCategory[7]}
+              {categoroy == "" ? "" : NameCategory[6]}
             </h2>
             <hr />
           </TitleProduct>

@@ -187,7 +187,7 @@ function App() {
       element: <Bone />,
     },
     {
-      path: "/eletronico",
+      path: "/eletronicos",
       element: <Eletronica />,
     },
     {

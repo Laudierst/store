@@ -89,7 +89,7 @@ export const Conjuntof = () => {
           <br />
           <TitleProduct>
             <h2 className="titleProduct">
-              {categoroy == "" ? "" : NameCategory[5]}
+              {categoroy == "" ? "" : NameCategory[4]}
             </h2>
             <hr />
           </TitleProduct>

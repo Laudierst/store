@@ -91,7 +91,7 @@ export const Eletronica = () => {
           <br />
           <TitleProduct>
             <h2 className="titleProduct">
-              {categoroy == "" ? "" : NameCategory[6]}
+              {categoroy == "" ? "" : NameCategory[9]}
             </h2>
             <hr />
           </TitleProduct>

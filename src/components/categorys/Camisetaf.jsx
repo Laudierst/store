@@ -116,7 +116,7 @@ export const Camisetaf = () => {
           <br />
           <TitleProduct>
             <h2 className="titleProduct">
-              {categoroy == "" ? "" : NameCategory[12]}
+              {categoroy == "" ? "" : NameCategory[11]}
             </h2>
             <hr />
           </TitleProduct>

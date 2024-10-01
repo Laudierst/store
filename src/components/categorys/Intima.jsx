@@ -116,7 +116,7 @@ export const Intima = () => {
           <br />
           <TitleProduct>
             <h2 className="titleProduct">
-              {categoroy == "" ? "" : NameCategory[9]}
+              {categoroy == "" ? "" : NameCategory[8]}
             </h2>
             <hr />
           </TitleProduct>

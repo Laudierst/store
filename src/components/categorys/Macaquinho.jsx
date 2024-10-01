@@ -115,7 +115,7 @@ export const Macaquinho = () => {
           <br />
           <TitleProduct>
             <h2 className="titleProduct">
-              {categoroy == "" ? "" : NameCategory[8]}
+              {categoroy == "" ? "" : NameCategory[7]}
             </h2>
             <hr />
           </TitleProduct>

@@ -116,7 +116,7 @@ export const Saia = () => {
           <br />
           <TitleProduct>
             <h2 className="titleProduct">
-              {categoroy == "" ? "" : NameCategory[6]}
+              {categoroy == "" ? "" : NameCategory[5]}
             </h2>
             <hr />
           </TitleProduct>

@@ -92,7 +92,7 @@ export const Estetica = () => {
           <br />
           <TitleProduct>
             <h2 className="titleProduct">
-              {categoroy == "" ? "" : NameCategory[11]}
+              {categoroy == "" ? "" : NameCategory[10]}
             </h2>
             <hr />
           </TitleProduct>

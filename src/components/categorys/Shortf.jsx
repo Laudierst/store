@@ -89,7 +89,7 @@ export const Shortf = () => {
           <br />
           <TitleProduct>
             <h2 className="titleProduct">
-              {categoroy == "" ? "" : NameCategory[4]}
+              {categoroy == "" ? "" : NameCategory[14]}
             </h2>
             <hr />
           </TitleProduct>
