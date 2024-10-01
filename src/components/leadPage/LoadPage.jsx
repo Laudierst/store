@@ -219,9 +219,21 @@ export const LoadPage = () => {
     }
   }
 
+  let percentual0 = 0.3;
+  let aumento0 = priceFilter * percentual0;
+  let novo_price0 = priceFilter - aumento0;
+
   let percentual = 0.25;
   let aumento = priceFilter * percentual;
   let novo_price = priceFilter - aumento;
+
+  let percentual2 = 0.17;
+  let aumento2 = priceFilter * percentual2;
+  let novo_price2 = priceFilter - aumento2;
+
+  let percentual3 = 0.13;
+  let aumento3 = priceFilter * percentual3;
+  let novo_price3 = priceFilter - aumento3;
 
   //imagem de meio de pagamentos bandeiras
   const imgCart = [
@@ -282,11 +294,23 @@ export const LoadPage = () => {
   //  frete: "FRETE GRATIS PARA DODO O BRASIL",
   //};
 
+  const priceAtual =
+    dataTamanho == "64GB"
+      ? novo_price0
+      : dataTamanho == "128GB"
+      ? novo_price
+      : dataTamanho == "256GB"
+      ? novo_price2
+      : dataTamanho == "512GB"
+      ? novo_price3
+      : novo_price;
+  console.log(priceAtual);
+
   const productProntoAddCard = [
     {
       id: dataProductFilter[0]?.id,
       name: dataProductFilter[0]?.name,
-      price: dataProductFilter[0]?.price,
+      price: priceAtual,
       quantity: dataProductFilter[0]?.quantity,
       url_product: dataProductFilter[0]?.url_product,
       description: dataProductFilter[0]?.description,
@@ -470,7 +494,17 @@ export const LoadPage = () => {
                         <br />
 
                         <div>
-                          <h1>R$ {novo_price},00</h1>
+                          {dataTamanho == "64GB" ? (
+                            <h1>R$ {novo_price0},00</h1>
+                          ) : dataTamanho == "128GB" ? (
+                            <h1>R$ {novo_price},00</h1>
+                          ) : dataTamanho == "256GB" ? (
+                            <h1>R$ {novo_price2},00</h1>
+                          ) : dataTamanho == "512GB" ? (
+                            <h1>R$ {novo_price3},00</h1>
+                          ) : (
+                            <h1>R$ {novo_price},00</h1>
+                          )}
                           <span
                             style={{
                               fontWeight: "bold",

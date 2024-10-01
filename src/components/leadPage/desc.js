@@ -17,17 +17,22 @@ export const Pricipal = styled.div`
     @media screen and (max-width: 923px) {
       width: 100%;
       height: 55vh;
+      margin-top: -10px;
     }
   }
 
   & .imgDiv {
-    width: 98%;
+    width: 80%;
     height: 75vh;
     border: none;
-    margin-top: -30px;
+    margin: auto;
+    display: flex;
+    margin-top: -15px;
 
     @media (max-width: 1650px){
       height: 100vh;
+      width: 98%;
+      margin-top: 10px;
     }
 
     @media (max-width: 1350px){
@@ -115,8 +120,9 @@ export const Pricipal = styled.div`
     }
 
     .slugImgDiv {
-      width: 20%;
+      width: 25%;
       margin: 2px;
+      border-radius: 5px;
       border-radius: 5px;
     }
 
@@ -179,7 +185,6 @@ export const Pricipal = styled.div`
     border: solid 1px;
     border: none;
     width: 45%;
-    height: 100%;
     display: inline-flex;
     margin: 5px;
     
@@ -216,17 +221,31 @@ export const Pricipal = styled.div`
       }
     }
 
+    & .cartDosesVezes {
+      word-break: keep-all;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    & .EnvioParaTodoPais {
+      word-break: keep-all;
+      font-weight: bold;
+      font-size: 20px;
+     
+    }
+
 		& .buttonCompra {
 			border: none;
 			width: 100%;
 			background: aqua;
 			margin: 2px;
-			padding: 5px;
+			padding: 10px;
 			border-radius: 6px;
 			font-weight: bold;
+      font-size: 20px;
 			
 			&:hover {
-				background: #FDD201;
+				background: #03CACA;
 				box-shadow: 0 0 0 0.3px black;
 			}
 
