@@ -99,7 +99,7 @@ export const ProductDescImage = styled.div`
 `
 export const ProductImageMini = styled.div`
   grid-area: l;
-  margin-top: 0px;
+  margin-top: 9px;
   margin-left: -50px;
   width: 1px;
   position: absolute;
@@ -111,18 +111,13 @@ export const ProductImageMini = styled.div`
       width: 5vw;
       height: 5vw;
       object-fit: cover;
-      margin-left: -15px;
+      margin-left: -26px;
       //display: grid;
 
       &:hover {
         border: solid 2px;
         border-color: aqua;
       }
-
-      @media (max-width: 1750px) {
-        margin-left: -10px;
-      }
-    
 
       @media screen and (max-width: 1168px) {
         width: 9vw;
