@@ -708,7 +708,9 @@ export const LoadPage = () => {
                                     borderRadius: 5,
                                   }}
                                 >
-                                  {dataTamanho ? dataTamanho : "Sem tamanho"}
+                                  {dataTamanho
+                                    ? dataTamanho
+                                    : divideSizeArrey[0]}
                                 </span>
                               </p>
                               {divideSizeArrey[0] ? (

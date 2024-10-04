@@ -726,7 +726,7 @@ export const DescriptionProducts = () => {
                                 >
                                   {dataTamanho
                                     ? dataTamanho
-                                    : divideSizeArrey[1]}
+                                    : divideSizeArrey[0]}
                                 </span>
                               </p>
                               {divideSizeArrey[0] ? (
