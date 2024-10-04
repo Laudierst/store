@@ -27,6 +27,7 @@ import { MarginTop, Pricipal } from "./desc";
 import { ProductImageMini } from "./products_desc";
 import Footer from "./footer/footer";
 import { SlidsListProducts } from "./SlidsListProducts";
+import { Eletronica } from "./Eletronica";
 //import api from "../../api/api";
 
 export const scrollToTop = () => {
@@ -951,6 +952,7 @@ export const LoadPage = () => {
           <></>
         </footer>
       </Pricipal>
+      <Eletronica />
       <Realacionandos />
       <SlidsListProducts />
       <Comentarios />

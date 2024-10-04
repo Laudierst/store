@@ -107,6 +107,10 @@ export const CoontainerSlids = styled.div`
     margin-left: -1%;
     margin-top: 162px;
 
+    @media (max-width: 1650px) {
+      top: 306%;
+    }
+
     @media (max-width: 968px){
       width: 30%;
       height: 170px;
@@ -133,7 +137,7 @@ export const CoontainerSlids = styled.div`
   margin-top: -1000px;
 
   @media (max-width: 1650px) {
-    top: 142%;
+    top: 456%;
   }
 
   @media (max-width: 1150px) {

@@ -32,7 +32,7 @@ export const Pricipal = styled.div`
     @media (max-width: 1650px){
       height: 100vh;
       width: 98%;
-      margin-top: 10px;
+      margin-top: -40px;
     }
 
     @media (max-width: 1350px){
