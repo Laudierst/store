@@ -310,6 +310,15 @@ export const ContainerFooter1 = styled.div`
     }
   }
 
+  & .social {
+    width: 60%;
+    
+    @media screen and (max-width: 768px) {
+      width: 90%;
+      height: 25px;
+    }
+  }
+
   & div {
     width: 600px;
     

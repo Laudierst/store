@@ -305,6 +305,15 @@ export const ContainerFooter1 = styled.div`
   padding: 50px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
+  & .social {
+    width: 60%;
+    
+    @media screen and (max-width: 768px) {
+      width: 90%;
+      height: 25px;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     width: 100%;
     margin-top: -50px;

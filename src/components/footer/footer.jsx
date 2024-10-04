@@ -185,19 +185,19 @@ export default function Footer() {
           </url>
           <br />
           <FacebookShareButton url="https://pensandoemmim.com/novidades">
-            <FacebookIcon size={30} />
+            <FacebookIcon className="social" />
           </FacebookShareButton>
           <WhatsappShareButton url="https://pensandoemmim.com/novidades">
-            <WhatsappIcon size={30} />
+            <WhatsappIcon className="social" />
           </WhatsappShareButton>
           <TelegramShareButton url="https://pensandoemmim.com/novidades">
-            <TelegramIcon size={30} />
+            <TelegramIcon className="social" />
           </TelegramShareButton>
           <RedditShareButton url="https://pensandoemmim.com/novidades">
-            <RedditIcon size={30} />
+            <RedditIcon className="social" />
           </RedditShareButton>
           <TumblrShareButton url="https://pensandoemmim.com/novidades">
-            <TumblrIcon size={30} />
+            <TumblrIcon className="social" />
           </TumblrShareButton>
         </div>
       </ContainerFooter1>
