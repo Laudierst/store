@@ -19,6 +19,7 @@ import {
 } from "../../redux/cart/cart";
 //import cartVazio from "./cartVazio.png";
 import cartVazio from "./images/cartVazio.png";
+import Logo from "./images/Logo.png";
 //teste
 
 export default function CartFinalize() {
@@ -72,7 +73,19 @@ export default function CartFinalize() {
   const carrinhoVazio = () => {
     return (
       <>
+        <img
+          src={Logo}
+          alt="img"
+          style={{
+            width: "20%",
+            margin: "auto",
+            display: "flex",
+            padding: 5,
+            borderRadius: 5,
+          }}
+        />
         <CartVazio>
+          <br />
           <Link className="a" to="/">
             Volta para o inicio
           </Link>

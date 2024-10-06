@@ -380,10 +380,11 @@ export const CartVazio = styled.div`
     width: 30%;
     height: 10vh;
     text-shadow: 0 0 0 10px #000000;
-  }
 
-  @media (max-width: 768px) {
-   
+    @media (max-width: 768px) {
+      width: 100%;
+      font-size: 6vw;
+    }
   }
 `
 
