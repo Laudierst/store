@@ -45,8 +45,9 @@ export const Pricipal = styled.div`
 
     @media screen and (max-width: 923px) {
       width: 100%;
-      height: 100%;
+      height: 90%;
       border: none;
+      margin-top: 10px;
     }
   }
 

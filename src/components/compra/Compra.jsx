@@ -19,6 +19,7 @@ function Compra() {
   const cartQuatro = useSelector((state) => state.cart.cartItems);
   const cartSinco = useSelector((state) => state.cart.cartItems);
   const cartTotal = useSelector((state) => state.cart);
+
   //const tmItens = useSelector((state) => state.cart.tmMedidas);
   //const tmCor = useSelector((state) => state.cart.tmCores);
 
@@ -99,8 +100,8 @@ function Compra() {
   let aumento = productAmount[0] * percentual;
   let novo_amount = productAmount[0] - aumento;
 
-  let aumentoPriceUm = cartUm[0]?.price * percentual;
-  let novo_priceUm = cartUm[0]?.price - aumentoPriceUm;
+  //let aumentoPriceUm = cartUm[0]?.price * percentual;
+  //let cartTotal.cartTotalAmount = cartUm[0]?.price - aumentoPriceUm;
 
   let aumentoPriceDois = cartDois[1]?.price * percentual;
   let novo_priceDois = cartDois[1]?.price - aumentoPriceDois;
@@ -116,11 +117,11 @@ function Compra() {
 
   //E usso elas para esse arrey que vai ser enviado para api do mercado pado contida em minha api
 
-  const priceProduct = Number(novo_amount);
+  //const priceProduct = Number(novo_amount);
 
   let prod = {
     title: cartUm[0]?.name,
-    price: priceProduct,
+    price: cartTotal.cartTotalAmount,
     image: cartUm[0]?.image,
     category: "PensanoEmMim",
     description: "PensanoEmMim toda loja em promoção",
@@ -151,8 +152,8 @@ function Compra() {
         image1: `${cartUm[0].image}` ? `${cartUm[0].image}` : "",
         nameproduct1: `${cartUm[0].name}` ? `${cartUm[0].name}` : "",
         quanty1: `${cartUm[0].cartQuantity}` ? `${cartUm[0].cartQuantity}` : "",
-        price1: `${novo_priceUm}`
-          ? `${novo_priceUm * cartTres[0]?.cartQuantity}`
+        price1: `${cartTotal.cartTotalAmount}`
+          ? `${cartTotal.cartTotalAmount * cartTres[0]?.cartQuantity}`
           : "",
         cor1: `${cartUm[0].cor}` ? `${cartUm[0].cor}` : "",
         medidas1: `${cartUm[0].size}` ? `${cartUm[0].size}` : "",
@@ -197,7 +198,7 @@ function Compra() {
         const ids = JSON.stringify(cartUm[0].id);
         const names = JSON.stringify(cartUm[0].name);
         const images = JSON.stringify(cartUm[0].image[0]);
-        const prices = JSON.stringify(novo_priceUm);
+        const prices = JSON.stringify(cartTotal.cartTotalAmount);
         const cartQuantitys = JSON.stringify(cartUm[0].cartQuantity);
         const cvCodeCompra = JSON.stringify(GeraCode);
         const localTn = localStorage.getItem("tmMedidas");
@@ -303,8 +304,8 @@ function Compra() {
         quanty1: `${cartTres[0].cartQuantity}`
           ? `${cartTres[0].cartQuantity}`
           : "",
-        price1: `${novo_priceUm}`
-          ? `${novo_priceUm * cartTres[0].cartQuantity}`
+        price1: `${cartTotal.cartTotalAmount}`
+          ? `${cartTotal.cartTotalAmount * cartTres[0].cartQuantity}`
           : "",
         cor1: `${cartTres[0].cor}` ? `${cartTres[0].cor}` : "",
         medidas1: `${cartTres[0].size}` ? `${cartTres[0].size}` : "",
@@ -353,7 +354,7 @@ function Compra() {
         const ids = JSON.stringify(cartUm[0].id);
         const names = JSON.stringify(cartUm[0].name);
         const images = JSON.stringify(cartUm[0].image[0]);
-        const prices = JSON.stringify(novo_priceUm);
+        const prices = JSON.stringify(cartTotal.cartTotalAmount);
         const cartQuantitys = JSON.stringify(cartUm[0].cartQuantity);
         const cartQuantitys2 = JSON.stringify(cartUm[1].cartQuantity);
         const cvCodeCompra = JSON.stringify(GeraCode);
@@ -505,8 +506,8 @@ function Compra() {
         quanty1: `${cartTres[0].cartQuantity}`
           ? `${cartTres[0].cartQuantity}`
           : "",
-        price1: `${novo_priceUm}`
-          ? `${novo_priceUm * cartTres[0].cartQuantity}`
+        price1: `${cartTotal.cartTotalAmount}`
+          ? `${cartTotal.cartTotalAmount * cartTres[0].cartQuantity}`
           : "",
         cor1: `${cartTres[0].cor}` ? `${cartTres[0].cor}` : "",
         medidas1: `${cartTres[0].size}` ? `${cartTres[0].size}` : "",
@@ -570,7 +571,7 @@ function Compra() {
         const ids = JSON.stringify(cartUm[0].id);
         const names = JSON.stringify(cartUm[0].name);
         const images = JSON.stringify(cartUm[0].image[0]);
-        const prices = JSON.stringify(novo_priceUm);
+        const prices = JSON.stringify(cartTotal.cartTotalAmount);
         const cartQuantitys = JSON.stringify(cartUm[0].cartQuantity);
         const cartQuantitys2 = JSON.stringify(cartUm[1].cartQuantity);
         const cartQuantitys3 = JSON.stringify(cartUm[2].cartQuantity);
@@ -754,8 +755,8 @@ function Compra() {
         quanty1: `${cartQuatro[0].cartQuantity}`
           ? `${cartQuatro[0].cartQuantity}`
           : "",
-        price1: `${novo_priceUm}`
-          ? `${novo_priceUm * cartQuatro[0].cartQuantity}`
+        price1: `${cartTotal.cartTotalAmount}`
+          ? `${cartTotal.cartTotalAmount * cartQuatro[0].cartQuantity}`
           : "",
         cor1: `${cartQuatro[0].cor}` ? `${cartQuatro[0].cor}` : "",
         medidas1: `${cartQuatro[0].size}` ? `${cartQuatro[0].size}` : "",
@@ -834,7 +835,7 @@ function Compra() {
         const ids = JSON.stringify(cartUm[0].id);
         const names = JSON.stringify(cartUm[0].name);
         const images = JSON.stringify(cartUm[0].image[0]);
-        const prices = JSON.stringify(novo_priceUm);
+        const prices = JSON.stringify(cartTotal.cartTotalAmount);
         const cartQuantitys = JSON.stringify(cartUm[0].cartQuantity);
         const cartQuantitys2 = JSON.stringify(cartUm[1].cartQuantity);
         const cartQuantitys3 = JSON.stringify(cartUm[2].cartQuantity);
@@ -1053,8 +1054,8 @@ function Compra() {
         quanty1: `${cartSinco[0].cartQuantity}`
           ? `${cartSinco[0].cartQuantity}`
           : "",
-        price1: `${novo_priceUm}`
-          ? `${novo_priceUm * cartSinco[0].cartQuantity}`
+        price1: `${cartTotal.cartTotalAmount}`
+          ? `${cartTotal.cartTotalAmount * cartSinco[0].cartQuantity}`
           : "",
         cor1: `${cartSinco[0].cor}` ? `${cartUm[0].cor}` : "",
         medidas1: `${cartSinco[0].size}` ? `${cartSinco[0].size}` : "",
@@ -1148,7 +1149,7 @@ function Compra() {
         const ids = JSON.stringify(cartUm[0].id);
         const names = JSON.stringify(cartUm[0].name);
         const images = JSON.stringify(cartUm[0].image[0]);
-        const prices = JSON.stringify(novo_priceUm);
+        const prices = JSON.stringify(cartTotal.cartTotalAmount);
         const cartQuantitys = JSON.stringify(cartUm[0].cartQuantity);
         const cartQuantitys2 = JSON.stringify(cartUm[1].cartQuantity);
         const cartQuantitys3 = JSON.stringify(cartUm[2].cartQuantity);
