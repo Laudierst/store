@@ -163,6 +163,7 @@ export const TableCartFinalize = styled.div`
         width: 115px;
         border: solid 1px;
         border-radius: 8px;
+        margin-top: 5px;
 
         & button {
           //background-color: white;
