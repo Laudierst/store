@@ -11,6 +11,9 @@ export default function SlidsProducts() {
       >
         <div class="carousel-inner">
           <ContainerSlid>
+            <div className="carousel-item">
+              <img src="/banne2/b6.png" className="d-block w-100" alt="img" />
+            </div>
             <div className="carousel-item active">
               <img
                 src="/banne/banner03-09.gif"

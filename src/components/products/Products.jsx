@@ -186,7 +186,6 @@ export const Products = () => {
   return (
     <>
       <Header />
-      <SlidsProducts />
       {<SlidsMenu />}
       {filterCategoryBolsaFeminina == "" ? (
         <ProductsLoading />
