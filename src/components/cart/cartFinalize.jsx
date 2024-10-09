@@ -203,7 +203,7 @@ export default function CartFinalize() {
 						</Button>*/
 
             <Link to="/compra">
-              <Button>Finaliza comprar</Button>
+              <Button>Avançar</Button>
             </Link>
           )}
         </div>
