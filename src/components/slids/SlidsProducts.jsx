@@ -16,7 +16,7 @@ export default function SlidsProducts() {
             </div>
             <div className="carousel-item active">
               <img
-                src="/banne/banner03-09.gif"
+                src="/banne/banner03-10.gif"
                 className="d-block w-100"
                 alt="img"
               />
