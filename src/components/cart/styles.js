@@ -1,5 +1,27 @@
 import styled from "styled-components";
 
+export const ContainerImgLogo = styled.div`
+
+ & div {
+  & .imgLogo {
+    width: "20%";
+    margin: "auto";
+    display: "flex";
+    padding: 5;
+    border-radius: 5;
+    background-color: red;
+
+    @media (max-width: 923px) {
+      width: "20%";
+      margin: "auto";
+      display: "flex";
+      padding: 5;
+      border-radius: 5;
+    }
+  }
+ }
+`
+
 export const CartContainer = styled.div`
   position: fixed;
   position: absolute;
@@ -161,7 +183,7 @@ export const TableCartFinalize = styled.div`
     & td {
       & .div1 {
         width: 115px;
-        border: solid 1px;
+        //border: solid 1px;
         border-radius: 8px;
         margin-top: 5px;
 
@@ -175,7 +197,7 @@ export const TableCartFinalize = styled.div`
         }
 
         @media(max-width: 923px) {
-          width: 220px;
+          width: 180px;
 
           & .namePosition {
             position: absolute;
@@ -288,20 +310,39 @@ export const TableCartFinalize = styled.div`
           }
         }
 
-        .btnButton {
-          border: none;
-          border-radius: 8px;
-          padding-left: 5px;
-          padding-right: 5px;
-          background-color: transparent;
-          font-weight: lighter;
-          color: white;
+        & .divButton {
+          width: 80px;
+          border: solid 1px;
+          display: inline-block;
+          border-radius: 4px;
+
+          & .btnButton {
+            border: none;
+            border-radius: 8px;
+            padding-left: 5px;
+            padding-right: 5px;
+            background-color: transparent;
+            font-weight: lighter;
+            color: white;
+            margin: 2px;
+
+            @media(max-width: 923px) {
+              width: 29px;
+              
+            }
+          }
 
           @media(max-width: 923px) {
-            width: 89px;
-            height: 1px;
-          }
+              margin-left: 12px;
+              width: 75px;
+            }
         }
+
+        & .pUnidade {
+            display: inline-block;
+            margin: 8px;
+          }
+       
 
         & .button {
           border: solid 0.1px;
@@ -310,6 +351,7 @@ export const TableCartFinalize = styled.div`
           padding: 5px;
           background-color: transparent;
           color: white;
+          margin: 8px;
 
           &:hover {
             background-color: rgba(0, 255, 255, 0.582);
@@ -323,10 +365,6 @@ export const TableCartFinalize = styled.div`
         }
       }
     }
-  }
-
-  & button {
-    margin: 8px
   }
 
   @media (max-width: 768px) {
@@ -368,15 +406,13 @@ export const TableCartFinalize = styled.div`
 export const CartVazio = styled.div`
   width: 100%;
   height: 50%;
-  margin: auto;
-  display: flex;
+  text-align: center;
 
   & .a {
     text-decoration: none;
-    display: block;
     text-align: center;
     font-weight: bold;
-    font-size: 2vw;
+    font-size: 3vw;
     width: 30%;
     height: 10vh;
     text-shadow: 0 0 0 10px #000000;
@@ -390,9 +426,14 @@ export const CartVazio = styled.div`
 
 export const ContainerImg = styled.div`
    & img {
-    width: 100%;
+    width: 40%;
     margin: auto;
     display: flex;
+
+    @media (max-width: 768px) {
+      width: 80%;
+      font-size: 6vw;
+    }
   }
 `
 

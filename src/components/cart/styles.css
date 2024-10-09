@@ -1,0 +1,10 @@
+.imgLogo {
+    
+    @media (max-width: 923px){
+        width: "20%";
+        margin: "auto";
+        display: "flex";
+        padding: 5;
+        borderRadius: 5;
+    }
+}

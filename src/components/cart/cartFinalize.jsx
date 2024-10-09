@@ -19,7 +19,9 @@ import {
 } from "../../redux/cart/cart";
 //import cartVazio from "./cartVazio.png";
 import cartVazio from "./images/cartVazio.png";
-import Logo from "./images/Logo.png";
+//import Logo from "./images/Logo.png";
+import { Eletronica } from "../leadPage/Eletronica";
+import { Vestidos } from "../leadPage/Vestidos";
 //teste
 
 export default function CartFinalize() {
@@ -73,17 +75,6 @@ export default function CartFinalize() {
   const carrinhoVazio = () => {
     return (
       <>
-        <img
-          src={Logo}
-          alt="img"
-          style={{
-            width: "20%",
-            margin: "auto",
-            display: "flex",
-            padding: 5,
-            borderRadius: 5,
-          }}
-        />
         <CartVazio>
           <br />
           <Link className="a" to="/">
@@ -93,6 +84,8 @@ export default function CartFinalize() {
         <ContainerImg>
           <img src={cartVazio} alt="img" />
         </ContainerImg>
+        <Eletronica />
+        <Vestidos />
       </>
     );
   };
@@ -149,23 +142,28 @@ export default function CartFinalize() {
                                   {cor ? <b>Cor: {cor}</b> : ""}
                                 </p>
                               </div>
+                              <div className="div1"></div>
+                              <div className="divButton">
+                                <button
+                                  className="btnButton"
+                                  onClick={() => handleIncreaseClick(res)}
+                                >
+                                  <FaPlus />
+                                </button>
+                                {cartQuantity}
+                                <button
+                                  className="btnButton"
+                                  onClick={() => handleDecreaseClick(res)}
+                                >
+                                  <FaWindowMinimize className="mb-2" />
+                                </button>
+                              </div>
+                              <p className="pUnidade">
+                                ( {cartQuantity} Unidade )
+                              </p>
                             </div>
+
                             <br />
-                          </div>
-                          <div className="div1">
-                            <button
-                              className="btnButton"
-                              onClick={() => handleIncreaseClick(res)}
-                            >
-                              <FaPlus />
-                            </button>
-                            {cartQuantity}
-                            <button
-                              className="btnButton"
-                              onClick={() => handleDecreaseClick(res)}
-                            >
-                              <FaWindowMinimize className="mb-2" />
-                            </button>
                           </div>
                         </td>
 
