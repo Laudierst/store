@@ -195,6 +195,7 @@ export const Buttons = styled.div`
 export const ContainerAMR = styled.div`
   width: 100%;
   background-image: linear-gradient(#03EBEB, #001414);
+  //background-image: linear-gradient(#03EBEB, #001414);
   //background-color: #03EBEB;
   text-decoration: none;
   justify-content: space-between;

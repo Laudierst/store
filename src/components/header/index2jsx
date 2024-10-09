@@ -21,7 +21,7 @@ import {
 } from "./styles";
 import { SeartResult } from "./SeartResult";
 
-export function Header() {
+export function Header2() {
   const complite = "produtos";
   const [dados, setDados] = useState(complite);
 

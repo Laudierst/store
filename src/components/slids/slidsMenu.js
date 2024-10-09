@@ -3,8 +3,9 @@
 import styled from "styled-components"
 
 export const Coontainer = styled.div`
-  background-image: linear-gradient(#03EBEB, #000000);
-  //background: #03EBEB;
+  //background-image: linear-gradient(#03EBEB, #000000);
+  background-image: linear-gradient(#03EBEB, #001414);
+  //background: transparent;
   width: 100%;
 
   @media(max-width: 768px) {
