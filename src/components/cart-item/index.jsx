@@ -28,9 +28,9 @@ const CartItem = ({ product }) => {
     dispatch(decrementCart(dataProduct));
   };
 
-  let percentual = 0.25;
-  let aumento = product.price * percentual;
-  let novo_price = product.price - aumento;
+  //let percentual = 0.25;
+  //let aumento = product.price * percentual;
+  //let novo_price = product.price - aumento;
 
   return (
     <div>
@@ -40,7 +40,7 @@ const CartItem = ({ product }) => {
         <CartItemInfo>
           <p>{product.name}</p>
           <p>
-            <strong>R$ {novo_price * product.cartQuantity},00</strong>
+            <strong>R$ {product.price},00</strong>
           </p>
 
           <CartItemQuantity>

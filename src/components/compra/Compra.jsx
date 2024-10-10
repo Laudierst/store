@@ -25,7 +25,7 @@ function Compra() {
 
   //console.log(cartUm[0].price, cartDois[1].price);
 
-  const productAmount = [cartTotal.cartTotalAmount];
+  //const productAmount = [cartTotal.cartTotalAmount];
   //const productQuantity = [cartTotal.cartTotalQuantyti]
 
   const GeraCode = Math.random();
@@ -34,7 +34,6 @@ function Compra() {
   // Aqui abaixo estamos criando arrey de estados para receber os valores do input vindo co form compra com useSatate
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
   const [state, setState] = useState("");
   const [city, setCity] = useState("");
   const [cep, setCep] = useState("");
@@ -42,11 +41,16 @@ function Compra() {
   const [number, setNumber] = useState("");
   const [district, setDistrict] = useState("");
   const [house, setHouse] = useState("");
+  const [phone, setPhone] = useState("");
   const [cpf, setCpf] = useState("");
+  //const [ResultPhone, setPhoneResult] = useState("");
+  //const [ResulCpf, setCpfResult] = useState("");
   const [code_compra] = useState(ConvertCode);
 
-  //const [ productslist] = useState(res)
+  const dataCpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, "$1.$2.$3-$4");
+  const dataPhone = phone.replace(/(\d{2})(\d{5})(\d{4})/g, "($1) $2-$3");
 
+  console.log(dataPhone);
   const onchangeCep = (e) => {
     e.preventDefault();
     const envento = e.target.value;
@@ -55,7 +59,7 @@ function Compra() {
 
     //let regex = /^[A-Za-z][0-9]{7}$/;
     if (envento.length === 8) {
-      console.log(envento);
+      //console.log(envento);
 
       (async () => {
         await axios
@@ -96,24 +100,24 @@ function Compra() {
     code_compra,
   };
 
-  let percentual = 0.25;
-  let aumento = productAmount[0] * percentual;
-  let novo_amount = productAmount[0] - aumento;
+  //let percentual = 0.25;
+  //let aumento = productAmount[0] * percentual;
+  //let novo_amount = productAmount[0] - aumento;
 
   //let aumentoPriceUm = cartUm[0]?.price * percentual;
   //let cartTotal.cartTotalAmount = cartUm[0]?.price - aumentoPriceUm;
 
-  let aumentoPriceDois = cartDois[1]?.price * percentual;
-  let novo_priceDois = cartDois[1]?.price - aumentoPriceDois;
+  //let aumentoPriceDois = cartDois[1]?.price * percentual;
+  let novo_priceDois = cartDois[1]?.price;
 
-  let aumentoPriceTres = cartTres[2]?.price * percentual;
-  let novo_priceTres = cartTres[2]?.price - aumentoPriceTres;
+  //let aumentoPriceTres = cartTres[2]?.price * percentual;
+  let novo_priceTres = cartTres[2]?.price;
 
-  let aumentoPriceQuatro = cartQuatro[3]?.price * percentual;
-  let novo_priceQuatro = cartQuatro[3]?.price - aumentoPriceQuatro;
+  //let aumentoPriceQuatro = cartQuatro[3]?.price * percentual;
+  let novo_priceQuatro = cartQuatro[3]?.price;
 
-  let aumentoPriceSinco = cartSinco[4]?.price * percentual;
-  let novo_priceSinco = cartSinco[4]?.price - aumentoPriceSinco;
+  //let aumentoPriceSinco = cartSinco[4]?.price * percentual;
+  let novo_priceSinco = cartSinco[4]?.price;
 
   //E usso elas para esse arrey que vai ser enviado para api do mercado pado contida em minha api
 
@@ -141,7 +145,7 @@ function Compra() {
 
       //let res1 = JSON.stringify(cartUm[0].image[0]);
       let res4 = JSON.stringify(adress);
-      let res5 = JSON.stringify(novo_amount);
+      let res5 = JSON.stringify(cartTotal.cartTotalAmount);
 
       const templeteParams = {
         from_name: name ? name : "",
@@ -246,7 +250,7 @@ function Compra() {
         const CreateCompra = {
           name: name,
           email: email,
-          phone: phone,
+          phone: dataPhone,
           state: cep.state,
           city: cep.city,
           cep: cep.cep,
@@ -254,7 +258,7 @@ function Compra() {
           number: number,
           district: cep.neighborhood,
           apartment_or_house: house,
-          cpf: cpf,
+          cpf: dataCpf,
           code_compra: code_compra,
           productslist: ArreyData,
           productName: cartUm[0].name,
@@ -266,7 +270,7 @@ function Compra() {
           productUrl: templeteParams.url_product1,
         };
 
-        console.log(CreateCompra);
+        //console.log(cpf);
 
         await api
           .post("/compra", CreateCompra)
@@ -291,7 +295,7 @@ function Compra() {
 
       //let res1 = JSON.stringify(cartUm[0].image[0]);
       let res4 = JSON.stringify(adress);
-      let res5 = JSON.stringify(novo_amount);
+      let res5 = JSON.stringify(cartTotal.cartTotalAmount);
 
       const templeteParams = {
         from_name: name ? name : "",
@@ -493,7 +497,7 @@ function Compra() {
 
       //let res1 = JSON.stringify(cartUm[0].image[0]);
       let res4 = JSON.stringify(adress);
-      let res5 = JSON.stringify(novo_amount);
+      let res5 = JSON.stringify(cartTotal.cartTotalAmount);
 
       const templeteParams = {
         from_name: name ? name : "",
@@ -742,7 +746,7 @@ function Compra() {
 
       //let res1 = JSON.stringify(cartUm[0].image[0]);
       let res4 = JSON.stringify(adress);
-      let res5 = JSON.stringify(novo_amount);
+      let res5 = JSON.stringify(cartTotal.cartTotalAmount);
 
       const templeteParams = {
         from_name: name ? name : "",
@@ -1041,7 +1045,7 @@ function Compra() {
 
       //let res1 = JSON.stringify(cartUm[0].image[0]);
       let res4 = JSON.stringify(adress);
-      let res5 = JSON.stringify(novo_amount);
+      let res5 = JSON.stringify(cartTotal.cartTotalAmount);
 
       const templeteParams = {
         from_name: name ? name : "",
@@ -1422,11 +1426,12 @@ function Compra() {
               <InputBox>
                 <ion-icon name="mail-outline"></ion-icon>
                 <input
-                  type="number"
+                  type="text"
                   name="phone"
                   id="phone"
+                  maxlength="11"
                   onChange={(e) => setPhone(e.target.value)}
-                  value={phone.phone}
+                  value={dataPhone}
                   required
                 />
                 <label htmlFor="">Telefone</label>
@@ -1534,12 +1539,14 @@ function Compra() {
                   type="text"
                   name="house"
                   id="house"
+                  maxlength="11"
                   onChange={(e) => setCpf(e.target.value)}
-                  value={house.cpf}
+                  value={dataCpf}
                   required
                 />
-                <label htmlFor="">CPF/CNPJ</label>
+                <label htmlFor="">CPF</label>
               </InputBox>
+
               <ButtonBox type="submit">Finaliza Compra</ButtonBox>
             </form>
           </FormBox>

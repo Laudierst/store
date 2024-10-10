@@ -179,6 +179,8 @@ export const DescriptionProducts = () => {
 
   function handlerCartAdd2(e) {
     let id = localStorage.getItem("id");
+
+    //console.log(e);
     let nameProduct = localStorage.getItem("name");
 
     const dataCor = { id: id, cor: dataSlug };
@@ -321,7 +323,7 @@ export const DescriptionProducts = () => {
       : dataTamanho == "512GB"
       ? novo_price3
       : novo_price;
-  console.log(priceAtual);
+  //console.log(priceAtual);
 
   const productProntoAddCard = [
     {

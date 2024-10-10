@@ -1,7 +1,7 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable react/jsx-no-comment-textnodes */
 import ReactLoading from "react-loading";
-import { ProductProd, LoadingPage, TitleProduct } from "./stylesEletro";
+import { ProductProd, LoadingPage } from "./stylesEletro";
 import { FaCreditCard } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
