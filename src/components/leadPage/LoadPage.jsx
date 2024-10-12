@@ -51,7 +51,7 @@ export const LoadPage = () => {
 
   const lastPart = localStorage.getItem("id")
     ? localStorage.getItem("id")
-    : "ea81e5e0-889e-4789-9ca8-ce540607cb2c";
+    : "dd90aefc-3c72-4cdc-8ab6-d40b7dd4aa11";
 
   localStorage.setItem("id", lastPart);
 
@@ -538,7 +538,6 @@ export const LoadPage = () => {
                             )}
                           </span>
                         </p>
-
                         <div>
                           <div
                             role="group"
@@ -682,6 +681,15 @@ export const LoadPage = () => {
                               </button>
                             )}
                           </div>
+                          <br />
+                          <p className="pMarge">
+                            O que você precisa saber sobre este produto É mãos
+                            livres. Tipo de alto-falante: subwoofer. Possui
+                            conectividade Bluetooth. Possui luzes LED. Bateria
+                            recarregável. Potência de 10W. Vem com um microfone
+                            de acessório. Lugar de colocação: mesa. Possui
+                            microfone interno. Tempo de carga da bateria: 2h.
+                          </p>
                         </div>
                         <div>
                           {divideSizeArrey[0] == "Padrão" ||

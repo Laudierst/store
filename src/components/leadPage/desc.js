@@ -189,6 +189,13 @@ export const Pricipal = styled.div`
     display: inline-flex;
     margin: 5px;
     
+    & .pMarge {
+      width: 90%;
+
+      @media(max-width: 923px) {
+        width: 100%;
+      }
+    }
 
     & .buttonColor {
       margin: 2px;
