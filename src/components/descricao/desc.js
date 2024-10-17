@@ -132,6 +132,12 @@ export const Pricipal = styled.div`
       margin: 2px;
       border-radius: 3px;
 
+      & .positionButtonImg {
+      @media (max-width: 923px) {
+        border: solid 1px;
+      }
+    }
+
       &:hover {
         border: 1px solid;
         border-color: #000000;
@@ -188,7 +194,6 @@ export const Pricipal = styled.div`
     width: 45%;
     display: inline-flex;
     margin: 5px;
-    
 
     & .buttonColor {
       margin: 2px;
@@ -272,6 +277,7 @@ export const Pricipal = styled.div`
 		@media (max-width: 1200px) {
 			font-size: 12px;
 		}
+    
 	}
 
   @media (max-width: 992px) {
@@ -279,8 +285,7 @@ export const Pricipal = styled.div`
     text-align: justify;
     grid-template-columns: 100%;
     grid-template-rows: 0px 470px 30px;
-    grid-template-areas: "cabecalho" "secao" "barra-lateral" "rodape";
-    
+    grid-template-areas: "cabecalho" "secao" "barra-lateral" "rodape";   
 
     & .img {
       width: 100%;
@@ -322,6 +327,7 @@ export const Pricipal = styled.div`
       width: 97%;
       height: 100%;
       display: inline-block;
+      
     }
   }
 `;

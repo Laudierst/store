@@ -254,10 +254,6 @@ export const ProductDescSecudanry = styled.div`
     font-size: 2vw;
   }
 
-  .slugImg {
-    width: 50px;
-  }
-
   & .btnButtonModal {
       margin: auto;
       display: flex;
