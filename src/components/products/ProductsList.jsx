@@ -17,12 +17,12 @@ export const Products = () => {
     });
   }, []);
 
-  const scrollToTop = () => {
+  /*const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-  };
+  };*/
 
   const [data, setData] = useState([]);
 
@@ -40,7 +40,7 @@ export const Products = () => {
   //console.log(limitPrducts);
   //const products = useSelector(productSlace => productSlace.products.items)
 
-  function LocalSto(e) {
+  /*function LocalSto(e) {
     localStorage.removeItem("id");
     localStorage.removeItem("bar_code");
     localStorage.removeItem("categoryId");
@@ -56,7 +56,7 @@ export const Products = () => {
     //console.log(dados)
 
     scrollToTop();
-  }
+  }*/
 
   return (
     <>
@@ -74,7 +74,7 @@ export const Products = () => {
               let novo_price = price - aumento;
 
               return (
-                <Link to={"/desc"} onClick={() => LocalSto(res)}>
+                <Link to={"/desc/" + id}>
                   <div key={id}>
                     <img src={image[0]} alt="img" />
                     <h5>{name}</h5>

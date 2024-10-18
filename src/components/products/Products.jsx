@@ -212,7 +212,10 @@ export const Products = () => {
                   let novo_price = price - aumento;
 
                   return (
-                    <Link to={"/desc"} onClick={() => LocalSto(req.products)}>
+                    <Link
+                      to={"/desc/id"}
+                      onClick={() => LocalSto(req.products)}
+                    >
                       <div key={id}>
                         <img src={image[0]} alt="img" />
                         <h5>{name}</h5>

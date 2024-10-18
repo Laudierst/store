@@ -49,10 +49,20 @@ export const DescriptionProducts = () => {
 
   //console.log(teste);
 
+  if (!window.location.hash) {
+    window.location = window.location + "#products#description";
+    window.location.reload();
+  }
+
   //let url = window.location.pathname;
   //let parts = url.split("/");
   //let lastPart = parts.pop() || parts.pop();
-  const lastPart = localStorage.getItem("id");
+  //const lastPart = localStorage.getItem("id");
+
+  let url = window.location.pathname;
+  let parts = url.split("/");
+  let lastPart2 = parts.pop() || parts.pop();
+  console.log(lastPart2);
 
   const navigate = useNavigate();
 
@@ -61,7 +71,7 @@ export const DescriptionProducts = () => {
   const productList = [product];
 
   const dataProductFilter = productList[0]?.filter(
-    (productData) => productData.id === lastPart
+    (productData) => productData.id === lastPart2
   );
 
   const priceFilter = dataProductFilter.map((pri) => pri.price);

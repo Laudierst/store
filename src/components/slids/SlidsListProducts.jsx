@@ -78,7 +78,7 @@ export const SlidsListProducts = () => {
             const { id, image } = res;
 
             return (
-              <Link to="/desc" onClick={() => LocalSto(res)}>
+              <Link to={"/desc/" + id} onClick={() => LocalSto(res)}>
                 <div key={id} className="item">
                   <div className="image">
                     <img src={image[0]} alt="img" />

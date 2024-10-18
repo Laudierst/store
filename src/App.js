@@ -82,7 +82,7 @@ function App() {
     },
 
     {
-      path: `/desc`,
+      path: `/desc/:id`,
       element: <DescriptionProducts />,
     },
 

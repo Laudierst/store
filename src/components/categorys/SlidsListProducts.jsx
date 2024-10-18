@@ -34,7 +34,7 @@ export const SlidsListProducts = () => {
     dispatch(addDecription(e))
   }*/
 
-  function LocalSto(e) {
+  /*function LocalSto(e) {
     localStorage.removeItem("id");
     localStorage.removeItem("bar_code");
     localStorage.removeItem("categoryId");
@@ -44,7 +44,7 @@ export const SlidsListProducts = () => {
     localStorage.setItem("id", id.id);
     localStorage.setItem("categoryId", e.id);
     localStorage.setItem("bar_code", e.bar_code);
-  }
+  }*/
 
   if (!data || !data.length) return null;
 
@@ -78,7 +78,7 @@ export const SlidsListProducts = () => {
             const { id, image } = res;
 
             return (
-              <Link to="/desc" onClick={() => LocalSto(res)}>
+              <Link to={"/desc/" + id} target="_blank">
                 <div key={id} className="item">
                   <div className="image">
                     <img src={image[0]} alt="img" />
