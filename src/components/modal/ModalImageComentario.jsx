@@ -40,9 +40,7 @@ export const ModalImageComentario = ({ data, comnetario }) => {
               return (
                 <div key={ImageData}>
                   {loopImg.map((res) =>
-                    res == "" ? (
-                      ""
-                    ) : (
+                    res ? (
                       <SwiperSlide
                         key={res}
                         style={{ width: "100%", height: "80vh" }}
@@ -54,6 +52,8 @@ export const ModalImageComentario = ({ data, comnetario }) => {
                           alt="Imagem não encontrada"
                         />
                       </SwiperSlide>
+                    ) : (
+                      ""
                     )
                   )}
                 </div>

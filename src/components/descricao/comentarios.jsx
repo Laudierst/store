@@ -173,7 +173,7 @@ export const Comentarios = () => {
                             border: "solid 1px",
                             borderRadius: 8,
                             borderColor: "#000000",
-                            background: "yellow",
+                            background: "#029F9F",
                             padding: 5,
                           }}
                         >
