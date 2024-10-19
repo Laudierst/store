@@ -49,11 +49,9 @@ export const LoadPage = () => {
   const [categoroy, setCategory] = useState([]);
   //const [teste, setTeste] = useState([]);
 
-  const lastPart = localStorage.getItem("id")
-    ? localStorage.getItem("id")
-    : "dd90aefc-3c72-4cdc-8ab6-d40b7dd4aa11";
+  const lastPart = "dd90aefc-3c72-4cdc-8ab6-d40b7dd4aa11";
 
-  localStorage.setItem("id", lastPart);
+  //localStorage.setItem("id", lastPart);
 
   const navigate = useNavigate();
 

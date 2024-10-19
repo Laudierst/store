@@ -7,8 +7,8 @@ import { FaCreditCard } from "react-icons/fa";
 import { useQuery } from "react-query";
 import imgcart from "./images/card.jpg";
 //import { useNavigate } from "react-router-dom"
-import { LoadingPage } from "../products/products";
-import ReactLoading from "react-loading";
+//import { LoadingPage } from "../products/products";
+//import ReactLoading from "react-loading";
 
 export function Realacionandos() {
   //console.clear()
@@ -43,7 +43,7 @@ export function Realacionandos() {
 
   //console.log(dataProductFilterBarcodeList);
 
-  function LocalSto(e) {
+  /*function LocalSto(e) {
     localStorage.removeItem("id");
     localStorage.removeItem("bar_code");
     localStorage.removeItem("categoryId");
@@ -72,7 +72,7 @@ export function Realacionandos() {
 
     //window.history.pushState(null, null, "/" + ids);
     //window.location.reload();
-  }
+  }*/
 
   if (!data || !data.length) return null;
 
@@ -88,7 +88,7 @@ export function Realacionandos() {
             let novo_price = price - aumento;
 
             return (
-              <Link to="/desc" onClick={() => LocalSto(res)}>
+              <Link to={"/desc/" + id}>
                 <div key={id} className="divRelation">
                   <img src={image[0]} alt="img" className="imgRelation" />
                   <h5 className="h5Relation">{name}</h5>

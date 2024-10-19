@@ -37,7 +37,7 @@ export const Vestidos = () => {
 
   //const products = useSelector(productSlace => productSlace.products.items)
 
-  function LocalSto(e) {
+  /*function LocalSto(e) {
     localStorage.removeItem("id");
     localStorage.removeItem("bar_code");
     localStorage.removeItem("categoryId");
@@ -47,7 +47,7 @@ export const Vestidos = () => {
     localStorage.setItem("id", id.id);
     localStorage.setItem("categoryId", e.id);
     localStorage.setItem("bar_code", e.bar_code);
-  }
+  }*/
 
   // Aqui estamos fazenso as requisição na API REstful com o axio,
   //e recebendo os dados atraves do useState para poder manipula os estados
@@ -90,7 +90,7 @@ export const Vestidos = () => {
                 let novo_price = price - aumento;
 
                 return (
-                  <Link to={"/desc"} onClick={() => LocalSto(res.products)}>
+                  <Link to={"/desc/" + id}>
                     <div key={id}>
                       <img src={image[0]} alt="img" />
                       <h5>{name}</h5>
