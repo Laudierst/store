@@ -87,7 +87,7 @@ function App() {
     },
 
     {
-      path: "/novidades",
+      path: "/novidades/:id",
       element: <LoadPage />,
     },
 

@@ -56,7 +56,7 @@ export function HeaderList() {
             </a>
           </li>
           <li>
-            <a href="/novidades">
+            <a href="/novidades/dd90aefc-3c72-4cdc-8ab6-d40b7dd4aa11">
               <AiFillAlert className="text-white h5 m-1 mb-2 p" />
               Novidade
             </a>
