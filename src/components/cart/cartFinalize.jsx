@@ -42,7 +42,7 @@ export default function CartFinalize() {
   const productSize = useSelector((cartItems) => cartItems.cart.tmMedidas);
   const productCor = useSelector((cartItems) => cartItems.cart.tmCores);
 
-  console.log(productCor);
+  //console.log(productCor);
 
   if (cart == "") {
     localStorage.removeItem("tmMedidas");
