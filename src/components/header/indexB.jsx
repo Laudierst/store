@@ -8,15 +8,13 @@ import logosimples from "./images/LogoTop2.png";
 // Styles
 import { Container, Logo, ContainerAMR, ContainerPRT } from "./styles";
 import { SeartResults } from "./SeartResults";
-import SlidsProducts from "../slids/SlidsProducts";
-import { SlidsMenu } from "../slids/SlidsMenu";
 
-export function HeaderList() {
+export function HeaderB() {
   return (
     <>
       <ContainerAMR>
         <Logo>
-          <a href="/desc/id" className="a-color">
+          <a href="/" className="a-color">
             <img src={logosimples} alt="img" className="img3" />
             PensandoEmMim
           </a>
@@ -75,8 +73,6 @@ export function HeaderList() {
           </li>
         </ul>
       </ContainerPRT>
-      <SlidsProducts />
-      <SlidsMenu />
     </>
   );
 }

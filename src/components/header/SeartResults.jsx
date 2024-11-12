@@ -47,9 +47,9 @@ export const SeartResults = () => {
       </LoadingPage>;
     }, 300);
 
-    //const ids = localStorage.getItem("id");
-    navigate("/desc");
-    window.location.reload();
+    const ids = localStorage.getItem("id");
+    navigate("/desc/" + ids);
+    //window.location.reload();
   }
 
   //const resutList = data.map((item) => {

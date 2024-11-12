@@ -8,7 +8,7 @@ import { FaCreditCard } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Header } from "../header";
-import SlidsProducts from "../slids/SlidsProducts";
+//import SlidsProducts from "../slids/SlidsProducts";
 import { SlidsMenu } from "../slids/SlidsMenu";
 import Footer from "../footer/footer";
 import { SlidsListProducts } from "../slids/SlidsListProducts";

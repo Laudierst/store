@@ -10,12 +10,25 @@ import { GoStarFill } from "react-icons/go";
 ///import { Widgets } from "@material-ui/icons"
 
 export const Comentarios = () => {
+  //const teste = window.history.pushState(null, null, "/")
+
+  //console.log(teste, "r")
+
+  //window.addEventListener("popstate", detectHostory)
+
+  //Js Detect Browser Back Button
+
+  //const r = window.history.pushState({id:1}, "?q=1234&u=beware")
+
+  /*function detectHostory(){
+    window.location.reload()
+  }*/
+
+  //window.history.pushState({id:1}, "?q=1234&u=beware")
+
   const [datacoment, setDatacomente] = useState([]);
 
-  let url = window.location.pathname;
-  let parts = url.split("/");
-  let localId = parts.pop() || parts.pop();
-
+  const localId = localStorage.getItem("id");
   const comentarios = useSelector(
     (comnetarioSlice) => comnetarioSlice.comentarios.items
   );
@@ -31,6 +44,15 @@ export const Comentarios = () => {
     <ContainerComentario>
       <section>{/*<SlidsDescriptionOfertas/>*/}</section>
       <div>
+        {/*<button
+        type="button"
+        className="btnButtonModal"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+
+      >
+        Deixe seu comentario
+      </button>*/}
         {comnetFilter[0] ? <h3>Avaliações Do Produto</h3> : ""}
 
         <div
