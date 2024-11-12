@@ -60,39 +60,6 @@ export function Realacionandos() {
     (productData) => productData.bar_code == filterProductBarcode[0]
   );
 
-  //console.log(dataProductFilterBarcodeList);
-
-  /*function LocalSto(e) {
-    localStorage.removeItem("id");
-    localStorage.removeItem("bar_code");
-    localStorage.removeItem("categoryId");
-
-    const dados = JSON.stringify(e);
-    const id = JSON.parse(dados);
-    localStorage.setItem("id", id.id);
-    localStorage.setItem("categoryId", e.id);
-    localStorage.setItem("bar_code", e.bar_code);
-
-    setTimeout(() => {
-      <LoadingPage>
-        <ReactLoading
-          type="spokes"
-          color="aqua"
-          height={"100%"}
-          width={"100%"}
-          delay={"100"}
-        />
-      </LoadingPage>;
-    }, 1000);
-
-    //const ids = localStorage.getItem("id");
-    //navigate("/desc/" + ids)
-    window.location.reload();
-
-    //window.history.pushState(null, null, "/" + ids);
-    //window.location.reload();
-  }*/
-
   if (!data || !data.length) return null;
 
   return (

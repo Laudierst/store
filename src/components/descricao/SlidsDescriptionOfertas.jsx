@@ -33,7 +33,10 @@ export function SlidsDescriptionOfertas() {
     }
   });
 
-  const localId = localStorage.getItem("id");
+  //const localId = localStorage.getItem("id");
+  let url = window.location.pathname;
+  let parts = url.split("/");
+  let localId = parts.pop() || parts.pop();
   //const BNT = localStorage.getItem("name")
 
   //const productFilter = product?.filter(product => product)
@@ -101,7 +104,11 @@ export function SlidsDescriptionOfertas() {
             let novo_price = price - aumento;
 
             return (
-              <Link to={"/" + id} target="_blank" onClick={() => LocalSto(res)}>
+              <Link
+                to={"/desc" + id}
+                target="_blank"
+                onClick={() => LocalSto(res)}
+              >
                 <div key={id}>
                   <img src={image[0]} alt="img" />
                   <h5>{name}</h5>

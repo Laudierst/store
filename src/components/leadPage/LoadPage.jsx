@@ -26,7 +26,7 @@ import { MarginTop, Pricipal } from "./desc";
 //import { ImageList } from "@material-ui/core";
 import { ProductImageMini } from "./products_desc";
 import Footer from "./footer/footer";
-import { SlidsListProducts } from "./SlidsListProducts";
+//import { SlidsListProducts } from "./SlidsListProducts";
 import { Eletronica } from "./Eletronica";
 //import api from "../../api/api";
 
@@ -962,7 +962,7 @@ export const LoadPage = () => {
       </Pricipal>
       <Eletronica />
       <Realacionandos />
-      <SlidsListProducts />
+      {/*<SlidsListProducts />*/}
       <Comentarios />
       <Footer />
     </>

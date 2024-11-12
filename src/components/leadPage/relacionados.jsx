@@ -29,7 +29,8 @@ export function Realacionandos() {
     }
   });
 
-  const lastPart = localStorage.getItem("id");
+  //const lastPart = localStorage.getItem("id");
+  const lastPart = "dd90aefc-3c72-4cdc-8ab6-d40b7dd4aa11";
 
   const filterProduct = data.map((pro) => pro);
   const dataProduct = [filterProduct];

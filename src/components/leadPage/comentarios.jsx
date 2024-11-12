@@ -28,7 +28,10 @@ export const Comentarios = () => {
 
   const [datacoment, setDatacomente] = useState([]);
 
-  const localId = localStorage.getItem("id");
+  //const localId = localStorage.getItem("id");
+  let url = window.location.pathname;
+  let parts = url.split("/");
+  let localId = parts.pop() || parts.pop();
   const comentarios = useSelector(
     (comnetarioSlice) => comnetarioSlice.comentarios.items
   );
