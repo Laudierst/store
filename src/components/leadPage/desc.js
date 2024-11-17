@@ -177,7 +177,7 @@ export const Pricipal = styled.div`
         margin-top: 230px;
       }
       & .espaco2 {
-        margin-top: 50px;
+        margin-top: 100px;
       }
     }
   }
