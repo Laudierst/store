@@ -28,6 +28,7 @@ import { ProductImageMini } from "./products_desc";
 import Footer from "./footer/footer";
 //import { SlidsListProducts } from "./SlidsListProducts";
 import { Eletronica } from "./Eletronica";
+import { Vestidos } from "./Vestidos";
 //import api from "../../api/api";
 
 export const scrollToTop = () => {
@@ -960,8 +961,9 @@ export const LoadPage = () => {
           <></>
         </footer>
       </Pricipal>
-      <Eletronica />
       <Realacionandos />
+      <Eletronica />
+      <Vestidos />
       {/*<SlidsListProducts />*/}
       <Comentarios />
       <Footer />
