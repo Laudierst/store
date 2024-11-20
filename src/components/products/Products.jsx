@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Footer from "../footer/footer";
 import { useSelector } from "react-redux";
 import { ProductsLoading } from "./ProductsLoading";
-import imgCopy from "./images/Decontos.gif";
+//import imgCopy from "./images/Decontos.gif";
 import "./styles.css";
 import api from "../../api/api";
 import { HeaderList } from "../header/indexList";
