@@ -153,22 +153,16 @@ export default function Footer() {
       <ContainerFooter2>
         <div>
           <h4>Politicas do site</h4>
-          <a
-            href="http://"
-            target="_blank"
-            className="links"
-            rel="noopener noreferrer"
-          >
+          <a href="politica" className="links" rel="noopener noreferrer">
             Politicas
           </a>
           <br />
           <a
-            href="http://"
-            target="_blank"
+            href="politicatrocadevolucao"
             className="links"
             rel="noopener noreferrer"
           >
-            Politicas
+            Devolucao
           </a>
         </div>
         <div>
