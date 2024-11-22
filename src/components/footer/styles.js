@@ -240,6 +240,19 @@ export const ContainerFooter2 = styled.div`
     padding: 40px;
   }
 
+  & .links {
+    text-decoration: none;
+    color: #eee;
+
+    &:hover{
+      color: #7fffd4;
+    }
+
+    @media screen and (max-width: 768px) {
+     font-size: 10px;
+    }
+  }
+
   & .imgSeg {
 
     & img {

@@ -152,7 +152,27 @@ export default function Footer() {
       </ContainerFooter>
       <ContainerFooter2>
         <div>
-          <h4>Bandeiras</h4>
+          <h4>Politicas do site</h4>
+          <a
+            href="http://"
+            target="_blank"
+            className="links"
+            rel="noopener noreferrer"
+          >
+            Politicas
+          </a>
+          <br />
+          <a
+            href="http://"
+            target="_blank"
+            className="links"
+            rel="noopener noreferrer"
+          >
+            Politicas
+          </a>
+        </div>
+        <div>
+          <h4>Bandeira</h4>
           {imgCart.map((img) => (
             <img src={img.img} alt="im" />
           ))}
